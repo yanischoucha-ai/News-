@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.residencemanager.online/sitemap.xml
+Sitemap: DOMAIN_PLACEHOLDER/sitemap.xml
