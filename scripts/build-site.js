@@ -182,30 +182,36 @@ const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDa
 const PROJECTS = {
   rm: {
     url: 'https://residencemanager.online',
-    fr: { name: 'Résidence Manager', tag: 'Pour les hôtes et conciergeries', p: 'Portail voyageur par QR code, catalogue de services additionnels et tableau de bord hôte, pour gérer vos logements sans courir après les messages.', cta: 'Découvrir Résidence Manager' },
-    en: { name: 'Résidence Manager', tag: 'For hosts and property managers', p: 'A QR-code guest portal, an upsell service catalog and a host dashboard, so you can run your listings without chasing messages.', cta: 'See Résidence Manager' },
+    fr: { name: 'Résidence Manager', tag: 'hôtes et conciergeries', p: 'portail voyageur par QR code, services additionnels et tableau de bord hôte.', cta: 'Voir Résidence Manager' },
+    en: { name: 'Résidence Manager', tag: 'hosts and property managers', p: 'QR-code guest portal, upsell services and a host dashboard.', cta: 'See Résidence Manager' },
+  },
+  mp: {
+    url: 'https://mayapilot.com',
+    fr: { name: 'Maya Pilot', tag: 'réseaux sociaux', p: 'un outil pour gérer vos réseaux sociaux au même endroit.', cta: 'Voir Maya Pilot' },
+    en: { name: 'Maya Pilot', tag: 'social media', p: 'one tool to manage your social media in one place.', cta: 'See Maya Pilot' },
   },
   altura: {
     url: 'mailto:contact.alturacom@gmail.com',
-    fr: { name: 'ALTURA', tag: 'Pour les artisans et indépendants', p: 'Sites, vidéos et assistants IA pour artisans. On construit une démo de l’assistant sous 24 h après votre accord : gratuite, vous décidez ensuite de la garder ou non.', cta: 'Demander une démo gratuite', subject: 'Démo assistant IA (via Marge)' },
-    en: { name: 'ALTURA', tag: 'For contractors and trades', p: 'Websites, video and AI assistants for trades businesses. We build a demo of a missed-call voice assistant within 24 hours of your OK: free, and you decide afterwards whether to keep it.', cta: 'Ask for a free demo', subject: 'AI assistant demo (via Marge)' },
+    fr: { name: 'ALTURA', tag: 'agence de communication', p: 'sites, vidéos et assistants IA. Démo de l’assistant sous 24 h après accord, gratuite, vous décidez ensuite.', cta: 'Demander une démo', subject: 'Démo assistant IA (via Marge)' },
+    en: { name: 'ALTURA', tag: 'communication agency', p: 'websites, video and AI assistants. A demo within 24 hours of your OK, free, and you decide afterwards.', cta: 'Ask for a demo', subject: 'AI assistant demo (via Marge)' },
   },
 };
 const projHref = (k, lang) => (k === 'altura' ? `${PROJECTS[k].url}?subject=${encodeURIComponent(PROJECTS[k][lang].subject)}` : PROJECTS[k].url);
-const projFor = (cat) => (cat === 'airbnb' || cat === 'immobilier' ? 'rm' : 'altura');
+const projFor = (cat) => (cat === 'airbnb' || cat === 'immobilier' ? 'rm' : cat === 'social' ? 'mp' : 'altura');
+const extAttr = (k) => (k === 'altura' ? ' rel="noopener"' : ' rel="noopener" target="_blank"');
 
-// Mot de l'éditeur : fin d'article, contextuel, signalé comme promotion de nos propres services
+// Mot de l'éditeur : discret, contextuel, mais signalé (nos propres services, pas un avis neutre)
 const promo = (lang, cat) => {
   const k = projFor(cat); const x = PROJECTS[k][lang];
-  const disc = lang === 'fr' ? `Mot de l’éditeur · ${BRAND} est édité par ALTURA. C’est la présentation de nos propres services, pas un avis neutre.` : `Note from the publisher · ${BRAND} is published by ALTURA. This presents our own services, not a neutral review.`;
-  return `<aside class="mk-promo" aria-label="${esc(disc)}"><span class="mk-promo-kicker">${esc(disc)}</span><h2>${esc(x.name)} <small>${esc(x.tag)}</small></h2><p>${esc(x.p)}</p><a class="mk-promo-cta" href="${esc(projHref(k, lang))}" rel="noopener"${k === 'rm' ? ' target="_blank"' : ''}>${esc(x.cta)} →</a></aside>`;
+  const lbl = lang === 'fr' ? `Mot de l’éditeur · ${BRAND} est édité par ALTURA` : `Publisher’s note · ${BRAND} is published by ALTURA`;
+  return `<aside class="mk-note" aria-label="${esc(lbl)}"><span class="mk-note-k">${esc(lbl)}</span><p><b>${esc(x.name)}</b>, ${esc(x.tag)} : ${esc(x.p)} <a href="${esc(projHref(k, lang))}"${extAttr(k)}>${esc(x.cta)} →</a></p></aside>`;
 };
 
-// Bloc « Derrière Marge » (accueil)
+// Bloc « Derrière Marge » (accueil) : une ligne par projet, sobre
 const behind = (lang) => {
   const m = MH[lang];
-  const card = (k) => { const x = PROJECTS[k][lang]; return `<a class="mk-card" href="${esc(projHref(k, lang))}" rel="noopener"${k === 'rm' ? ' target="_blank"' : ''}><span class="j-kicker">${esc(x.tag)}</span><h3>${esc(x.name)}</h3><p>${esc(x.p)}</p><span class="mk-card-cta">${esc(x.cta)} →</span></a>`; };
-  return `<section class="j-sec mk-behind"><div class="j-sec-h"><h2>${esc(m.behindH)}</h2></div><p class="mk-behind-p">${esc(m.behindP)}</p><div class="mk-cards">${card('rm')}${card('altura')}</div></section>`;
+  const row = (k) => { const x = PROJECTS[k][lang]; return `<li><a href="${esc(projHref(k, lang))}"${extAttr(k)}><b>${esc(x.name)}</b><span>${esc(x.tag)}</span></a></li>`; };
+  return `<section class="mk-behind"><div class="j-wrap"><p class="mk-behind-p"><b>${esc(m.behindH)}.</b> ${esc(lang === 'fr' ? `${BRAND} est édité par ALTURA, qui développe aussi :` : `${BRAND} is published by ALTURA, which also builds:`)}</p><ul class="mk-behind-list">${row('rm')}${row('mp')}${row('altura')}</ul></div></section>`;
 };
 
 // Calendrier des 7 prochains jours (accueil)
@@ -243,7 +249,8 @@ function buildLangIndex(lang, published, schedule) {
   const body = `<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
 ${calendar(lang, schedule)}
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
-<div class="j-wrap">${catSecs}${behind(lang)}</div>
+<div class="j-wrap">${catSecs}</div>
+${behind(lang)}
 <div style="height:2.5rem"></div>`;
   wr(`${lang}/index.html`, shell({
     lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body, current: 'home',
