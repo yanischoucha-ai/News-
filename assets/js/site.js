@@ -44,4 +44,16 @@
   var d = document.querySelector('[data-today]');
   if (!d) return;
   try { var t = new Date().toLocaleDateString(d.getAttribute('data-today'), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); d.textContent = t.charAt(0).toUpperCase() + t.slice(1); } catch (e) {}
+
 })();
+
+  // Menu mobile
+(function () {
+    var hdr = document.querySelector('.mh'); var btn = document.querySelector('.mh-burger');
+    if (!hdr || !btn) return;
+    function set(open) { hdr.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); document.documentElement.classList.toggle('mh-lock', open); }
+    btn.addEventListener('click', function () { set(!hdr.classList.contains('is-open')); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    hdr.querySelectorAll('.mh-nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 900) set(false); });
+  })();

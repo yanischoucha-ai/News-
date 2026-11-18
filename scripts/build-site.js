@@ -102,14 +102,27 @@ const fixFonts = (html) => {
 const nav = (lang, alt, current) => {
   const t = T[lang]; const m = MH[lang];
   const nl = current === 'home' ? '#newsletter' : `/${lang}/#newsletter`;
+  const menuLbl = lang === 'fr' ? 'Menu' : 'Menu';
+  const cats = CATS.map((c) => `<a href="${catPath(lang, c.id)}"${c.id === current ? ' aria-current="page"' : ''}>${esc(c[lang].name)}</a>`).join('');
   return `<!--S:HEAD-->
 <header class="mh">
-  <div class="mh-top">
-    <span class="mh-date" data-today="${m.date}"></span>
-    <div class="mh-tools"><a class="mh-write" href="${PAGES.write[lang]}">${esc(t.write)}</a><span class="mh-lang"><a href="${alt.fr}"${lang === 'fr' ? ' aria-current="true"' : ''}>FR</a>·<a href="${alt.en}"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></span><a class="mh-sub" href="${nl}">${m.sub}</a></div>
+  <div class="mh-bar">
+    <a class="mh-logo" href="/${lang}/">${BRAND}<i>.</i></a>
+    <p class="mh-tag">${esc(m.tag)}</p>
+    <div class="mh-tools">
+      <a class="mh-write" href="${PAGES.write[lang]}">${esc(t.write)}</a>
+      <span class="mh-lang"><a href="${alt.fr}"${lang === 'fr' ? ' aria-current="true"' : ''}>FR</a><a href="${alt.en}"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></span>
+      <a class="mh-sub" href="${nl}">${m.sub}</a>
+      <button class="mh-burger" type="button" aria-expanded="false" aria-controls="mh-menu" aria-label="${menuLbl}"><span class="mh-burger-ico" aria-hidden="true"></span><span class="mh-burger-txt">${menuLbl}</span></button>
+    </div>
   </div>
-  <div class="mh-brand"><a class="mh-logo" href="/${lang}/">${BRAND}<i>.</i></a><p class="mh-tag">${esc(m.tag)}</p></div>
-  <nav class="mh-nav" aria-label="${esc(t.cats)}"><div class="mh-nav-in">${CATS.map((c) => `<a href="${catPath(lang, c.id)}"${c.id === current ? ' aria-current="page"' : ''}>${esc(c[lang].name)}</a>`).join('')}</div></nav>
+  <nav class="mh-nav" id="mh-menu" aria-label="${esc(t.cats)}">
+    <div class="mh-nav-in">
+      <a class="mh-nav-home" href="/${lang}/"${current === 'home' ? ' aria-current="page"' : ''}>${esc(t.latest)}</a>
+      ${cats}
+      <div class="mh-nav-extra"><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
+    </div>
+  </nav>
 </header>
 <!--/S:HEAD-->`;
 };
