@@ -117,6 +117,7 @@ body > .s-newsletter { margin: 3rem 1.5rem; max-width: none; }
 .s-field input:focus, .s-field textarea:focus { outline: 2px solid var(--s-gold); outline-offset: 1px; }
 .s-check { display: flex; gap: .6rem; align-items: flex-start; font: .86rem/1.5 var(--s-sans); margin-bottom: 1.2rem; text-align: left; }
 .s-check input { margin-top: .25rem; flex: 0 0 auto; }
+.s-terms { font: .82rem/1.5 var(--s-sans); color: var(--s-muted); margin: .5rem 0 1rem; }
 .s-form-stack .s-form-msg.ok { color: #1e7a3a; }
 .s-form-stack .s-form-msg.err { color: #b3261e; }
 

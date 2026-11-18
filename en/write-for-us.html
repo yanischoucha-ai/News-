@@ -56,14 +56,12 @@
 <h2>Terms</h2>
 <p>You remain the owner of your text. You grant us a non-exclusive licence to publish it on Marge, in English and French (translation included). The text must be unpublished. One promotional link to your business is accepted and is presented as such.</p>
 <form class="s-form-stack" data-s-form="contribution" data-ok="Thank you! Your pitch has been received and we will read it carefully.">
-  <div class="s-field"><label for="c-name">Name</label><input id="c-name" name="name" required maxlength="120" autocomplete="name"></div>
-  <div class="s-field"><label for="c-email">Email</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email"></div>
-  <div class="s-field"><label for="c-title">Proposed topic</label><input id="c-title" name="title" required maxlength="200"><small>One sentence: the angle, not just the theme.</small></div>
-  <div class="s-field"><label for="c-pitch">Your pitch</label><textarea id="c-pitch" name="pitch" required minlength="80" maxlength="8000"></textarea><small>What you lived or measured (numbers, context) and what the reader will be able to do afterwards. You can also paste the full article.</small></div>
-  <div class="s-field"><label for="c-link">Your site or profile (optional)</label><input id="c-link" name="link" type="url" maxlength="300" placeholder="https://"></div>
+  <div class="s-field"><label for="c-email">Your email</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com"></div>
+  <div class="s-field"><label for="c-title">Topic and angle</label><input id="c-title" name="title" required maxlength="200" placeholder="Ex: I cut my overhead by 30% in 6 months by changing my legal structure"></div>
+  <div class="s-field"><label for="c-pitch">Your pitch</label><textarea id="c-pitch" name="pitch" required minlength="20" maxlength="8000" placeholder="What you lived or measured. You can also paste the full article."></textarea></div>
   <input type="text" name="website" class="s-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <label class="s-check"><input type="checkbox" name="agree" required><span>I have read the terms above: the text is original and mine, I keep my rights and authorize Marge to publish it (EN/FR, translation included) with my byline.</span></label>
-  <button type="submit">Send my pitch</button>
+  <p class="s-terms">By submitting, you confirm the text is original and yours. You keep your rights; Marge publishes with your byline (EN/FR).</p>
+  <button type="submit">Send</button>
   <p class="s-form-msg" role="status" aria-live="polite"></p>
 </form></main>
 <footer class="site-footer">

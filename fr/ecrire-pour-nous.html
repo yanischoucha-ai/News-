@@ -56,14 +56,12 @@
 <h2>Conditions</h2>
 <p>Vous restez propriétaire de votre texte. Vous nous accordez une licence non exclusive pour le publier sur Marge, en français et en anglais (traduction comprise). Le texte doit être inédit. Un seul lien promotionnel vers votre activité est accepté, et il est assumé comme tel.</p>
 <form class="s-form-stack" data-s-form="contribution" data-ok="Merci ! Votre proposition est bien reçue, nous la lisons avec attention.">
-  <div class="s-field"><label for="c-name">Nom ou pseudo</label><input id="c-name" name="name" required maxlength="120" autocomplete="name"></div>
-  <div class="s-field"><label for="c-email">Email</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email"></div>
-  <div class="s-field"><label for="c-title">Sujet proposé</label><input id="c-title" name="title" required maxlength="200"><small>Une phrase : l’angle, pas juste le thème.</small></div>
-  <div class="s-field"><label for="c-pitch">Votre proposition</label><textarea id="c-pitch" name="pitch" required minlength="80" maxlength="8000"></textarea><small>Ce que vous avez vécu ou mesuré (chiffres, contexte), ce que le lecteur saura faire après lecture. Vous pouvez aussi coller l’article complet.</small></div>
-  <div class="s-field"><label for="c-link">Votre site ou profil (facultatif)</label><input id="c-link" name="link" type="url" maxlength="300" placeholder="https://"></div>
+  <div class="s-field"><label for="c-email">Votre email</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="vous@example.com"></div>
+  <div class="s-field"><label for="c-title">Sujet et angle</label><input id="c-title" name="title" required maxlength="200" placeholder="Ex : J’ai réduit mes charges de 30 % en 6 mois en changeant de statut"></div>
+  <div class="s-field"><label for="c-pitch">Votre proposition</label><textarea id="c-pitch" name="pitch" required minlength="20" maxlength="8000" placeholder="Ce que vous avez vécu ou mesuré. Vous pouvez aussi coller l’article complet."></textarea></div>
   <input type="text" name="website" class="s-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <label class="s-check"><input type="checkbox" name="agree" required><span>J’ai lu les conditions ci-dessus : le texte est inédit et de moi, je garde mes droits et j’autorise Marge à le publier (FR/EN, traduction comprise) avec ma signature.</span></label>
-  <button type="submit">Envoyer ma proposition</button>
+  <p class="s-terms">En envoyant, vous confirmez que le texte est inédit et de vous. Vous gardez vos droits, Marge publie avec votre signature (FR/EN).</p>
+  <button type="submit">Envoyer</button>
   <p class="s-form-msg" role="status" aria-live="polite"></p>
 </form></main>
 <footer class="site-footer">
