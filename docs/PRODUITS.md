@@ -6,15 +6,17 @@ Source : pages officielles des produits (relevées le 18 nov. 2026). Le média e
 
 Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zéro initial). Une mention n'est autorisée que si **toutes** les conditions de sa ligne sont vraies. Sinon : aucune mention, l'article est écrit comme si ces produits n'existaient pas.
 
-| Jour | Produit | Condition |
-|---|---|---|
-| Lundi | Résidence Manager | W pair, article **FR** uniquement |
-| Mercredi | Résidence Manager | W = 1 modulo 4 (W = 1, 5, 9, 13…), article **FR** uniquement, et seulement si le sujet est la location courte durée ou la gestion locative |
-| Jeudi | ALTURA | W impair, article **FR** uniquement, et seulement si le sujet touche à la visibilité en ligne, au site web, à la vidéo ou aux réseaux d'une petite entreprise |
-| Dimanche | Maya Pilot | W impair, article **FR** uniquement, et seulement si le sujet concerne le marketing ou les réseaux sociaux d'un éditeur de logiciel / SaaS |
-| Mardi, vendredi, samedi | aucun | jamais |
+| Jour | Produit | Condition FR | Condition EN (marché US/UK) |
+|---|---|---|---|
+| Lundi | Résidence Manager | W pair | W impair |
+| Mercredi | Résidence Manager | W = 1 modulo 4 (1, 5, 9, 13…), sujet location courte durée ou gestion locative | W = 3 modulo 4 (3, 7, 11, 15…), même condition de sujet |
+| Jeudi | ALTURA | W impair, sujet visibilité en ligne, site web, vidéo ou réseaux d'une petite entreprise | W pair, même condition de sujet (contractors, petites entreprises de services) |
+| Dimanche | Maya Pilot | W impair, sujet marketing ou réseaux sociaux d'un éditeur de logiciel / SaaS | W pair, même condition de sujet |
+| Mardi, vendredi, samedi | aucun | jamais | jamais |
 
-Les articles EN ne contiennent jamais de mention produit (en revanche ils portent le backlink de la section suivante). Résultat attendu : environ 1 à 2 mentions par semaine sur 14 articles. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
+Cette table remplace toute mention « article FR uniquement » d'un prompt de tâche. Résultat attendu : environ 2 à 4 mentions par semaine sur 14 articles, FR et EN alternées. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
+
+**Règles propres aux mentions EN (honnêteté)** : le média vise aussi les États-Unis et le Royaume-Uni, mais au 18 nov. 2026 les sites Résidence Manager et ALTURA sont **uniquement en français** et ALTURA n'a pas de présence commerciale américaine établie. Donc dans un article EN : ne jamais affirmer qu'un produit est disponible, localisé ou implanté aux États-Unis ou au Royaume-Uni, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). Le lien reste utile pour qui lit le français ou veut voir le produit. Cette réserve sera supprimée par l'éditeur quand une page en anglais existera.
 
 ## Backlinks : un lien contextuel dans environ 2 articles sur 3
 
