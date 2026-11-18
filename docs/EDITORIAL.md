@@ -31,7 +31,11 @@ Test final : un lecteur qui n'a que cet article sous les yeux peut-il décider o
 
 - Aucune expérience personnelle inventée. Pas de « j'ai testé », « chez mes clients », « j'utilise », « I tested », sauf si c'est réellement arrivé pendant l'exécution (outil gratuit effectivement essayé, par exemple). Utiliser « on », « les données montrent », ou citer des témoignages publics réels avec lien.
 - Si un titre planifié suppose un cas ou une expérience personnelle (« Comment j'ai… », « Comment un plombier a… »), le retitrer en angle analytique sourcé, ou ne l'écrire qu'avec un cas public réel retrouvé et cité.
-- Aucun lien d'affiliation. Mention d'un produit du réseau (règle propre à chaque jour) : une seule fois, subtile, utile au lecteur, jamais présentée comme neutre si ce n'est pas le cas.
+- Aucun lien d'affiliation.
+- **Produits du réseau** (le média est édité par ALTURA, qui développe aussi Résidence Manager et Maya Pilot) : lun. et mer. Airbnb / location → residencemanager.online ; dim. réseaux sociaux → mayapilot.com ; autres rubriques → ALTURA (agence de communication) seulement si le sujet s'y prête vraiment.
+  - Le site ajoute **automatiquement** en fin d'article une courte note « Mot de l'éditeur » signalée comme telle (via `node scripts/build-site.js`). Ne jamais ajouter soi-même de `cta-box`, bouton, bandeau ou bloc promotionnel dans `bodyHtml`.
+  - Dans le texte : au plus **une** mention d'un produit du réseau, seulement si elle aide réellement le lecteur à résoudre le problème de l'article (règle d'alternance propre à chaque jour), en une phrase neutre, avec la transparence naturelle « outil du même éditeur que ce média ». Jamais présentée comme un avis indépendant. Pas de superlatifs, pas de promesse non vérifiable, pas de prix ni de fonctionnalité qu'on n'a pas lus sur la page officielle du produit. Ne pas répéter dans le texte le contenu de la note de fin.
+  - Aucun chiffre d'audience (lecteurs, abonnés, vues) n'est jamais affiché ou affirmé tant qu'il n'est pas réel et mesuré.
 
 ## 4. Rédaction (1200-1800 mots par article)
 
