@@ -13,6 +13,18 @@
   <link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/">
   <link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/">
   <link rel="stylesheet" href="assets/css/home.css">
+  <script>
+    // Détection langue navigateur → redirection automatique
+    (function() {
+      var lang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+      var isFr = lang.startsWith('fr');
+      var path = window.location.pathname;
+      // Ne redirige que depuis la racine exacte
+      if (path === '/' || path === '/index.html') {
+        window.location.replace(isFr ? '/fr/' : '/en/');
+      }
+    })();
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,8 +68,8 @@
   <div class="ec-inner">
     <div class="ec-stats">
       <div class="ec-stat"><span class="ec-stat-num">8</span><span class="ec-stat-label">articles publiés</span></div>
-      <div class="ec-stat"><span class="ec-stat-num">1🔥</span><span class="ec-stat-label">jours actifs</span></div>
-      <div class="ec-stat"><span class="ec-stat-num">8</span><span class="ec-stat-label">articles en cours</span></div>
+      <div class="ec-stat"><span class="ec-stat-num">2🔥</span><span class="ec-stat-label">jours actifs</span></div>
+      <div class="ec-stat"><span class="ec-stat-num">50</span><span class="ec-stat-label">articles en cours</span></div>
     </div>
     <div class="ec-today">
       <span class="ec-new-badge">NOUVEAU</span>
@@ -69,7 +81,7 @@
     <div class="ec-next">
       <span class="ec-label">Prochain article</span>
       <span class="ec-next-when">demain</span>
-      <span class="ec-next-title">🇫🇷 Immobilier · <em>Comment fixer le bon prix sur Airbnb en 2026</em></span>
+      <span class="ec-next-title">🇫🇷 Artisans · <em>Artisan : comment répondre à chaque devis sans perdre 2h par jour</em></span>
     </div>
   </div>
 </div>
