@@ -1,4 +1,4 @@
-/* MEDIA_NAME — Article interactivity */
+/* Marge — Article interactivity */
 
 // 1. Reading progress bar
 (function() {

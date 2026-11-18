@@ -114,6 +114,9 @@ function main() {
   fs.writeFileSync(INDEX_HTML, html);
   console.log('✅ index.html mis à jour');
 
+  // Régénère pages /fr/ /en/, rubriques, footer/newsletter des articles, sitemap
+  require('./build-site').build();
+
   // ── Résumé pour notification ───────────────────────────────────────────
   const summary = [
     `📊 ${published.length} articles publiés | ${streak}🔥 jours actifs`,

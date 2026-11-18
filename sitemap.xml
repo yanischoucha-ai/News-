@@ -1,94 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
   <url>
     <loc>DOMAIN_PLACEHOLDER/</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Index FR -->
   <url>
     <loc>DOMAIN_PLACEHOLDER/fr/</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/"/>
   </url>
-
-  <!-- Index EN -->
   <url>
     <loc>DOMAIN_PLACEHOLDER/en/</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/"/>
   </url>
-
-  <!-- Articles FR -->
   <url>
-    <loc>DOMAIN_PLACEHOLDER/fr/automatiser-conciergerie-airbnb</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/automatiser-conciergerie-airbnb"/>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/airbnb</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/airbnb"/>
   </url>
   <url>
-    <loc>DOMAIN_PLACEHOLDER/fr/ia-pour-artisans-comment-se-lancer</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/ia-pour-artisans-comment-se-lancer"/>
+    <loc>DOMAIN_PLACEHOLDER/en/category/airbnb</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/airbnb"/>
   </url>
-
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/ia</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/ia"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/ia</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/ia"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/immobilier</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/immobilier"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/immobilier</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/immobilier"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/artisans</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/artisans"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/artisans"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/artisans</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/artisans"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/artisans"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/tech</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/tech"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/tech"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/tech</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/tech"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/tech"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/business</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/business"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/business"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/business</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/business"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/business"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/social</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/social"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/social</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/social"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/ecrire-pour-nous</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/ecrire-pour-nous"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/write-for-us"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/write-for-us</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/ecrire-pour-nous"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/write-for-us"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/reutilisation-contenu</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/reutilisation-contenu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/content-reuse"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/content-reuse</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/reutilisation-contenu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/content-reuse"/>
+  </url>
   <url>
     <loc>DOMAIN_PLACEHOLDER/fr/investir-location-courte-duree-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/investir-location-courte-duree-2026"/>
   </url>
   <url>
     <loc>DOMAIN_PLACEHOLDER/fr/7-outils-ia-business-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/7-outils-ia-business-2026"/>
-  </url>
-
-  <!-- Articles EN -->
-  <url>
-    <loc>DOMAIN_PLACEHOLDER/en/airbnb-host-concierge-app-2026</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/airbnb-host-concierge-app-2026"/>
-  </url>
-  <url>
-    <loc>DOMAIN_PLACEHOLDER/en/ai-for-hvac-plumbing-contractors</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/ai-for-hvac-plumbing-contractors"/>
   </url>
   <url>
     <loc>DOMAIN_PLACEHOLDER/en/airbnb-host-plateau-3-listings</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/airbnb-host-plateau-3-listings"/>
   </url>
   <url>
     <loc>DOMAIN_PLACEHOLDER/en/honest-guide-ai-tools-contractors-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/honest-guide-ai-tools-contractors-2026"/>
   </url>
-
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/ia-pour-artisans-comment-se-lancer</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/ai-for-hvac-plumbing-contractors</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/automatiser-conciergerie-airbnb</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/airbnb-host-concierge-app-2026</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

@@ -6,7 +6,8 @@
 
 (function () {
   // ─── PLANNING ÉDITORIAL ───────────────────────────────────────────────────
-  // Chaque entrée : { date: "YYYY-MM-DD", title, lang, slug, tag }
+  // Chaque entrée : { date: "YYYY-MM-DD", title, lang, slug, tag, cat, min, desc }
+  // cat = airbnb|ia|immobilier|artisans|tech|business|social (défaut : selon le jour de la semaine) ; min = minutes de lecture ; desc = résumé 1-2 phrases (cartes, listes)
   // La scheduled task met à jour ce tableau en ajoutant les nouvelles entrées
   // ── THÉMATIQUE PAR JOUR ───────────────────────────────────────────────────
   // Lun: Airbnb & gestion locative → residencemanager.online
@@ -20,16 +21,16 @@
   const SCHEDULE = [
     // ── PUBLIÉS ──────────────────────────────────────────────────────────────
     // Mardi 10 nov (IA)
-    { date: "2026-11-10", title: "Comment automatiser votre conciergerie Airbnb en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie" },
-    { date: "2026-11-10", title: "The Best Airbnb Concierge App for Hosts in 2026", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb" },
+    { date: "2026-11-10", title: "Comment automatiser votre conciergerie Airbnb en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie", cat: "airbnb", min: 7, desc: "Portail invité, upsells automatiques, concierge IA multilingue : le guide complet pour travailler moins et gagner plus sur vos locations." },
+    { date: "2026-11-10", title: "The Best Airbnb Concierge App for Hosts in 2026", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb", cat: "airbnb", min: 6, desc: "How smart hosts use digital guest portals and AI concierge to increase revenue and reduce workload on every booking." },
     // Mercredi 11 nov (Immobilier)
-    { date: "2026-11-11", title: "L'IA pour les artisans : comment se lancer sans se perdre", lang: "fr", slug: "/fr/ia-pour-artisans-comment-se-lancer.html", tag: "IA & PME" },
-    { date: "2026-11-11", title: "How HVAC & Plumbing Contractors Are Using AI to Win More Jobs", lang: "en", slug: "/en/ai-for-hvac-plumbing-contractors.html", tag: "AI" },
+    { date: "2026-11-11", title: "L'IA pour les artisans : comment se lancer sans se perdre", lang: "fr", slug: "/fr/ia-pour-artisans-comment-se-lancer.html", tag: "IA & PME", cat: "artisans", min: 8, desc: "Assistant vocal, chatbot de qualification, génération de devis : les 3 usages à fort ROI pour les artisans et PME en 2026." },
+    { date: "2026-11-11", title: "How HVAC & Plumbing Contractors Are Using AI to Win More Jobs", lang: "en", slug: "/en/ai-for-hvac-plumbing-contractors.html", tag: "AI", cat: "artisans", min: 7, desc: "Answer every missed call, qualify leads automatically, and book more jobs without hiring more staff. A practical guide for 2026." },
     // Mardi 18 nov (IA + Immobilier)
-    { date: "2026-11-18", title: "Faut-il encore investir en location courte durée en 2026 ?", lang: "fr", slug: "/fr/investir-location-courte-duree-2026.html", tag: "Immobilier" },
-    { date: "2026-11-18", title: "Les 7 outils IA que j'utilise vraiment dans mon business en 2026", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA" },
-    { date: "2026-11-18", title: "Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)", lang: "en", slug: "/en/airbnb-host-plateau-3-listings.html", tag: "Airbnb" },
-    { date: "2026-11-18", title: "The Honest Guide to AI Tools for Small Contractors in 2026", lang: "en", slug: "/en/honest-guide-ai-tools-contractors-2026.html", tag: "AI Tools" },
+    { date: "2026-11-18", title: "Faut-il encore investir en location courte durée en 2026 ?", lang: "fr", slug: "/fr/investir-location-courte-duree-2026.html", tag: "Immobilier", cat: "immobilier", min: 7, desc: "La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve." },
+    { date: "2026-11-18", title: "Les 7 outils IA que j'utilise vraiment dans mon business en 2026", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA", cat: "ia", min: 8, desc: "Pas une liste tendance. Ce qui tourne en production dans des vrais business, avec ce que ça coûte et ce que ça change concrètement." },
+    { date: "2026-11-18", title: "Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)", lang: "en", slug: "/en/airbnb-host-plateau-3-listings.html", tag: "Airbnb", cat: "airbnb", min: 7, desc: "The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall." },
+    { date: "2026-11-18", title: "The Honest Guide to AI Tools for Small Contractors in 2026", lang: "en", slug: "/en/honest-guide-ai-tools-contractors-2026.html", tag: "AI Tools", cat: "artisans", min: 8, desc: "What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers." },
 
     // ── SEMAINE 47 (19–22 nov) ───────────────────────────────────────────────
     // Jeu 19 — Contractors & artisans
