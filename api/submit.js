@@ -1,8 +1,8 @@
 // Vercel serverless : enregistre inscriptions newsletter, propositions d'articles et messages dans Supabase.
 // Variables d'environnement requises (Vercel → Settings → Environment Variables) :
-//   SUPABASE_URL, SUPABASE_SERVICE_KEY   (schéma : supabase/schema.sql)
+//   SUPABASE_URL, SUPABASE_ANON_KEY   (clé publique, ajout seul ; schéma : supabase/schema.sql)
 
-const TABLES = { newsletter: 'subscribers', contribution: 'contributions', contact: 'contacts' };
+const TABLES = { newsletter: 'marge_subscribers', contribution: 'marge_contributions', contact: 'marge_contacts' };
 const clip = (v, n) => String(v == null ? '' : v).trim().slice(0, n);
 
 module.exports = async (req, res) => {
@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
   }
 
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_KEY;
+  const key = process.env.SUPABASE_ANON_KEY;
   if (!url || !key) return res.status(503).json({ error: 'not_configured' });
 
   try {
