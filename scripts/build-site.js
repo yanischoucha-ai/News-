@@ -90,8 +90,8 @@ const footer = (lang) => {
 };
 
 const MH = {
-  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', top: 'Dernières publications', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Rejoignez les 100+ lecteurs qui nous lisent chaque semaine. Un seul email, que du concret.', date: 'fr-FR' },
-  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', top: 'Latest', nlH: 'The week’s numbers, in your inbox.', nlP: 'Join the 100+ readers who read us every week. One email, only what you can use.', date: 'en-US' },
+  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', all: 'Toute l’actualité', top: 'À la une', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Un seul email par semaine, que du concret : cas réels, chiffres vérifiés, zéro généralité.', date: 'fr-FR' },
+  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', all: 'All stories', top: 'Top stories', nlH: 'The week’s numbers, in your inbox.', nlP: 'One email a week, only what you can use: real cases, verified numbers, no filler.', date: 'en-US' },
 };
 const FONTS = '<link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>';
 const fixFonts = (html) => {
@@ -171,10 +171,7 @@ function buildLangIndex(lang, published, schedule) {
   const today = new Date().toISOString().slice(0, 10);
   const next = schedule.filter((a) => !a.slug && a.lang === lang && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
   const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}"><span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
-  const catSecs = CATS.map((c) => {
-    const items = rest.filter((a) => a.cat === c.id).slice(0, 3);
-    return items.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(c[lang].name)}</h2><a href="${catPath(lang, c.id)}">${m.more} →</a></div><div class="j-grid">${items.map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
-  }).join('');
+  const catSecs = rest.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(m.all)}</h2></div><div class="j-grid">${rest.slice(0, 12).map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
   const body = `<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
 <div class="j-wrap">${catSecs}${next.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${m.up}</h2></div><ul class="s-upcoming">${next.map((a) => `<li><time datetime="${a.date}">${fmt(a.date, lang)}</time><span>${esc(a.title)}</span></li>`).join('')}</ul></section>` : ''}</div>

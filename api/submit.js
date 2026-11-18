@@ -30,10 +30,10 @@ module.exports = async (req, res) => {
     row = { email, lang, source: clip(b.page, 200) };
   } else if (type === 'contribution') {
     row = {
-      name: clip(b.name, 120), email, lang, title: clip(b.title, 200),
+      name: clip(b.name, 120) || String(email).split('@')[0].slice(0, 120), email, lang, title: clip(b.title, 200),
       pitch: clip(b.pitch, 8000), link: clip(b.link, 300), status: 'new',
     };
-    if (!row.name || !row.title || row.pitch.length < 80 || b.agree !== 'on') return res.status(400).json({ error: 'fields' });
+    if (!row.name || !row.title || row.pitch.length < 20) return res.status(400).json({ error: 'fields' });
   } else {
     row = { name: clip(b.name, 120), email, lang, message: clip(b.message, 4000) };
     if (!row.name || row.message.length < 10) return res.status(400).json({ error: 'fields' });

@@ -97,14 +97,12 @@ const T = {
 const contribForm = (lang) => {
   const fr = lang === 'fr';
   return `<form class="s-form-stack" data-s-form="contribution" data-ok="${fr ? 'Merci ! Votre proposition est bien reçue, nous la lisons avec attention.' : 'Thank you! Your pitch has been received and we will read it carefully.'}">
-  <div class="s-field"><label for="c-name">${fr ? 'Nom ou pseudo' : 'Name'}</label><input id="c-name" name="name" required maxlength="120" autocomplete="name"></div>
-  <div class="s-field"><label for="c-email">Email</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email"></div>
-  <div class="s-field"><label for="c-title">${fr ? 'Sujet proposé' : 'Proposed topic'}</label><input id="c-title" name="title" required maxlength="200"><small>${fr ? 'Une phrase : l’angle, pas juste le thème.' : 'One sentence: the angle, not just the theme.'}</small></div>
-  <div class="s-field"><label for="c-pitch">${fr ? 'Votre proposition' : 'Your pitch'}</label><textarea id="c-pitch" name="pitch" required minlength="80" maxlength="8000"></textarea><small>${fr ? 'Ce que vous avez vécu ou mesuré (chiffres, contexte), ce que le lecteur saura faire après lecture. Vous pouvez aussi coller l’article complet.' : 'What you lived or measured (numbers, context) and what the reader will be able to do afterwards. You can also paste the full article.'}</small></div>
-  <div class="s-field"><label for="c-link">${fr ? 'Votre site ou profil (facultatif)' : 'Your site or profile (optional)'}</label><input id="c-link" name="link" type="url" maxlength="300" placeholder="https://"></div>
+  <div class="s-field"><label for="c-email">${fr ? 'Votre email' : 'Your email'}</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="${fr ? 'vous@exemple.com' : 'you@example.com'}"></div>
+  <div class="s-field"><label for="c-title">${fr ? 'Sujet et angle' : 'Topic and angle'}</label><input id="c-title" name="title" required maxlength="200" placeholder="${fr ? 'Ex : j’ai réduit mes charges de 30 % en 6 mois' : 'Ex: I cut my overhead by 30% in 6 months'}"></div>
+  <div class="s-field"><label for="c-pitch">${fr ? 'Votre proposition' : 'Your pitch'}</label><textarea id="c-pitch" name="pitch" required minlength="20" maxlength="8000" placeholder="${fr ? 'Ce que vous avez vécu ou mesuré. Vous pouvez aussi coller l’article complet.' : 'What you lived or measured. You can also paste the full article.'}"></textarea></div>
   <input type="text" name="website" class="s-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <label class="s-check"><input type="checkbox" name="agree" required><span>${fr ? `J’ai lu les conditions ci-dessus : le texte est inédit et de moi, je garde mes droits et j’autorise ${BRAND} à le publier (FR/EN, traduction comprise) avec ma signature.` : `I have read the terms above: the text is original and mine, I keep my rights and authorize ${BRAND} to publish it (EN/FR, translation included) with my byline.`}</span></label>
-  <button type="submit">${fr ? 'Envoyer ma proposition' : 'Send my pitch'}</button>
+  <p class="s-terms">${fr ? `En envoyant, vous confirmez que le texte est inédit et de vous. Vous gardez vos droits, ${BRAND} publie avec votre signature (FR/EN).` : `By submitting, you confirm the text is original and yours. You keep your rights; ${BRAND} publishes with your byline (EN/FR).`}</p>
+  <button type="submit">${fr ? 'Envoyer' : 'Send'}</button>
   <p class="s-form-msg" role="status" aria-live="polite"></p>
 </form>`;
 };
