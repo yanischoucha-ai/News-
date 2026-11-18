@@ -14,7 +14,17 @@ Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zé
 | Dimanche | Maya Pilot | W impair, article **FR** uniquement, et seulement si le sujet concerne le marketing ou les réseaux sociaux d'un éditeur de logiciel / SaaS |
 | Mardi, vendredi, samedi | aucun | jamais |
 
-Les articles EN ne mentionnent jamais ces produits. Résultat attendu : environ 1 à 2 mentions par semaine sur 14 articles. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
+Les articles EN ne contiennent jamais de mention produit (en revanche ils portent le backlink de la section suivante). Résultat attendu : environ 1 à 2 mentions par semaine sur 14 articles. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
+
+## Backlinks : un lien contextuel dans (presque) chaque article
+
+Objectif : chaque article envoie un lien normal vers un site du réseau. Distinguer deux choses : le **backlink** (un simple lien de référence, fréquent) et la **mention produit** (1-2 phrases qui présentent l'outil, rare, voir planning ci-dessus).
+
+- **Règle** : chaque article, **FR et EN**, contient **1 lien contextuel** vers un site du réseau, dès qu'il existe un endroit naturel pour le placer. Jamais plus de 1 lien réseau par article. S'il n'y a vraiment aucun endroit naturel, ne pas forcer.
+- **Quel site** selon le sujet : Airbnb, location courte durée, gestion locative, conciergerie, immobilier locatif → https://www.residencemanager.online ; réseaux sociaux, marketing de contenu, SaaS, personal branding → https://mayapilot.com ; artisans, PME, site web, visibilité en ligne, vidéo, IA et automatisation en entreprise, business → https://alturacom-production.odoo.com. Si la mention produit du jour est autorisée et faite, elle tient lieu de lien : n'en ajouter aucun autre.
+- **Forme** : lien HTML normal dans une phrase utile (exemple, ressource, outil à tester), sans `rel="nofollow"` ni `rel="sponsored"`, ouvert dans le même onglet. Texte d'ancre descriptif et **varié** d'un article à l'autre (« gestion des départs et du ménage », « un portail voyageur par QR code », « agence de communication digitale »…), jamais « cliquez ici », jamais deux fois la même ancre de suite.
+- **Placement** : dans le corps, à l'endroit où le lecteur en a besoin, pas dans la conclusion ni dans un bloc à part, pas de bouton. Le lien reste un renvoi, pas un argumentaire : pas de superlatif ni de promesse. Les faits sur le produit restent limités à « Faits autorisés ». Un simple lien de référence n'exige pas de mention de l'éditeur dans la phrase (le pied de page indique « Marge est édité par ALTURA ») ; une phrase qui présente l'outil, elle, garde la transparence naturelle.
+- **Compte rendu** : « backlink : oui/non, URL, ancre ».
 
 ## Comment mentionner
 
