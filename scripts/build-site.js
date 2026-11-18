@@ -366,6 +366,32 @@ ${L('fr').join('\n') || '- (à venir)'}
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
+// Versionne les CSS/JS (?v=hash du contenu) pour que les navigateurs, dont ceux intégrés à Instagram, rechargent après chaque changement.
+function versionAssets() {
+  const crypto = require('crypto');
+  const hashes = {};
+  const hashOf = (rel) => {
+    if (!hashes[rel]) {
+      const f = path.join(ROOT, rel);
+      hashes[rel] = fs.existsSync(f) ? crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8) : '0';
+    }
+    return hashes[rel];
+  };
+  const files = [path.join(ROOT, 'index.html')];
+  ['fr', 'en'].forEach((l) => {
+    const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).forEach((d) => {
+      const f = path.join(dir, d.name);
+      if (d.isDirectory()) walk(f); else if (d.name.endsWith('.html')) files.push(f);
+    });
+    if (fs.existsSync(path.join(ROOT, l))) walk(path.join(ROOT, l));
+  });
+  files.filter((f) => fs.existsSync(f)).forEach((f) => {
+    const html = fs.readFileSync(f, 'utf8');
+    const out = html.replace(/((?:src|href)=")(\/?assets\/(?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=\w+)?(")/g, (m, a, u, c) => `${a}${u}?v=${hashOf(u.replace(/^\//, ''))}${c}`);
+    if (out !== html) fs.writeFileSync(f, out);
+  });
+}
+
 function build() {
   const schedule = readSchedule();
   const published = schedule.filter((a) => a.slug).sort((a, b) => b.date.localeCompare(a.date));
@@ -386,6 +412,7 @@ function build() {
   buildHome(published);
   buildSitemap(published);
   buildLlms(published);
+  versionAssets();
   console.log(`✅ build-site : ${published.length} articles publiés, ${CATS.length * 2} pages rubriques, sitemap régénéré`);
 }
 
