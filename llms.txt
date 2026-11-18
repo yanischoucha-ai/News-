@@ -1,0 +1,32 @@
+# Marge
+
+> Marge is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. Marge is published by ALTURA, a digital agency; products of the same publisher are disclosed as such.
+
+## Sections
+- Airbnb & short-term rentals: Systems, pricing and regulation: what actually works for hosts and property managers.
+- AI & automation: The AI tools and automations that really save time, and the ones that cost more than they return.
+- Real estate & investing: Market data, tax and yield: the numbers to run before you buy, with sources.
+- Contractors & trades: Quotes, pricing, reviews, tools: the daily reality of contractors and tradespeople.
+- Tech & productivity: Honest tool tests, comparisons and real pricing, so you can choose without falling for the marketing page.
+- Tech & sustainability: Responsible tech, energy, retrofits and tools that really cut footprint and bills: sourced numbers, no greenwashing.
+- Business & freelance: Pricing, legal structure, first clients, recurring revenue: analysis before slogans.
+- Social media & branding: Algorithms, frequency, formats: what the data says, not the gurus.
+
+## Articles (English)
+- [Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)](https://marge.media/en/airbnb-host-plateau-3-listings): The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall.
+- [The Honest Guide to AI Tools for Small Contractors in 2026](https://marge.media/en/honest-guide-ai-tools-contractors-2026): What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers.
+- [Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist](https://marge.media/en/ai-for-hvac-plumbing-contractors): HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices.
+- [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://marge.media/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
+
+## Articles (Français)
+- [Faut-il encore investir en location courte durée en 2026 ?](https://marge.media/fr/investir-location-courte-duree-2026): La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve.
+- [Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer](https://marge.media/fr/7-outils-ia-business-2026): Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant.
+- [IA et artisans : par où commencer quand 27 % seulement s'y mettent](https://marge.media/fr/ia-pour-artisans-comment-se-lancer): 27 % des artisans utilisent l'IA, moins de 10 % dans le BTP : les trois usages à tester d'abord, le calcul de gain à refaire et les règles CNIL sur les appels.
+- [Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026](https://marge.media/fr/automatiser-conciergerie-airbnb): À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures.
+
+## Community authors
+- [Community voices](https://marge.media/en/community): pieces by independent authors, published without editorial review, links marked nofollow.
+- [Tribune des auteurs](https://marge.media/fr/tribune)
+
+## Reuse and citation
+- [Citing and reusing our articles](https://marge.media/en/content-reuse): short quotations with attribution and a link to the source are welcome.

@@ -1,5 +1,24 @@
 User-agent: *
 Allow: /
+Disallow: /admin-tribune
+
+# Assistants et moteurs IA : autorisés, pour que le contenu puisse être cité avec sa source
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://marge.media/sitemap.xml
 Sitemap: https://marge.media/sitemap-tribune.xml

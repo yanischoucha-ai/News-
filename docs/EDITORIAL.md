@@ -91,3 +91,20 @@ Ajouter `"replace": true, "modified": "<date du jour>"` dans le JSON : le script
 
 ## Rubrique « Tech & développement durable » (vendredi, une semaine sur deux)
 Le vendredi alterne selon la semaine ISO (`date +%V`) : **semaine impaire = Tech & développement durable** (`cat: durable`, à passer à `new-article.js`), **semaine paire = Tech & productivité** (`cat: tech`). Sujets durables : numérique responsable (coût énergie et empreinte d'un outil, hébergement, matériel reconditionné), énergie et rénovation pour hôtes et artisans (aides, DPE, pompes à chaleur, solaire), obligations et aides réelles (vérifiées sur source officielle), calculs de retour sur investissement chiffrés. Aucun greenwashing : chaque affirmation environnementale est sourcée (ADEME, Négawatt, IEA, études citées), avec ses limites ; pas de « neutre en carbone » sans méthode. Mêmes exigences que les autres jours (chiffres, cas réel, conseils applicables, actualité des 60 derniers jours).
+
+## 9. Écrire pour les humains ET pour les moteurs IA (ChatGPT, Perplexity, Claude, Google AI)
+
+Beaucoup de lecteurs posent leur question à un assistant IA, qui cite les pages les plus claires et les mieux sourcées. Un article utile pour un humain l'est aussi pour une IA si l'on respecte ces règles (elles s'ajoutent aux autres, sans jamais passer avant l'honnêteté ni la valeur pour le lecteur) :
+
+- **Réponse d'abord** : les 2 premières phrases de l'article répondent directement à la question du titre, avec le chiffre clé et la condition. Ensuite seulement viennent le contexte et la démonstration. Le méta `description` reprend cette réponse en une phrase.
+- **Encadré « À retenir »** : 2 à 4 points chiffrés et datés, qui tiennent seuls s'ils sont cités hors de l'article (« Au 18 nov. 2026, X coûte Y selon [source] »).
+- **Un fait = une phrase autonome** : sujet, chiffre, unité, année, source nommée dans la même phrase. Pas de « comme vu plus haut », pas de pronoms flous. Une IA qui extrait une phrase doit pouvoir la citer sans le reste.
+- **Définitions et comparaisons visibles** : une définition claire du terme principal dès qu'il apparaît ; un tableau HTML pour toute comparaison de 3 options ou plus (colonnes : critère, valeur, source).
+- **Titres H2/H3 sous forme de vraies questions ou d'énoncés précis** (« Combien coûte un appel manqué à un plombier ? »), pas de titres métaphoriques.
+- **FAQ de 4 Q/R** reprenant des questions que les gens tapent réellement (formulation naturelle, réponse de 2 à 3 phrases avec un chiffre). Le balisage FAQPage existant est conservé.
+- **Dates et fraîcheur** : toujours la date de vérification des chiffres sur source officielle, et `dateModified` mis à jour si l'article est corrigé.
+- **Sources citables** : nom de l'organisme, titre du document, année, lien. Un lien primaire vaut mieux que dix liens secondaires.
+- **Honnêteté sur les limites** : indiquer l'échantillon, le biais ou l'incertitude d'une étude. Les IA et les lecteurs font davantage confiance aux sources qui nuancent.
+- **Pas de bourrage** : ni mots-clés répétés, ni paragraphes de remplissage, ni phrases génériques interchangeables. Un article plus court et plus dense vaut mieux qu'un article long et creux.
+
+Le site publie déjà un `llms.txt` (régénéré à chaque build) et autorise les robots des assistants IA dans `robots.txt` : ne pas les modifier.

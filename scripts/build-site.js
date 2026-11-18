@@ -337,6 +337,34 @@ function buildSitemap(published) {
   wr('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${out.join('\n')}\n</urlset>\n`);
 }
 
+
+// ── llms.txt : plan du site lisible par les assistants IA (ChatGPT, Claude, Perplexity…) ──
+function buildLlms(published) {
+  const L = (lang) => published.filter((a) => (a.lang || (a.slug && a.slug.startsWith('en/') ? 'en' : null)) === lang || prettyUrl(a.slug).startsWith('/' + lang + '/'))
+    .map((a) => `- [${a.title}](${DOMAIN}${prettyUrl(a.slug)})${a.desc ? ': ' + a.desc.replace(/\s+/g, ' ') : ''}`);
+  const txt = `# ${BRAND}
+
+> ${BRAND} is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. ${BRAND} is published by ALTURA, a digital agency; products of the same publisher are disclosed as such.
+
+## Sections
+${CATS.map((c) => `- ${c.en.name}: ${c.en.desc}`).join('\n')}
+
+## Articles (English)
+${L('en').join('\n') || '- (coming)'}
+
+## Articles (Français)
+${L('fr').join('\n') || '- (à venir)'}
+
+## Community authors
+- [Community voices](${DOMAIN}/en/community): pieces by independent authors, published without editorial review, links marked nofollow.
+- [Tribune des auteurs](${DOMAIN}/fr/tribune)
+
+## Reuse and citation
+- [Citing and reusing our articles](${DOMAIN}${PAGES.reuse.en}): short quotations with attribution and a link to the source are welcome.
+`;
+  wr('llms.txt', txt);
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 function build() {
   const schedule = readSchedule();
@@ -357,6 +385,7 @@ function build() {
 
   buildHome(published);
   buildSitemap(published);
+  buildLlms(published);
   console.log(`✅ build-site : ${published.length} articles publiés, ${CATS.length * 2} pages rubriques, sitemap régénéré`);
 }
 
