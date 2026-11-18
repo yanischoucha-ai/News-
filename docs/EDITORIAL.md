@@ -73,3 +73,7 @@ git push origin main
 ## 7. Compte rendu final
 
 Titres, slugs, 3 sources principales (liens), angle choisi, chiffres clés avec leur source, et tout ce qui reste incertain ou non vérifié.
+
+## 8. Réécrire un article déjà publié
+
+Ajouter `"replace": true, "modified": "<date du jour>"` dans le JSON : le script réécrit la page du même slug (date de publication conservée, `dateModified` mise à jour) au lieu de chercher une entrée sans slug.

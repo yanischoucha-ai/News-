@@ -19,6 +19,7 @@
  *   "faq": [ { "q": "...", "a": "..." }, ... ],      // 4, réponses tirées de l'article
  *   "tags": ["...", "..."],
  *   "cat": "airbnb|ia|immobilier|artisans|tech|business|social"   // facultatif (défaut : entrée du SCHEDULE)
+ *   "replace": true, "modified": "2026-11-18"   // facultatif : réécrit un article déjà publié (même slug, date d'origine conservée)
  * }
  * Le script REFUSE l'article (exit 1) s'il contient des tournures génériques, moins de 3 sources, ou une longueur hors plage.
  */
@@ -80,7 +81,7 @@ function render(a, words, catId) {
     : { read: 'min read', share: '🔗 Copy link', sum: 'In short:', toc: 'Contents', sources: 'Sources', faq: 'Frequently asked questions', back: '← All articles', cite: 'Cite this article', citeTpl: `Source: “${a.title}”, ${BRAND}, ${human}, ${url}`, nav: 'Articles', other: 'Français', otherHref: '/fr/', home: '/en/' };
   const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: a.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
   const artLd = {
-    '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.desc, datePublished: a.date, dateModified: a.date,
+    '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.desc, datePublished: a.date, dateModified: a.modified || a.date,
     author: { '@type': 'Organization', name: BRAND }, publisher: { '@type': 'Organization', name: BRAND }, inLanguage: a.lang,
     mainEntityOfPage: url, citation: a.sources.map((s) => s.url), copyrightHolder: { '@type': 'Organization', name: BRAND }, copyrightYear: y,
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.article-summary', 'h1', '.article-body h2'] },
@@ -168,8 +169,13 @@ function main() {
   const clockPath = path.join(ROOT, 'assets/js/editorial-clock.js');
   const src = fs.readFileSync(clockPath, 'utf8');
   const lines = src.split('\n');
-  const idx = lines.findIndex((l) => l.includes(`date: "${a.date}"`) && l.includes(`lang: "${a.lang}"`) && /slug: null/.test(l));
-  if (idx < 0) fail([`aucune entrée du SCHEDULE sans slug pour ${a.date} / ${a.lang} (déjà publiée ou date inconnue)`]);
+  // "replace": true → réécriture d'un article déjà publié (même slug, date de publication conservée, "modified" = date de la réécriture)
+  const slugStr = `slug: "/${a.lang}/${a.slug}.html"`;
+  const idx = a.replace
+    ? lines.findIndex((l) => l.includes(slugStr))
+    : lines.findIndex((l) => l.includes(`date: "${a.date}"`) && l.includes(`lang: "${a.lang}"`) && /slug: null/.test(l));
+  if (idx < 0) fail([a.replace ? `aucun article publié avec le slug ${a.slug}` : `aucune entrée du SCHEDULE sans slug pour ${a.date} / ${a.lang} (déjà publiée ou date inconnue)`]);
+  if (a.replace) { a.date = (lines[idx].match(/date: "([^"]+)"/) || [])[1] || a.date; }
   const old = lines[idx];
   const tag = (old.match(/tag: "([^"]*)"/) || [])[1] || '';
   const defCat = CATS.find((c) => c.dow === new Date(a.date + 'T12:00:00Z').getUTCDay()).id;

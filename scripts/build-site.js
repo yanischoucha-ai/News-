@@ -93,7 +93,12 @@ const MH = {
   fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', top: 'Dernières publications', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Rejoignez les 100+ lecteurs qui nous lisent chaque semaine. Un seul email, que du concret.', date: 'fr-FR' },
   en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', top: 'Latest', nlH: 'The week’s numbers, in your inbox.', nlP: 'Join the 100+ readers who read us every week. One email, only what you can use.', date: 'en-US' },
 };
-const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap">';
+const FONTS = '<link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>';
+const fixFonts = (html) => {
+  html = html.replace(/<link rel="preconnect" href="https:\/\/fonts\.g[^>]*>\s*/g, '').replace(/<link rel="stylesheet" href="https:\/\/fonts\.googleapis[^>]*>\s*/g, '');
+  if (!html.includes('/assets/fonts/')) html = html.replace(/(\s*<link rel="stylesheet" href="[^"]*journal\.css">)/, `\n  ${FONTS}$1`);
+  return html;
+};
 const nav = (lang, alt, current) => {
   const t = T[lang]; const m = MH[lang];
   const nl = current === 'home' ? '#newsletter' : `/${lang}/#newsletter`;
@@ -234,6 +239,7 @@ function processArticle(file, lang) {
     html = html.replace(/"publisher": \{[^}]*\}/, `"publisher": { "@type": "Organization", "name": "${BRAND}", "url": "${DOMAIN}" }`);
     html = html.replace(/<p class="meta">(ALTURA|Résidence Manager) ·/, lang === 'fr' ? `<p class="meta">Rédaction ${BRAND} ·` : `<p class="meta">${BRAND} Newsroom ·`);
   }
+  html = fixFonts(html);
   html = html.replace(/\n?<footer>\s*<p>&copy;[\s\S]*?<\/footer>\n?/, '\n');
   const head = nav(lang, alt, null);
   if (/<!--S:HEAD-->/.test(html)) html = setBlock(html, 'HEAD', head.replace(/^<!--S:HEAD-->\n|\n<!--\/S:HEAD-->$/g, ''));
@@ -271,6 +277,7 @@ function buildHome(published) {
   html = setBlock(html, 'FOOTER', footer('fr'));
   if (!html.includes('assets/css/site.css')) html = html.replace('</head>', '  <link rel="stylesheet" href="assets/css/site.css">\n</head>');
   if (!html.includes('assets/js/site.js')) html = html.replace('</body>', '  <script src="assets/js/site.js" defer></script>\n</body>');
+  html = fixFonts(html);
   fs.writeFileSync(p, html);
 }
 

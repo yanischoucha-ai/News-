@@ -21,14 +21,14 @@
   const SCHEDULE = [
     // ── PUBLIÉS ──────────────────────────────────────────────────────────────
     // Mardi 10 nov (IA)
-    { date: "2026-11-10", title: "Comment automatiser votre conciergerie Airbnb en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie", cat: "airbnb", min: 7, desc: "Portail invité, upsells automatiques, concierge IA multilingue : le guide complet pour travailler moins et gagner plus sur vos locations." },
-    { date: "2026-11-10", title: "The Best Airbnb Concierge App for Hosts in 2026", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb", cat: "airbnb", min: 6, desc: "How smart hosts use digital guest portals and AI concierge to increase revenue and reduce workload on every booking." },
+    { date: "2026-11-10", title: "Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie", cat: "airbnb", min: 6, desc: "À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures." },
+    { date: "2026-11-10", title: "Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb", cat: "airbnb", min: 5, desc: "Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe." },
     // Mercredi 11 nov (Immobilier)
-    { date: "2026-11-11", title: "L'IA pour les artisans : comment se lancer sans se perdre", lang: "fr", slug: "/fr/ia-pour-artisans-comment-se-lancer.html", tag: "IA & PME", cat: "artisans", min: 8, desc: "Assistant vocal, chatbot de qualification, génération de devis : les 3 usages à fort ROI pour les artisans et PME en 2026." },
-    { date: "2026-11-11", title: "How HVAC & Plumbing Contractors Are Using AI to Win More Jobs", lang: "en", slug: "/en/ai-for-hvac-plumbing-contractors.html", tag: "AI", cat: "artisans", min: 7, desc: "Answer every missed call, qualify leads automatically, and book more jobs without hiring more staff. A practical guide for 2026." },
+    { date: "2026-11-11", title: "IA et artisans : par où commencer quand 27 % seulement s'y mettent", lang: "fr", slug: "/fr/ia-pour-artisans-comment-se-lancer.html", tag: "IA & PME", cat: "artisans", min: 5, desc: "27 % des artisans utilisent l'IA, moins de 10 % dans le BTP : les trois usages à tester d'abord, le calcul de gain à refaire et les règles CNIL sur les appels." },
+    { date: "2026-11-11", title: "Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist", lang: "en", slug: "/en/ai-for-hvac-plumbing-contractors.html", tag: "AI", cat: "artisans", min: 4, desc: "HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices." },
     // Mardi 18 nov (IA + Immobilier)
     { date: "2026-11-18", title: "Faut-il encore investir en location courte durée en 2026 ?", lang: "fr", slug: "/fr/investir-location-courte-duree-2026.html", tag: "Immobilier", cat: "immobilier", min: 7, desc: "La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve." },
-    { date: "2026-11-18", title: "Les 7 outils IA que j'utilise vraiment dans mon business en 2026", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA", cat: "ia", min: 8, desc: "Pas une liste tendance. Ce qui tourne en production dans des vrais business, avec ce que ça coûte et ce que ça change concrètement." },
+    { date: "2026-11-18", title: "Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA", cat: "ia", min: 4, desc: "Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant." },
     { date: "2026-11-18", title: "Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)", lang: "en", slug: "/en/airbnb-host-plateau-3-listings.html", tag: "Airbnb", cat: "airbnb", min: 7, desc: "The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall." },
     { date: "2026-11-18", title: "The Honest Guide to AI Tools for Small Contractors in 2026", lang: "en", slug: "/en/honest-guide-ai-tools-contractors-2026.html", tag: "AI Tools", cat: "artisans", min: 8, desc: "What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers." },
 
@@ -37,10 +37,10 @@
     { date: "2026-11-19", title: "Artisan : comment répondre à chaque devis sans perdre 2h par jour", lang: "fr", slug: null, tag: "Artisans" },
     { date: "2026-11-19", title: "The Contractor's Guide to Google Reviews in 2026", lang: "en", slug: null, tag: "Contractors" },
     // Ven 20 — Tech & outils productivité
-    { date: "2026-11-20", title: "Les 5 extensions Chrome qui m'ont fait gagner 1h par jour", lang: "fr", slug: null, tag: "Productivité" },
+    { date: "2026-11-20", title: "Extensions Chrome pour indépendants : les 5 qui font gagner du temps, et comment le mesurer", lang: "fr", slug: null, tag: "Productivité" },
     { date: "2026-11-20", title: "5 Chrome Extensions That Save Entrepreneurs an Hour Every Day", lang: "en", slug: null, tag: "Productivity" },
     // Sam 21 — Business & entrepreneuriat
-    { date: "2026-11-21", title: "Micro-entreprise ou SASU : ce que j'aurais voulu savoir avant", lang: "fr", slug: null, tag: "Business" },
+    { date: "2026-11-21", title: "Micro-entreprise ou SASU : le calcul à faire avant de choisir (barèmes 2026)", lang: "fr", slug: null, tag: "Business" },
     { date: "2026-11-21", title: "Sole Trader vs LLC: What American Contractors Actually Need to Know", lang: "en", slug: null, tag: "Business" },
     // Dim 22 — Réseaux sociaux → MayaPilot
     { date: "2026-11-22", title: "Comment gérer 3 comptes Instagram professionnels sans y passer sa vie", lang: "fr", slug: null, tag: "Réseaux sociaux" },
@@ -74,8 +74,8 @@
     { date: "2026-11-30", title: "Check-in automatique Airbnb : guide complet 2026 (boîte à clés, Nuki, Igloohome)", lang: "fr", slug: null, tag: "Gestion locative" },
     { date: "2026-11-30", title: "Airbnb Self Check-In in 2026: Smart Locks, Key Boxes & the Best Options", lang: "en", slug: null, tag: "Airbnb" },
     // Mar 1 déc — IA
-    { date: "2026-12-01", title: "Comment j'ai automatisé ma prospection client avec l'IA (retour d'expérience)", lang: "fr", slug: null, tag: "IA Business" },
-    { date: "2026-12-01", title: "How I Automated Client Outreach with AI — What Worked, What Didn't", lang: "en", slug: null, tag: "AI Business" },
+    { date: "2026-12-01", title: "Prospection par IA : ce que disent les données sur les taux de réponse, et où la loi s'arrête", lang: "fr", slug: null, tag: "IA Business" },
+    { date: "2026-12-01", title: "AI Outreach in 2026: What the Reply-Rate Data Shows and Where the Law Draws the Line", lang: "en", slug: null, tag: "AI Business" },
     // Mer 2 — Immobilier
     { date: "2026-12-02", title: "Investir dans un Airbnb rural en 2026 : les villes qui surperforment", lang: "fr", slug: null, tag: "Investissement" },
     { date: "2026-12-02", title: "Rural Airbnb Investing in 2026: The Markets That Are Still Growing", lang: "en", slug: null, tag: "Real Estate" },
@@ -103,8 +103,8 @@
     { date: "2026-12-09", title: "Location meublée non professionnelle (LMNP) en 2026 : guide fiscal complet", lang: "fr", slug: null, tag: "Fiscalité" },
     { date: "2026-12-09", title: "Short-Term Rental Tax Guide for US Hosts in 2026", lang: "en", slug: null, tag: "Tax" },
     // Jeu 10 — Contractors
-    { date: "2026-12-10", title: "Comment un plombier a multiplié par 2 ses avis Google en 3 mois", lang: "fr", slug: null, tag: "Artisans" },
-    { date: "2026-12-10", title: "How One Plumber Doubled His Google Reviews in 3 Months (Exact Strategy)", lang: "en", slug: null, tag: "Contractors" },
+    { date: "2026-12-10", title: "Avis Google pour plombiers et électriciens : ce que montrent les données sur la visibilité locale", lang: "fr", slug: null, tag: "Artisans" },
+    { date: "2026-12-10", title: "Google Reviews for Contractors: What the Data Shows About Local Visibility and Conversions", lang: "en", slug: null, tag: "Contractors" },
     // Ven 11 — Tech
     { date: "2026-12-11", title: "Automatiser sa comptabilité freelance avec l'IA en 2026", lang: "fr", slug: null, tag: "Comptabilité" },
     { date: "2026-12-11", title: "How to Automate Your Freelance Accounting with AI in 2026", lang: "en", slug: null, tag: "Finance Tools" },

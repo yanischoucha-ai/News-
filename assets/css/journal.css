@@ -1,3 +1,6 @@
+@font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/newsreader-latin-wght-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Newsreader'; font-style: italic; font-weight: 200 800; font-display: swap; src: url(/assets/fonts/newsreader-latin-wght-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/assets/fonts/inter-latin-wght-normal.woff2) format('woff2'); }
 /* Look « journal en ligne » : chargé en dernier sur toutes les pages, surcharge blog.css / site.css */
 :root {
   --rm-gold: #b8321f; --s-gold: #b8321f; --rm-dark: #111; --s-dark: #111;
