@@ -39,3 +39,9 @@
     e.preventDefault();
   });
 })();
+
+(function () {
+  var d = document.querySelector('[data-today]');
+  if (!d) return;
+  try { var t = new Date().toLocaleDateString(d.getAttribute('data-today'), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); d.textContent = t.charAt(0).toUpperCase() + t.slice(1); } catch (e) {}
+})();

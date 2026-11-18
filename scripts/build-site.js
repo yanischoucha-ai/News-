@@ -89,13 +89,24 @@ const footer = (lang) => {
 </footer>`;
 };
 
-const nav = (lang, alt) => {
-  const t = T[lang];
-  const on = (l) => (l === lang ? ' style="color:var(--rm-gold)"' : '');
-  return `<nav>
-  <a class="logo" href="/">${BRAND}</a>
-  <div class="nav-links"><a class="nav-write" href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${alt.fr}"${on('fr')}>FR</a><a href="${alt.en}"${on('en')}>EN</a></div>
-</nav>`;
+const MH = {
+  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', top: 'Dernières publications', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Rejoignez les 100+ lecteurs qui nous lisent chaque semaine. Un seul email, que du concret.', date: 'fr-FR' },
+  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', top: 'Latest', nlH: 'The week’s numbers, in your inbox.', nlP: 'Join the 100+ readers who read us every week. One email, only what you can use.', date: 'en-US' },
+};
+const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap">';
+const nav = (lang, alt, current) => {
+  const t = T[lang]; const m = MH[lang];
+  const nl = current === 'home' ? '#newsletter' : `/${lang}/#newsletter`;
+  return `<!--S:HEAD-->
+<header class="mh">
+  <div class="mh-top">
+    <span class="mh-date" data-today="${m.date}"></span>
+    <div class="mh-tools"><a class="mh-write" href="${PAGES.write[lang]}">${esc(t.write)}</a><span class="mh-lang"><a href="${alt.fr}"${lang === 'fr' ? ' aria-current="true"' : ''}>FR</a>·<a href="${alt.en}"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></span><a class="mh-sub" href="${nl}">${m.sub}</a></div>
+  </div>
+  <div class="mh-brand"><a class="mh-logo" href="/${lang}/">${BRAND}<i>.</i></a><p class="mh-tag">${esc(m.tag)}</p></div>
+  <nav class="mh-nav" aria-label="${esc(t.cats)}"><div class="mh-nav-in">${CATS.map((c) => `<a href="${catPath(lang, c.id)}"${c.id === current ? ' aria-current="page"' : ''}>${esc(c[lang].name)}</a>`).join('')}</div></nav>
+</header>
+<!--/S:HEAD-->`;
 };
 
 const card = (a, lang) => {
@@ -109,7 +120,7 @@ ${a.desc ? `<p>${esc(a.desc)}</p>` : ''}
 };
 
 // ── Pages générées ───────────────────────────────────────────────────────────
-function shell({ lang, title, desc, urlPath, alt, jsonld, body, type = 'website' }) {
+function shell({ lang, title, desc, urlPath, alt, jsonld, body, type = 'website', current }) {
   const url = DOMAIN + urlPath;
   return `<!doctype html>
 <!-- Page générée par scripts/build-site.js — ne pas éditer à la main (modifier scripts/site-config.js) -->
@@ -130,10 +141,12 @@ function shell({ lang, title, desc, urlPath, alt, jsonld, body, type = 'website'
   <meta property="og:url" content="${url}">
   <link rel="stylesheet" href="/assets/css/blog.css">
   <link rel="stylesheet" href="/assets/css/site.css">
+  ${FONTS}
+  <link rel="stylesheet" href="/assets/css/journal.css">
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>
 <body>
-${nav(lang, alt)}
+${nav(lang, alt, current)}
 ${body}
 ${footer(lang)}
 <script src="/assets/js/site.js" defer></script>
@@ -142,17 +155,27 @@ ${footer(lang)}
 `;
 }
 
-function buildLangIndex(lang, published) {
-  const t = T[lang];
+const jItem = (a, lang, withDesc) => `<a class="j-item" href="${prettyUrl(a.slug)}"><span class="j-kicker">${esc(catById(a.cat)[lang].name)}</span><h3>${esc(a.title)}</h3>${withDesc && a.desc ? `<p>${esc(a.desc)}</p>` : ''}<span class="j-meta">${fmt(a.date, lang)}${a.min ? ` · ${a.min} ${T[lang].readMin}` : ''}</span></a>`;
+
+function buildLangIndex(lang, published, schedule) {
+  const t = T[lang]; const m = MH[lang];
   const list = published.filter((a) => a.lang === lang);
-  const body = `${hero(lang, false)}
-${catsBlock(lang)}
-<section class="s-section"><h2 class="s-h2">${esc(t.latest)}</h2><div class="articles-grid">
-${list.map((a) => card(a, lang)).join('\n')}
-</div></section>
-${newsletter(lang)}`;
+  const lead = list[0];
+  const side = list.slice(1, 5);
+  const rest = list.slice(5);
+  const today = new Date().toISOString().slice(0, 10);
+  const next = schedule.filter((a) => !a.slug && a.lang === lang && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+  const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}"><span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
+  const catSecs = CATS.map((c) => {
+    const items = rest.filter((a) => a.cat === c.id).slice(0, 3);
+    return items.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(c[lang].name)}</h2><a href="${catPath(lang, c.id)}">${m.more} →</a></div><div class="j-grid">${items.map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
+  }).join('');
+  const body = `<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
+<section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
+<div class="j-wrap">${catSecs}${next.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${m.up}</h2></div><ul class="s-upcoming">${next.map((a) => `<li><time datetime="${a.date}">${fmt(a.date, lang)}</time><span>${esc(a.title)}</span></li>`).join('')}</ul></section>` : ''}</div>
+<div style="height:2.5rem"></div>`;
   wr(`${lang}/index.html`, shell({
-    lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body,
+    lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body, current: 'home',
     jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${BRAND} — ${t.siteTitle}`, description: t.siteDesc, url: `${DOMAIN}/${lang}/`, inLanguage: t.locale, isPartOf: { '@type': 'WebSite', name: BRAND, url: DOMAIN + '/' } },
   }));
 }
@@ -164,16 +187,15 @@ function buildCategory(lang, cat, schedule, published) {
   const today = new Date().toISOString().slice(0, 10);
   const next = schedule.filter((a) => !a.slug && a.lang === lang && a.cat === cat.id && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3);
   const body = `<header class="s-cat-head"><h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p></header>
-${catsBlock(lang, cat.id)}
 <section class="s-section">
-${list.length ? `<div class="articles-grid">${list.map((a) => card(a, lang)).join('\n')}</div>` : `<p class="s-empty">${esc(t.emptyCat)}</p>`}
+${list.length ? `<div class="j-grid">${list.map((a) => jItem(a, lang, true)).join('')}</div>` : `<p class="s-empty">${esc(t.emptyCat)}</p>`}
 </section>
 ${next.length ? `<section class="s-section"><h2 class="s-h2">${esc(t.upcoming)}</h2><ul class="s-upcoming">${next.map((a) => `<li><time datetime="${a.date}">${fmt(a.date, lang)}</time><span>${esc(a.title)}</span></li>`).join('')}</ul></section>` : ''}
 <div style="height:2.5rem"></div>
 ${newsletter(lang)}`;
   const urlPath = catPath(lang, cat.id);
   wr(urlPath.slice(1) + '.html', shell({
-    lang, title: `${c.name} | ${BRAND}`, desc: c.desc, urlPath, alt: { fr: catPath('fr', cat.id), en: catPath('en', cat.id) }, body,
+    lang, title: `${c.name} | ${BRAND}`, desc: c.desc, urlPath, alt: { fr: catPath('fr', cat.id), en: catPath('en', cat.id) }, body, current: cat.id,
     jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: c.name, description: c.desc, url: DOMAIN + urlPath, inLanguage: t.locale, isPartOf: { '@type': 'WebSite', name: BRAND, url: DOMAIN + '/' } },
   }));
 }
@@ -198,9 +220,24 @@ function setBlock(html, name, inner, fallback) {
 
 function processArticle(file, lang) {
   let html = fs.readFileSync(file, 'utf8');
+  const alt = { fr: '/fr/', en: '/en/' };
   if (!html.includes('assets/css/site.css')) html = html.replace('</head>', '  <link rel="stylesheet" href="/assets/css/site.css">\n</head>');
-  if (!/property="og:site_name"/.test(html)) html = html.replace('</head>', `  <meta property="og:site_name" content="${BRAND}">\n</head>`);
+  if (!html.includes('assets/css/journal.css')) html = html.replace('</head>', `  ${FONTS}\n  <link rel="stylesheet" href="/assets/css/journal.css">\n</head>`);
+  if (/property="og:site_name"/.test(html)) html = html.replace(/<meta property="og:site_name" content="[^"]*">/, `<meta property="og:site_name" content="${BRAND}">`);
+  else html = html.replace('</head>', `  <meta property="og:site_name" content="${BRAND}">\n</head>`);
   if (!html.includes('assets/js/site.js')) html = html.replace('</body>', '  <script src="/assets/js/site.js" defer></script>\n</body>');
+  // anciens articles : habillage ALTURA / Résidence Manager → Marge
+  const legacy = /<p class="meta">(ALTURA|Résidence Manager) ·/.test(html);
+  if (legacy) {
+    html = html.replace(/(<title>[^<]*?) \| (ALTURA|Résidence Manager)(<\/title>)/, `$1 | ${BRAND}$3`);
+    html = html.replace(/"author": \{[^}]*\}/, `"author": { "@type": "Organization", "name": "${BRAND}" }`);
+    html = html.replace(/"publisher": \{[^}]*\}/, `"publisher": { "@type": "Organization", "name": "${BRAND}", "url": "${DOMAIN}" }`);
+    html = html.replace(/<p class="meta">(ALTURA|Résidence Manager) ·/, lang === 'fr' ? `<p class="meta">Rédaction ${BRAND} ·` : `<p class="meta">${BRAND} Newsroom ·`);
+  }
+  html = html.replace(/\n?<footer>\s*<p>&copy;[\s\S]*?<\/footer>\n?/, '\n');
+  const head = nav(lang, alt, null);
+  if (/<!--S:HEAD-->/.test(html)) html = setBlock(html, 'HEAD', head.replace(/^<!--S:HEAD-->\n|\n<!--\/S:HEAD-->$/g, ''));
+  else html = html.replace(/<nav[\s\S]*?<\/nav>/, () => head);
   const hasMain = html.includes('</main>');
   html = setBlock(html, 'NEWSLETTER', newsletter(lang), (h, b) => (hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'FOOTER', footer(lang), (h, b) => (hasMain ? h.replace('</main>', () => `</main>\n${b}`) : h.replace('</body>', () => `${b}\n</body>`)));
@@ -221,10 +258,16 @@ function buildHome(published) {
   <div class="card-meta">${fmt(a.date, a.lang)}${a.min ? ` · ${a.min} ${T[a.lang].readMin}` : ''}</div>
 </a>`).join('\n');
   const catRow = (lang) => `<div class="s-cats-row"><div class="s-cats-label">${lang === 'fr' ? '🇫🇷 Rubriques' : '🇬🇧 Topics'}</div><div class="s-cats">${CATS.map((c) => `<a href="${catPath(lang, c.id)}">${esc(c[lang].name)}</a>`).join('')}</div></div>`;
-  html = setBlock(html, 'HERO', hero('fr', true));
+  const m = MH.fr;
+  const band = `<section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)} <a href="/en/">${esc(T.fr.gateway)}</a></p></div><div>${nlForm('fr', 'root', T.fr.nlCta)}<p class="s-form-note">${esc(T.fr.note)}</p></div></div></section>`;
+  html = setBlock(html, 'HERO', band);
+  const head = nav('fr', { fr: '/fr/', en: '/en/' }, 'home');
+  if (/<!--S:HEAD-->/.test(html)) html = setBlock(html, 'HEAD', head.replace(/^<!--S:HEAD-->\n|\n<!--\/S:HEAD-->$/g, ''));
+  else html = html.replace(/<nav>[\s\S]*?<\/nav>/, () => head);
+  if (!html.includes('assets/css/journal.css')) html = html.replace('</head>', `  ${FONTS}\n  <link rel="stylesheet" href="assets/css/journal.css">\n</head>`);
   html = setBlock(html, 'FEATURED', `<div class="featured-grid">\n${feat}\n</div>`);
-  html = setBlock(html, 'CATS', `<div class="s-cats-wrap">${catRow('fr')}${catRow('en')}</div>`);
-  html = setBlock(html, 'NEWSLETTER', newsletter('fr'));
+  html = setBlock(html, 'CATS', '');
+  html = setBlock(html, 'NEWSLETTER', '');
   html = setBlock(html, 'FOOTER', footer('fr'));
   if (!html.includes('assets/css/site.css')) html = html.replace('</head>', '  <link rel="stylesheet" href="assets/css/site.css">\n</head>');
   if (!html.includes('assets/js/site.js')) html = html.replace('</body>', '  <script src="assets/js/site.js" defer></script>\n</body>');
@@ -253,7 +296,7 @@ function build() {
   const published = schedule.filter((a) => a.slug).sort((a, b) => b.date.localeCompare(a.date));
 
   ['fr', 'en'].forEach((lang) => {
-    buildLangIndex(lang, published);
+    buildLangIndex(lang, published, schedule);
     CATS.forEach((cat) => buildCategory(lang, cat, schedule, published));
     Object.keys(PAGES).forEach((k) => buildStaticPage(k, lang));
   });
