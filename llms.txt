@@ -13,20 +13,20 @@
 - Social media & branding: Algorithms, frequency, formats: what the data says, not the gurus.
 
 ## Articles (English)
-- [Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)](https://margebrief.com/en/airbnb-host-plateau-3-listings): The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall.
-- [The Honest Guide to AI Tools for Small Contractors in 2026](https://margebrief.com/en/honest-guide-ai-tools-contractors-2026): What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers.
-- [Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist](https://margebrief.com/en/ai-for-hvac-plumbing-contractors): HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices.
-- [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
+- [Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)](https://www.margebrief.com/en/airbnb-host-plateau-3-listings): The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall.
+- [The Honest Guide to AI Tools for Small Contractors in 2026](https://www.margebrief.com/en/honest-guide-ai-tools-contractors-2026): What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers.
+- [Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist](https://www.margebrief.com/en/ai-for-hvac-plumbing-contractors): HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices.
+- [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://www.margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
 
 ## Articles (Français)
-- [Faut-il encore investir en location courte durée en 2026 ?](https://margebrief.com/fr/investir-location-courte-duree-2026): La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve.
-- [Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer](https://margebrief.com/fr/7-outils-ia-business-2026): Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant.
-- [IA et artisans : par où commencer quand 27 % seulement s'y mettent](https://margebrief.com/fr/ia-pour-artisans-comment-se-lancer): 27 % des artisans utilisent l'IA, moins de 10 % dans le BTP : les trois usages à tester d'abord, le calcul de gain à refaire et les règles CNIL sur les appels.
-- [Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026](https://margebrief.com/fr/automatiser-conciergerie-airbnb): À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures.
+- [Faut-il encore investir en location courte durée en 2026 ?](https://www.margebrief.com/fr/investir-location-courte-duree-2026): La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve.
+- [Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer](https://www.margebrief.com/fr/7-outils-ia-business-2026): Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant.
+- [IA et artisans : par où commencer quand 27 % seulement s'y mettent](https://www.margebrief.com/fr/ia-pour-artisans-comment-se-lancer): 27 % des artisans utilisent l'IA, moins de 10 % dans le BTP : les trois usages à tester d'abord, le calcul de gain à refaire et les règles CNIL sur les appels.
+- [Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026](https://www.margebrief.com/fr/automatiser-conciergerie-airbnb): À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures.
 
 ## Community authors
-- [Community voices](https://margebrief.com/en/community): pieces by independent authors, published without editorial review, links marked nofollow.
-- [Tribune des auteurs](https://margebrief.com/fr/tribune)
+- [Community voices](https://www.margebrief.com/en/community): pieces by independent authors, published without editorial review, links marked nofollow.
+- [Tribune des auteurs](https://www.margebrief.com/fr/tribune)
 
 ## Reuse and citation
-- [Citing and reusing our articles](https://margebrief.com/en/content-reuse): short quotations with attribution and a link to the source are welcome.
+- [Citing and reusing our articles](https://www.margebrief.com/en/content-reuse): short quotations with attribution and a link to the source are welcome.
