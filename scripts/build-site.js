@@ -179,41 +179,6 @@ const jItem = (a, lang, withDesc) => `<a class="j-item" href="${prettyUrl(a.slug
 const parisToday = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Paris' });
 const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 
-const PROJECTS = {
-  rm: {
-    url: 'https://residencemanager.online',
-    fr: { name: 'Résidence Manager', tag: 'hôtes et conciergeries', p: 'portail voyageur par QR code, services additionnels et tableau de bord hôte.', cta: 'Voir Résidence Manager' },
-    en: { name: 'Résidence Manager', tag: 'hosts and property managers', p: 'QR-code guest portal, upsell services and a host dashboard.', cta: 'See Résidence Manager' },
-  },
-  mp: {
-    url: 'https://mayapilot.com',
-    fr: { name: 'Maya Pilot', tag: 'réseaux sociaux', p: 'un outil pour gérer vos réseaux sociaux au même endroit.', cta: 'Voir Maya Pilot' },
-    en: { name: 'Maya Pilot', tag: 'social media', p: 'one tool to manage your social media in one place.', cta: 'See Maya Pilot' },
-  },
-  altura: {
-    url: 'mailto:contact.alturacom@gmail.com',
-    fr: { name: 'ALTURA', tag: 'agence de communication', p: 'sites, vidéos et assistants IA. Démo de l’assistant sous 24 h après accord, gratuite, vous décidez ensuite.', cta: 'Demander une démo', subject: 'Démo assistant IA (via Marge)' },
-    en: { name: 'ALTURA', tag: 'communication agency', p: 'websites, video and AI assistants. A demo within 24 hours of your OK, free, and you decide afterwards.', cta: 'Ask for a demo', subject: 'AI assistant demo (via Marge)' },
-  },
-};
-const projHref = (k, lang) => (k === 'altura' ? `${PROJECTS[k].url}?subject=${encodeURIComponent(PROJECTS[k][lang].subject)}` : PROJECTS[k].url);
-const projFor = (cat) => (cat === 'airbnb' || cat === 'immobilier' ? 'rm' : cat === 'social' ? 'mp' : 'altura');
-const extAttr = (k) => (k === 'altura' ? ' rel="noopener"' : ' rel="noopener" target="_blank"');
-
-// Mot de l'éditeur : discret, contextuel, mais signalé (nos propres services, pas un avis neutre)
-const promo = (lang, cat) => {
-  const k = projFor(cat); const x = PROJECTS[k][lang];
-  const lbl = lang === 'fr' ? `Mot de l’éditeur · ${BRAND} est édité par ALTURA` : `Publisher’s note · ${BRAND} is published by ALTURA`;
-  return `<aside class="mk-note" aria-label="${esc(lbl)}"><span class="mk-note-k">${esc(lbl)}</span><p><b>${esc(x.name)}</b>, ${esc(x.tag)} : ${esc(x.p)} <a href="${esc(projHref(k, lang))}"${extAttr(k)}>${esc(x.cta)} →</a></p></aside>`;
-};
-
-// Bloc « Derrière Marge » (accueil) : une ligne par projet, sobre
-const behind = (lang) => {
-  const m = MH[lang];
-  const row = (k) => { const x = PROJECTS[k][lang]; return `<li><a href="${esc(projHref(k, lang))}"${extAttr(k)}><b>${esc(x.name)}</b><span>${esc(x.tag)}</span></a></li>`; };
-  return `<section class="mk-behind"><div class="j-wrap"><p class="mk-behind-p"><b>${esc(m.behindH)}.</b> ${esc(lang === 'fr' ? `${BRAND} est édité par ALTURA, qui développe aussi :` : `${BRAND} is published by ALTURA, which also builds:`)}</p><ul class="mk-behind-list">${row('rm')}${row('mp')}${row('altura')}</ul></div></section>`;
-};
-
 // Calendrier des 7 prochains jours (accueil)
 function calendar(lang, schedule) {
   const m = MH[lang]; const today = parisToday();
@@ -250,7 +215,6 @@ function buildLangIndex(lang, published, schedule) {
 ${calendar(lang, schedule)}
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
 <div class="j-wrap">${catSecs}</div>
-${behind(lang)}
 <div style="height:2.5rem"></div>`;
   wr(`${lang}/index.html`, shell({
     lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body, current: 'home',
@@ -296,7 +260,7 @@ function setBlock(html, name, inner, fallback) {
   return fallback ? fallback(html, b) : html;
 }
 
-function processArticle(file, lang, cat) {
+function processArticle(file, lang) {
   let html = fs.readFileSync(file, 'utf8');
   const alt = { fr: '/fr/', en: '/en/' };
   if (!html.includes('assets/css/site.css')) html = html.replace('</head>', '  <link rel="stylesheet" href="/assets/css/site.css">\n</head>');
@@ -319,7 +283,6 @@ function processArticle(file, lang, cat) {
   else html = html.replace(/<nav[\s\S]*?<\/nav>/, () => head);
   const hasMain = html.includes('</main>');
   html = html.replace(/<!--S:PROMO-->[\s\S]*?<!--\/S:PROMO-->\n?/, '');
-  html = setBlock(html, 'PROMO', promo(lang, cat), (h, b) => (h.includes('<!--S:NEWSLETTER-->') ? h.replace('<!--S:NEWSLETTER-->', () => `${b}\n<!--S:NEWSLETTER-->`) : hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'NEWSLETTER', newsletter(lang), (h, b) => (hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'FOOTER', footer(lang), (h, b) => (hasMain ? h.replace('</main>', () => `</main>\n${b}`) : h.replace('</body>', () => `${b}\n</body>`)));
   fs.writeFileSync(file, html);
@@ -387,7 +350,7 @@ function build() {
   ['fr', 'en'].forEach((lang) => {
     fs.readdirSync(path.join(ROOT, lang), { withFileTypes: true })
       .filter((d) => d.isFile() && d.name.endsWith('.html') && !generated.has(d.name))
-      .forEach((d) => { const ent = schedule.find((a) => a.slug && path.basename(a.slug) === d.name); processArticle(path.join(ROOT, lang, d.name), lang, ent ? ent.cat : null); });
+      .forEach((d) => processArticle(path.join(ROOT, lang, d.name), lang));
   });
 
   buildHome(published);

@@ -474,19 +474,3 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 2rem; }
   .cal-day { min-height: 0; padding: .9rem 1rem; }
   .cal-status { margin-top: .1rem; }
 }
-
-/* ── NOS PROJETS : discret mais signalé ────────────────────────────────── */
-.mk-note { margin: 2rem auto .5rem; max-width: 740px; padding: .9rem 1.1rem; border-left: 3px solid var(--border); background: var(--bg2); border-radius: 0 8px 8px 0; font-family: var(--sans); }
-.mk-note-k { display: block; font-size: .66rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
-.mk-note p { margin: 0; font-size: .9rem; line-height: 1.55; color: var(--ink2); }
-.mk-note b { color: var(--ink); }
-.mk-note a { color: var(--ac); font-weight: 600; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
-@media (max-width: 800px) { .mk-note { margin-left: 1rem; margin-right: 1rem; } }
-.mk-behind { border-top: 1px solid var(--border); margin-top: 1.5rem; padding: 1.1rem 0 0; }
-.mk-behind-p { font-size: .85rem; color: var(--muted); margin: 0 0 .6rem; }
-.mk-behind-p b { color: var(--ink2); }
-.mk-behind-list { list-style: none; margin: 0 0 .5rem; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
-.mk-behind-list a { display: inline-flex; flex-direction: column; padding: .55rem .9rem; border: 1px solid var(--border); border-radius: 8px; min-height: 44px; justify-content: center; transition: border-color .15s; }
-.mk-behind-list a:hover { border-color: var(--ac); }
-.mk-behind-list b { font-size: .88rem; color: var(--ink); }
-.mk-behind-list span { font-size: .72rem; color: var(--muted); }
