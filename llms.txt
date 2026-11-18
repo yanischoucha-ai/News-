@@ -1,6 +1,6 @@
 # Marge Brief
 
-> Marge Brief is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. Marge Brief is published by AlturaCom, a digital agency; products of the same publisher are disclosed as such.
+> Marge Brief is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. Marge Brief is published by AlturaCom (https://alturacom-production.odoo.com), a digital agency; products of the same publisher are disclosed as such.
 
 ## Sections
 - Airbnb & short-term rentals: Systems, pricing and regulation: what actually works for hosts and property managers.
