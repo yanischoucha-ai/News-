@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
   const lang = q.lang === 'en' ? 'en' : 'fr';
   const t = TXT[lang];
   const host = req.headers['x-forwarded-host'] || req.headers.host || '';
-  const origin = process.env.SITE_URL || (host ? `https://${host}` : '');
+  const origin = process.env.SITE_URL || 'https://marge.media' || (host ? `https://${host}` : '');
   try {
     if (q.sitemap) {
       const rows = await sb('select=slug,lang,updated_at&status=eq.approved&order=published_at.desc&limit=2000');
