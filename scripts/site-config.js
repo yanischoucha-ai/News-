@@ -45,7 +45,7 @@ const T = {
   fr: {
     locale: 'fr-FR',
     tagline: 'Tech · Business · Immobilier',
-    siteTitle: 'Le brief quotidien des hôtes, artisans et indépendants',
+    siteTitle: 'Le brief quotidien pour développer son activité',
     siteDesc: 'Un article en français et un en anglais chaque jour pour les hôtes Airbnb, artisans et indépendants. Données vérifiées, cas réels, zéro généralité.',
     heroTag: 'Airbnb · Artisans · IA · Business',
     heroH1: 'Hôtes Airbnb, artisans, indépendants : arrêtez de deviner. Lisez les chiffres.',
@@ -71,7 +71,7 @@ const T = {
   en: {
     locale: 'en',
     tagline: 'Tech · Business · Real Estate',
-    siteTitle: 'The daily brief for hosts, tradespeople and independents',
+    siteTitle: 'The daily brief to grow your business',
     siteDesc: 'One article in English and one in French every day for Airbnb hosts, contractors and solo founders. Verified data, real cases, zero generalities.',
     heroTag: 'Airbnb · Contractors · AI · Business',
     heroH1: 'Airbnb hosts, contractors, solo founders: stop guessing. Read the numbers.',
