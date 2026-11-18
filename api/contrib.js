@@ -27,7 +27,7 @@ const fmt = (iso, lang) => new Intl.DateTimeFormat(TXT[lang].locale, { day: 'num
 function page(lang, origin, { title, desc, urlPath, main, jsonld, robots = 'index, follow' }) {
   let h = fs.readFileSync(path.join(process.cwd(), TPL[lang]), 'utf8');
   const url = origin + urlPath;
-  h = h.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)} | Marge</title>`)
+  h = h.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)} | Marge Brief</title>`)
     .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${esc(desc)}">`)
     .replace(/<meta name="robots"[^>]*>/, `<meta name="robots" content="${robots}">`)
     .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}">`)
@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
   const lang = q.lang === 'en' ? 'en' : 'fr';
   const t = TXT[lang];
   const host = req.headers['x-forwarded-host'] || req.headers.host || '';
-  const origin = process.env.SITE_URL || 'https://marge.media' || (host ? `https://${host}` : '');
+  const origin = process.env.SITE_URL || 'https://margebrief.com' || (host ? `https://${host}` : '');
   try {
     if (q.sitemap) {
       const rows = await sb('select=slug,lang,updated_at&status=eq.approved&order=published_at.desc&limit=2000');
@@ -74,7 +74,7 @@ ${p.summary ? `<p class="s-intro">${esc(p.summary)}</p>` : ''}
 <div class="article-body tr-body">${MD.render(p.body)}</div>
 <aside class="tr-author"><strong>${esc(p.author_name)}</strong>${p.author_bio ? `<p>${esc(p.author_bio)}</p>` : ''}${p.author_url ? `<p><a href="${esc(p.author_url)}" rel="nofollow ugc sponsored noopener" target="_blank">${t.site}</a></p>` : ''}</aside>
 <p class="tr-note">${t.note} <a href="${t.reuse}">${t.report}</a></p></article></main>`;
-      const jsonld = { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: desc, inLanguage: t.locale, datePublished: p.published_at, dateModified: p.updated_at, author: { '@type': 'Person', name: p.author_name }, mainEntityOfPage: origin + urlPath, publisher: { '@type': 'Organization', name: 'Marge' } };
+      const jsonld = { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: desc, inLanguage: t.locale, datePublished: p.published_at, dateModified: p.updated_at, author: { '@type': 'Person', name: p.author_name }, mainEntityOfPage: origin + urlPath, publisher: { '@type': 'Organization', name: 'Marge Brief' } };
       res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=3600');
       return res.status(200).send(page(lang, origin, { title: p.title, desc, urlPath, main, jsonld }));
     }

@@ -1,4 +1,4 @@
-/* Marge — Article interactivity */
+/* Marge Brief — Article interactivity */
 
 // 1. Reading progress bar
 (function() {

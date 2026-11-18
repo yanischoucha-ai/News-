@@ -20,5 +20,5 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://marge.media/sitemap.xml
-Sitemap: https://marge.media/sitemap-tribune.xml
+Sitemap: https://margebrief.com/sitemap.xml
+Sitemap: https://margebrief.com/sitemap-tribune.xml

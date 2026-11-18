@@ -1,8 +1,8 @@
 // Config centrale du site : nom, domaine, rubriques, textes FR/EN.
 // Après choix du nom de marque : remplacer BRAND (et DOMAIN une fois le domaine acheté), puis `node scripts/build-site.js`.
 
-const BRAND = 'Marge';
-const DOMAIN = 'https://marge.media';
+const BRAND = 'Marge Brief';
+const DOMAIN = 'https://margebrief.com';
 const YEAR = 2026;
 const READERS = '100+'; // audience hebdomadaire déclarée
 

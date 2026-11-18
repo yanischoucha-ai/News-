@@ -2,231 +2,231 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://marge.media/</loc>
+    <loc>https://margebrief.com/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://marge.media/fr/</loc>
+    <loc>https://margebrief.com/fr/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/"/>
   </url>
   <url>
-    <loc>https://marge.media/en/</loc>
+    <loc>https://margebrief.com/en/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/airbnb</loc>
+    <loc>https://margebrief.com/fr/categorie/airbnb</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/airbnb"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/airbnb"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/airbnb</loc>
+    <loc>https://margebrief.com/en/category/airbnb</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/airbnb"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/airbnb"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/ia</loc>
+    <loc>https://margebrief.com/fr/categorie/ia</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/ia"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/ia"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/ia"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/ia</loc>
+    <loc>https://margebrief.com/en/category/ia</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/ia"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/ia"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/ia"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/immobilier</loc>
+    <loc>https://margebrief.com/fr/categorie/immobilier</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/immobilier"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/immobilier"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/immobilier</loc>
+    <loc>https://margebrief.com/en/category/immobilier</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/immobilier"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/immobilier"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/artisans</loc>
+    <loc>https://margebrief.com/fr/categorie/artisans</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/artisans"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/artisans"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/artisans"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/artisans"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/artisans</loc>
+    <loc>https://margebrief.com/en/category/artisans</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/artisans"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/artisans"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/artisans"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/artisans"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/tech</loc>
+    <loc>https://margebrief.com/fr/categorie/tech</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/tech"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/tech"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/tech"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/tech"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/tech</loc>
+    <loc>https://margebrief.com/en/category/tech</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/tech"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/tech"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/tech"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/tech"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/durable</loc>
+    <loc>https://margebrief.com/fr/categorie/durable</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/durable"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/durable"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/durable"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/durable"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/durable</loc>
+    <loc>https://margebrief.com/en/category/durable</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/durable"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/durable"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/durable"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/durable"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/business</loc>
+    <loc>https://margebrief.com/fr/categorie/business</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/business"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/business"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/business"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/business"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/business</loc>
+    <loc>https://margebrief.com/en/category/business</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/business"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/business"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/business"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/business"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/categorie/social</loc>
+    <loc>https://margebrief.com/fr/categorie/social</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/social"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/social"/>
   </url>
   <url>
-    <loc>https://marge.media/en/category/social</loc>
+    <loc>https://margebrief.com/en/category/social</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/categorie/social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/category/social"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/categorie/social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/category/social"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/ecrire-pour-nous</loc>
+    <loc>https://margebrief.com/fr/ecrire-pour-nous</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/ecrire-pour-nous"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/write-for-us"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/ecrire-pour-nous"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/write-for-us"/>
   </url>
   <url>
-    <loc>https://marge.media/en/write-for-us</loc>
+    <loc>https://margebrief.com/en/write-for-us</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/ecrire-pour-nous"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/write-for-us"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/ecrire-pour-nous"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/write-for-us"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/reutilisation-contenu</loc>
+    <loc>https://margebrief.com/fr/reutilisation-contenu</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/reutilisation-contenu"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/content-reuse"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/reutilisation-contenu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/content-reuse"/>
   </url>
   <url>
-    <loc>https://marge.media/en/content-reuse</loc>
+    <loc>https://margebrief.com/en/content-reuse</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://marge.media/fr/reutilisation-contenu"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://marge.media/en/content-reuse"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://margebrief.com/fr/reutilisation-contenu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://margebrief.com/en/content-reuse"/>
   </url>
   <url>
-    <loc>https://marge.media/fr/investir-location-courte-duree-2026</loc>
+    <loc>https://margebrief.com/fr/investir-location-courte-duree-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/fr/7-outils-ia-business-2026</loc>
+    <loc>https://margebrief.com/fr/7-outils-ia-business-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/en/airbnb-host-plateau-3-listings</loc>
+    <loc>https://margebrief.com/en/airbnb-host-plateau-3-listings</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/en/honest-guide-ai-tools-contractors-2026</loc>
+    <loc>https://margebrief.com/en/honest-guide-ai-tools-contractors-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/fr/ia-pour-artisans-comment-se-lancer</loc>
+    <loc>https://margebrief.com/fr/ia-pour-artisans-comment-se-lancer</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/en/ai-for-hvac-plumbing-contractors</loc>
+    <loc>https://margebrief.com/en/ai-for-hvac-plumbing-contractors</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/fr/automatiser-conciergerie-airbnb</loc>
+    <loc>https://margebrief.com/fr/automatiser-conciergerie-airbnb</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marge.media/en/airbnb-host-concierge-app-2026</loc>
+    <loc>https://margebrief.com/en/airbnb-host-concierge-app-2026</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

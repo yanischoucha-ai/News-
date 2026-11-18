@@ -1,6 +1,6 @@
 /* Formulaires (newsletter, contributions, contact) + attribution automatique à la copie */
 (function () {
-  var SITE = 'Marge';
+  var SITE = 'Marge Brief';
   var lang = (document.documentElement.lang || 'fr').slice(0, 2);
   var fr = lang === 'fr';
 
