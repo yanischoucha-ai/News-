@@ -16,7 +16,10 @@ Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zé
 
 Cette table remplace toute mention « article FR uniquement » d'un prompt de tâche. Résultat attendu : environ 2 à 4 mentions par semaine sur 14 articles, FR et EN alternées. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
 
-**Règles propres aux mentions EN (honnêteté)** : le média vise aussi les États-Unis et le Royaume-Uni, mais au 18 nov. 2026 les sites Résidence Manager et ALTURA sont **uniquement en français** et ALTURA n'a pas de présence commerciale américaine établie. Donc dans un article EN : ne jamais affirmer qu'un produit est disponible, localisé ou implanté aux États-Unis ou au Royaume-Uni, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). Le lien reste utile pour qui lit le français ou veut voir le produit. Cette réserve sera supprimée par l'éditeur quand une page en anglais existera.
+**Règles propres aux mentions EN (honnêteté)** : le média vise aussi les États-Unis et le Royaume-Uni. Vérifié le 18 nov. 2026 avec un navigateur en anglais :
+- **Résidence Manager** a une version anglaise (la langue suit celle du navigateur, avec un sélecteur FR/EN). Un article EN peut donc mentionner et lier Résidence Manager normalement, sans réserve de langue. Ne jamais affirmer qu'il est « implanté » ou « adopté » aux États-Unis ou au Royaume-Uni, et ne citer que des faits listés dans « Faits autorisés ».
+- **ALTURA** (https://alturacom-production.odoo.com) était encore en français ce jour-là, et n'a pas de présence commerciale américaine établie sur le site. Dans un article EN, pour ALTURA : ne jamais affirmer une offre ou une implantation aux États-Unis, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). L'éditeur supprimera cette réserve quand la version anglaise d'ALTURA sera en ligne.
+- **Maya Pilot** : mêmes règles que dans « Faits autorisés » (statut honnête, rien d'inventé).
 
 ## Backlinks : un lien contextuel dans environ 2 articles sur 3
 
