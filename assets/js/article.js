@@ -4,7 +4,7 @@
 (function() {
   const bar = document.createElement('div');
   bar.id = 'progress-bar';
-  bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;background:#b8321f;width:0%;z-index:9999;transition:width .1s linear;';
+  bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;background:#0ea35b;width:0%;z-index:9999;transition:width .1s linear;';
   document.body.prepend(bar);
 
   window.addEventListener('scroll', () => {

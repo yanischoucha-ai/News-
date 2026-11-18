@@ -85,13 +85,13 @@ const footer = (lang) => {
 <div class="sf-col"><h4>${t.footTitle1}</h4>${CATS.map((c) => `<a href="${catPath(lang, c.id)}">${esc(c[lang].name)}</a>`).join('')}</div>
 <div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
 </div>
-<div class="sf-legal">${esc(t.legal)} <a href="${PAGES.reuse[lang]}">${esc(t.legalMore)}</a>.</div>
+<div class="sf-legal">${esc(lang === 'fr' ? `${BRAND} est édité par ALTURA. ` : `${BRAND} is published by ALTURA. `)}${esc(t.legal)} <a href="${PAGES.reuse[lang]}">${esc(t.legalMore)}</a>.</div>
 </footer>`;
 };
 
 const MH = {
-  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', all: 'Toute l’actualité', top: 'À la une', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Un seul email par semaine, que du concret : cas réels, chiffres vérifiés, zéro généralité.', date: 'fr-FR' },
-  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', all: 'All stories', top: 'Top stories', nlH: 'The week’s numbers, in your inbox.', nlP: 'One email a week, only what you can use: real cases, verified numbers, no filler.', date: 'en-US' },
+  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', all: 'Toute l’actualité', top: 'À la une', calH: 'Un nouvel article chaque jour, sept jours sur sept.', calP: 'Une rubrique par jour, en français et en anglais. Voici la semaine qui vient.', today: 'Aujourd’hui', done: 'Publié', soon: 'À venir', calNl: 'Recevoir la semaine par email', calNlP: 'Un seul email, le meilleur des 7 jours.', behindH: 'Derrière Marge', behindP: 'Marge est édité par ALTURA. Nous le disons clairement : voici nos projets, présentés comme tels.', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Un seul email par semaine, que du concret : cas réels, chiffres vérifiés, zéro généralité.', date: 'fr-FR' },
+  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', all: 'All stories', top: 'Top stories', calH: 'A new story every day, seven days a week.', calP: 'One topic per day, in English and French. Here is the week ahead.', today: 'Today', done: 'Published', soon: 'Coming up', calNl: 'Get the week by email', calNlP: 'One email, the best of the 7 days.', behindH: 'Behind Marge', behindP: 'Marge is published by ALTURA. We say so plainly: here are our projects, presented as ours.', nlH: 'The week’s numbers, in your inbox.', nlP: 'One email a week, only what you can use: real cases, verified numbers, no filler.', date: 'en-US' },
 };
 const FONTS = '<link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>';
 const fixFonts = (html) => {
@@ -175,19 +175,75 @@ ${footer(lang)}
 
 const jItem = (a, lang, withDesc) => `<a class="j-item" href="${prettyUrl(a.slug)}"><span class="j-kicker">${esc(catById(a.cat)[lang].name)}</span><h3>${esc(a.title)}</h3>${withDesc && a.desc ? `<p>${esc(a.desc)}</p>` : ''}<span class="j-meta">${fmt(a.date, lang)}${a.min ? ` · ${a.min} ${T[lang].readMin}` : ''}</span></a>`;
 
+
+const parisToday = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Paris' });
+const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+
+const PROJECTS = {
+  rm: {
+    url: 'https://residencemanager.online',
+    fr: { name: 'Résidence Manager', tag: 'Pour les hôtes et conciergeries', p: 'Portail voyageur par QR code, catalogue de services additionnels et tableau de bord hôte, pour gérer vos logements sans courir après les messages.', cta: 'Découvrir Résidence Manager' },
+    en: { name: 'Résidence Manager', tag: 'For hosts and property managers', p: 'A QR-code guest portal, an upsell service catalog and a host dashboard, so you can run your listings without chasing messages.', cta: 'See Résidence Manager' },
+  },
+  altura: {
+    url: 'mailto:contact.alturacom@gmail.com',
+    fr: { name: 'ALTURA', tag: 'Pour les artisans et indépendants', p: 'Sites, vidéos et assistants IA pour artisans. On construit une démo de l’assistant sous 24 h après votre accord : gratuite, vous décidez ensuite de la garder ou non.', cta: 'Demander une démo gratuite', subject: 'Démo assistant IA (via Marge)' },
+    en: { name: 'ALTURA', tag: 'For contractors and trades', p: 'Websites, video and AI assistants for trades businesses. We build a demo of a missed-call voice assistant within 24 hours of your OK: free, and you decide afterwards whether to keep it.', cta: 'Ask for a free demo', subject: 'AI assistant demo (via Marge)' },
+  },
+};
+const projHref = (k, lang) => (k === 'altura' ? `${PROJECTS[k].url}?subject=${encodeURIComponent(PROJECTS[k][lang].subject)}` : PROJECTS[k].url);
+const projFor = (cat) => (cat === 'airbnb' || cat === 'immobilier' ? 'rm' : 'altura');
+
+// Mot de l'éditeur : fin d'article, contextuel, signalé comme promotion de nos propres services
+const promo = (lang, cat) => {
+  const k = projFor(cat); const x = PROJECTS[k][lang];
+  const disc = lang === 'fr' ? `Mot de l’éditeur · ${BRAND} est édité par ALTURA. C’est la présentation de nos propres services, pas un avis neutre.` : `Note from the publisher · ${BRAND} is published by ALTURA. This presents our own services, not a neutral review.`;
+  return `<aside class="mk-promo" aria-label="${esc(disc)}"><span class="mk-promo-kicker">${esc(disc)}</span><h2>${esc(x.name)} <small>${esc(x.tag)}</small></h2><p>${esc(x.p)}</p><a class="mk-promo-cta" href="${esc(projHref(k, lang))}" rel="noopener"${k === 'rm' ? ' target="_blank"' : ''}>${esc(x.cta)} →</a></aside>`;
+};
+
+// Bloc « Derrière Marge » (accueil)
+const behind = (lang) => {
+  const m = MH[lang];
+  const card = (k) => { const x = PROJECTS[k][lang]; return `<a class="mk-card" href="${esc(projHref(k, lang))}" rel="noopener"${k === 'rm' ? ' target="_blank"' : ''}><span class="j-kicker">${esc(x.tag)}</span><h3>${esc(x.name)}</h3><p>${esc(x.p)}</p><span class="mk-card-cta">${esc(x.cta)} →</span></a>`; };
+  return `<section class="j-sec mk-behind"><div class="j-sec-h"><h2>${esc(m.behindH)}</h2></div><p class="mk-behind-p">${esc(m.behindP)}</p><div class="mk-cards">${card('rm')}${card('altura')}</div></section>`;
+};
+
+// Calendrier des 7 prochains jours (accueil)
+function calendar(lang, schedule) {
+  const m = MH[lang]; const today = parisToday();
+  const locale = lang === 'fr' ? 'fr-FR' : 'en-US';
+  const cells = [];
+  for (let i = 0; i < 7; i++) {
+    const date = addDays(today, i);
+    const dow = new Date(date + 'T12:00:00Z').getUTCDay();
+    const cat = CATS.find((c) => c.dow === dow);
+    const items = schedule.filter((a) => a.lang === lang && a.date === date);
+    const it = items.find((a) => a.slug) || items[0];
+    const wd = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' }).format(new Date(date + 'T12:00:00Z'));
+    const dm = fmt(date, lang).replace(/ 20\d\d$/, '').replace(/, 20\d\d$/, '');
+    const status = it && it.slug ? m.done : (i === 0 ? m.today : m.soon);
+    const title = it ? it.title : cat[lang].desc;
+    const tag = `<span class="j-kicker">${esc(cat[lang].name)}</span>`;
+    const inner = `<span class="cal-date"><b>${esc(wd)}</b> ${esc(dm)}${i === 0 ? ` <em>${esc(m.today)}</em>` : ''}</span>${tag}<span class="cal-title">${esc(title)}</span><span class="cal-status ${it && it.slug ? 'is-done' : ''}">${esc(status)}</span>`;
+    const cls = `cal-day${i === 0 ? ' is-today' : ''}`;
+    cells.push(it && it.slug ? `<a class="${cls}" href="${prettyUrl(it.slug)}">${inner}</a>` : `<a class="${cls}" href="${catPath(lang, cat.id)}">${inner}</a>`);
+  }
+  cells.push(`<a class="cal-day cal-nl" href="#newsletter"><span class="cal-date"><b>${esc(m.sub)}</b></span><span class="cal-title">${esc(m.calNl)}</span><span class="cal-status">${esc(m.calNlP)}</span></a>`);
+  return `<section class="j-cal" aria-labelledby="cal-h"><div class="j-wrap"><div class="j-sec-h"><h2 id="cal-h">${esc(m.calH)}</h2></div><p class="j-cal-p">${esc(m.calP)}</p><div class="cal-grid">${cells.join('')}</div></div></section>`;
+}
+
 function buildLangIndex(lang, published, schedule) {
   const t = T[lang]; const m = MH[lang];
   const list = published.filter((a) => a.lang === lang);
   const lead = list[0];
   const side = list.slice(1, 5);
   const rest = list.slice(5);
-  const today = new Date().toISOString().slice(0, 10);
-  const next = schedule.filter((a) => !a.slug && a.lang === lang && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
   const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}"><span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
   const catSecs = rest.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(m.all)}</h2></div><div class="j-grid">${rest.slice(0, 12).map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
   const body = `<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
+${calendar(lang, schedule)}
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
-<div class="j-wrap">${catSecs}${next.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${m.up}</h2></div><ul class="s-upcoming">${next.map((a) => `<li><time datetime="${a.date}">${fmt(a.date, lang)}</time><span>${esc(a.title)}</span></li>`).join('')}</ul></section>` : ''}</div>
+<div class="j-wrap">${catSecs}${behind(lang)}</div>
 <div style="height:2.5rem"></div>`;
   wr(`${lang}/index.html`, shell({
     lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body, current: 'home',
@@ -199,7 +255,7 @@ function buildCategory(lang, cat, schedule, published) {
   const t = T[lang];
   const c = cat[lang];
   const list = published.filter((a) => a.lang === lang && a.cat === cat.id);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = parisToday();
   const next = schedule.filter((a) => !a.slug && a.lang === lang && a.cat === cat.id && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3);
   const body = `<header class="s-cat-head"><h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p></header>
 <section class="s-section">
@@ -233,7 +289,7 @@ function setBlock(html, name, inner, fallback) {
   return fallback ? fallback(html, b) : html;
 }
 
-function processArticle(file, lang) {
+function processArticle(file, lang, cat) {
   let html = fs.readFileSync(file, 'utf8');
   const alt = { fr: '/fr/', en: '/en/' };
   if (!html.includes('assets/css/site.css')) html = html.replace('</head>', '  <link rel="stylesheet" href="/assets/css/site.css">\n</head>');
@@ -255,6 +311,8 @@ function processArticle(file, lang) {
   if (/<!--S:HEAD-->/.test(html)) html = setBlock(html, 'HEAD', head.replace(/^<!--S:HEAD-->\n|\n<!--\/S:HEAD-->$/g, ''));
   else html = html.replace(/<nav[\s\S]*?<\/nav>/, () => head);
   const hasMain = html.includes('</main>');
+  html = html.replace(/<!--S:PROMO-->[\s\S]*?<!--\/S:PROMO-->\n?/, '');
+  html = setBlock(html, 'PROMO', promo(lang, cat), (h, b) => (h.includes('<!--S:NEWSLETTER-->') ? h.replace('<!--S:NEWSLETTER-->', () => `${b}\n<!--S:NEWSLETTER-->`) : hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'NEWSLETTER', newsletter(lang), (h, b) => (hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'FOOTER', footer(lang), (h, b) => (hasMain ? h.replace('</main>', () => `</main>\n${b}`) : h.replace('</body>', () => `${b}\n</body>`)));
   fs.writeFileSync(file, html);
@@ -322,7 +380,7 @@ function build() {
   ['fr', 'en'].forEach((lang) => {
     fs.readdirSync(path.join(ROOT, lang), { withFileTypes: true })
       .filter((d) => d.isFile() && d.name.endsWith('.html') && !generated.has(d.name))
-      .forEach((d) => processArticle(path.join(ROOT, lang, d.name), lang));
+      .forEach((d) => { const ent = schedule.find((a) => a.slug && path.basename(a.slug) === d.name); processArticle(path.join(ROOT, lang, d.name), lang, ent ? ent.cat : null); });
   });
 
   buildHome(published);
