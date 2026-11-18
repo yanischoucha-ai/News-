@@ -1,6 +1,8 @@
+> **Nom public : AlturaCom** (et non « ALTURA »). Toute consigne ou tout article qui dit « ALTURA » doit s'écrire AlturaCom dans le texte publié.
+
 # Produits du réseau : faits autorisés et planning de mentions
 
-Source : pages officielles des produits (relevées le 18 nov. 2026). Le média est édité par ALTURA, qui développe aussi Résidence Manager et Maya Pilot. **On n'écrit sur un produit que ce qui figure dans la section « Faits autorisés » ci-dessous.** Tout le reste est interdit, même si c'est plausible.
+Source : pages officielles des produits (relevées le 18 nov. 2026). Le média est édité par AlturaCom, qui développe aussi Résidence Manager et Maya Pilot. **On n'écrit sur un produit que ce qui figure dans la section « Faits autorisés » ci-dessous.** Tout le reste est interdit, même si c'est plausible.
 
 ## Planning : quand mentionner (règle dure)
 
@@ -10,7 +12,7 @@ Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zé
 |---|---|---|---|
 | Lundi | Résidence Manager | W pair | W impair |
 | Mercredi | Résidence Manager | W = 1 modulo 4 (1, 5, 9, 13…), sujet location courte durée ou gestion locative | W = 3 modulo 4 (3, 7, 11, 15…), même condition de sujet |
-| Jeudi | ALTURA | W impair, sujet visibilité en ligne, site web, vidéo ou réseaux d'une petite entreprise | W pair, même condition de sujet (contractors, petites entreprises de services) |
+| Jeudi | AlturaCom | W impair, sujet visibilité en ligne, site web, vidéo ou réseaux d'une petite entreprise | W pair, même condition de sujet (contractors, petites entreprises de services) |
 | Dimanche | Maya Pilot | W impair, sujet marketing ou réseaux sociaux d'un éditeur de logiciel / SaaS | W pair, même condition de sujet |
 | Mardi, vendredi, samedi | aucun | jamais | jamais |
 
@@ -18,7 +20,7 @@ Cette table remplace toute mention « article FR uniquement » d'un prompt de t�
 
 **Règles propres aux mentions EN (honnêteté)** : le média vise aussi les États-Unis et le Royaume-Uni. Vérifié le 18 nov. 2026 avec un navigateur en anglais :
 - **Résidence Manager** a une version anglaise (la langue suit celle du navigateur, avec un sélecteur FR/EN). Un article EN peut donc mentionner et lier Résidence Manager normalement, sans réserve de langue. Ne jamais affirmer qu'il est « implanté » ou « adopté » aux États-Unis ou au Royaume-Uni, et ne citer que des faits listés dans « Faits autorisés ».
-- **ALTURA** (https://alturacom-production.odoo.com) était encore en français ce jour-là, et n'a pas de présence commerciale américaine établie sur le site. Dans un article EN, pour ALTURA : ne jamais affirmer une offre ou une implantation aux États-Unis, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). L'éditeur supprimera cette réserve quand la version anglaise d'ALTURA sera en ligne.
+- **AlturaCom** (https://alturacom-production.odoo.com) était encore en français ce jour-là, et n'a pas de présence commerciale américaine établie sur le site. Dans un article EN, pour AlturaCom : ne jamais affirmer une offre ou une implantation aux États-Unis, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). L'éditeur supprimera cette réserve quand la version anglaise d'AlturaCom sera en ligne.
 - **Maya Pilot** : mêmes règles que dans « Faits autorisés » (statut honnête, rien d'inventé).
 
 ## Backlinks : un lien contextuel dans environ 2 articles sur 3
@@ -31,7 +33,7 @@ Objectif : la majorité des articles envoient un lien normal vers un site du ré
 - **Ton** : aucun vocabulaire commercial (« solution », « découvrez », « essayez », « gagnez du temps »), aucune promesse, aucun appel à l'action. Le lien est un renvoi parmi d'autres, au même registre que les liens vers les sources.
 - **Quel site** selon le sujet : Airbnb, location courte durée, gestion locative, conciergerie, immobilier locatif → https://www.residencemanager.online ; réseaux sociaux, marketing de contenu, SaaS, personal branding → https://mayapilot.com ; artisans, PME, site web, visibilité en ligne, vidéo, IA et automatisation en entreprise, business → https://alturacom-production.odoo.com. Si la mention produit du jour est autorisée et faite, elle tient lieu de lien : n'en ajouter aucun autre.
 - **Forme** : lien HTML normal dans une phrase utile (exemple, ressource, outil à tester), sans `rel="nofollow"` ni `rel="sponsored"`, ouvert dans le même onglet. Texte d'ancre descriptif et **varié** d'un article à l'autre (« gestion des départs et du ménage », « un portail voyageur par QR code », « agence de communication digitale »…), jamais « cliquez ici », jamais deux fois la même ancre de suite.
-- **Placement** : dans le corps, à l'endroit où le lecteur en a besoin, pas dans la conclusion ni dans un bloc à part, pas de bouton. Le lien reste un renvoi, pas un argumentaire : pas de superlatif ni de promesse. Les faits sur le produit restent limités à « Faits autorisés ». Un simple lien de référence n'exige pas de mention de l'éditeur dans la phrase (le pied de page indique « Marge Brief est édité par ALTURA ») ; une phrase qui présente l'outil, elle, garde la transparence naturelle.
+- **Placement** : dans le corps, à l'endroit où le lecteur en a besoin, pas dans la conclusion ni dans un bloc à part, pas de bouton. Le lien reste un renvoi, pas un argumentaire : pas de superlatif ni de promesse. Les faits sur le produit restent limités à « Faits autorisés ». Un simple lien de référence n'exige pas de mention de l'éditeur dans la phrase (le pied de page indique « Marge Brief est édité par AlturaCom ») ; une phrase qui présente l'outil, elle, garde la transparence naturelle.
 - **Compte rendu** : « backlink : oui/non, URL, ancre ».
 
 ## Comment mentionner
@@ -62,7 +64,7 @@ Objectif : la majorité des articles envoient un lien normal vers un site du ré
 - Statut honnête à respecter : la publication sur Instagram est **en construction**, Facebook arrive ensuite, le paiement en ligne n'est pas encore ouvert. Ne jamais affirmer que l'outil publie déjà automatiquement.
 - Interdit : les chiffres des exemples du site (visiteurs, abonnés, MRR : ils sont fictifs), « Kinélys / Devisimo / Coachéo » comme cas réels, toute promesse de clients gagnés.
 
-### ALTURA (AlturaCom) : https://alturacom-production.odoo.com
+### AlturaCom (AlturaCom) : https://alturacom-production.odoo.com
 - Agence de communication digitale : sites web et e-commerce, contenu et réseaux sociaux de marque, production vidéo, acquisition et SEO. Devis gratuit.
 - Contact : formulaire sur https://alturacom-production.odoo.com/contactus
 - Interdit : « tarifs imbattables », témoignage client cité, promesse de résultats chiffrés, numéro de téléphone ou adresse personnelle.
