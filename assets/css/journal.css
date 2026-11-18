@@ -75,10 +75,13 @@ body > nav, body > .blog-nav { display: none !important; }
 /* mobile : bouton Menu + panneau plein écran, grandes zones tactiles */
 @media (max-width: 900px) {
   .mh-bar { padding: .6rem 1rem; gap: .6rem; min-height: 60px; }
+  .mh { backdrop-filter: none; -webkit-backdrop-filter: none; background: #fff; }
   .mh-tag, .mh-write, .mh-sub { display: none; }
+  .mh-logo { white-space: nowrap; font-size: 1.45rem; }
+  .mh-lang { flex-shrink: 0; }
   .mh-burger { display: inline-flex; }
   .mh-lang a { padding: .65rem .8rem; }
-  .mh nav.mh-nav { display: none; border-top: 0; position: fixed; left: 0; right: 0; top: 61px; bottom: 0; background: #fff; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 2rem; }
+  .mh nav.mh-nav { display: none; border-top: 0; position: fixed; left: 0; right: 0; top: 64px; bottom: 0; background: #fff; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 2rem; }
   .mh.is-open nav.mh-nav { display: block; background: #fff; }
   .mh-nav-in { display: block; padding: .5rem 1rem 2rem; max-width: 560px; }
   .mh-nav-in > a, .mh-nav-in > a:first-child { display: flex; align-items: center; justify-content: space-between; padding: 1.05rem .25rem; min-height: 56px; font-size: 1.15rem; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--border); margin: 0; }
@@ -515,4 +518,9 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 2rem; }
 @media (max-width: 900px) {
   #share-btn { min-height: 44px; padding-left: 1rem; padding-right: 1rem; }
   .back-link, .next-link { display: inline-block; padding: .7rem 0; }
+}
+
+@media (max-width: 400px) {
+  .mh-burger-txt { display: none; }
+  .mh-burger { padding: 0 .85rem; }
 }
