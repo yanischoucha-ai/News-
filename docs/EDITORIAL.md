@@ -108,3 +108,15 @@ Beaucoup de lecteurs posent leur question à un assistant IA, qui cite les pages
 - **Pas de bourrage** : ni mots-clés répétés, ni paragraphes de remplissage, ni phrases génériques interchangeables. Un article plus court et plus dense vaut mieux qu'un article long et creux.
 
 Le site publie déjà un `llms.txt` (régénéré à chaque build) et autorise les robots des assistants IA dans `robots.txt` : ne pas les modifier.
+
+## 10. Une plume vivante, pas un texte générique
+
+Un article doit se lire comme écrit par quelqu'un qui connaît le terrain et prend position. C'est une exigence de qualité : les lecteurs, Google et les assistants IA récompensent le contenu précis, singulier et utile, et ignorent les textes interchangeables. Règles :
+
+- **Du concret avant tout** : noms réels, chiffres réels, lieux, montants, dates, citations courtes et attribuées tirées des sources. Une scène ou un exemple précis (sourcé) vaut mieux que trois généralités.
+- **Une prise de position claire** : l'article tranche (« à ce prix, ne le prenez pas ») et dit dans quel cas il se trompe. Les nuances viennent des données, pas de formules de politesse.
+- **Rythme varié** : mélanger phrases courtes et phrases plus longues, une idée par paragraphe, parfois une phrase d'une ligne. Pas de structure identique d'un article à l'autre.
+- **Voix directe** : « vous », verbes concrets, vocabulaire du métier du lecteur. Pas de ton de communiqué ni de manuel.
+- **Interdits** : les tournures passe-partout (« dans un monde où », « il est important de noter », « en conclusion », « plongeons dans », « un véritable game changer », « à l'ère du numérique »), les listes de trois adjectifs, les ouvertures et conclusions motivationnelles, les répétitions de la question, les « Voici X conseils » sans contenu.
+- **Aucune fausse expérience** : jamais de « j'ai testé », « dans mon agence », « un client m'a dit » inventés, et aucun faux auteur ni faux témoignage. Le texte est signé du média ; les témoignages cités viennent de sources publiques avec lien. Ne pas chercher à imiter un humain précis, chercher à être utile et précis.
+- **Relecture finale** : relire à voix haute mentalement ; si une phrase pourrait figurer dans n'importe quel article du même sujet, la remplacer par un fait précis ou la supprimer.
