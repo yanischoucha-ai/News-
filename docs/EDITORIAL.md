@@ -87,3 +87,7 @@ Titres, slugs, 3 sources principales (liens), angle choisi, chiffres clés avec 
 ## 8. Réécrire un article déjà publié
 
 Ajouter `"replace": true, "modified": "<date du jour>"` dans le JSON : le script réécrit la page du même slug (date de publication conservée, `dateModified` mise à jour) au lieu de chercher une entrée sans slug.
+
+
+## Rubrique « Tech & développement durable » (vendredi, une semaine sur deux)
+Le vendredi alterne selon la semaine ISO (`date +%V`) : **semaine impaire = Tech & développement durable** (`cat: durable`, à passer à `new-article.js`), **semaine paire = Tech & productivité** (`cat: tech`). Sujets durables : numérique responsable (coût énergie et empreinte d'un outil, hébergement, matériel reconditionné), énergie et rénovation pour hôtes et artisans (aides, DPE, pompes à chaleur, solaire), obligations et aides réelles (vérifiées sur source officielle), calculs de retour sur investissement chiffrés. Aucun greenwashing : chaque affirmation environnementale est sourcée (ADEME, Négawatt, IEA, études citées), avec ses limites ; pas de « neutre en carbone » sans méthode. Mêmes exigences que les autres jours (chiffres, cas réel, conseils applicables, actualité des 60 derniers jours).

@@ -90,8 +90,8 @@ const footer = (lang) => {
 };
 
 const MH = {
-  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', all: 'Toute l’actualité', top: 'À la une', calH: 'Un nouvel article chaque jour, sept jours sur sept.', calP: 'Une rubrique par jour, en français et en anglais. Voici la semaine qui vient.', today: 'Aujourd’hui', done: 'Publié', soon: 'À venir', calNl: 'Recevoir la semaine par email', calNlP: 'Un seul email, le meilleur des 7 jours.', behindH: 'Derrière Marge', behindP: 'Marge est édité par ALTURA. Nous le disons clairement : voici nos projets, présentés comme tels.', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Un seul email par semaine, que du concret : cas réels, chiffres vérifiés, zéro généralité.', date: 'fr-FR' },
-  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', all: 'All stories', top: 'Top stories', calH: 'A new story every day, seven days a week.', calP: 'One topic per day, in English and French. Here is the week ahead.', today: 'Today', done: 'Published', soon: 'Coming up', calNl: 'Get the week by email', calNlP: 'One email, the best of the 7 days.', behindH: 'Behind Marge', behindP: 'Marge is published by ALTURA. We say so plainly: here are our projects, presented as ours.', nlH: 'The week’s numbers, in your inbox.', nlP: 'One email a week, only what you can use: real cases, verified numbers, no filler.', date: 'en-US' },
+  fr: { tag: 'Les chiffres avant les slogans', sub: 'Newsletter', more: 'Tout voir', up: 'Prochainement', all: 'Toute l’actualité', top: 'À la une', calH: 'Un nouvel article chaque jour, 7 jours sur 7.', dailySub: 'En français et en anglais · voir la semaine →', calP: 'Une rubrique par jour, en français et en anglais. Voici la semaine qui vient.', today: 'Aujourd’hui', done: 'Publié', soon: 'À venir', calNl: 'Recevoir la semaine par email', calNlP: 'Un seul email, le meilleur des 7 jours.', behindH: 'Derrière Marge', behindP: 'Marge est édité par ALTURA. Nous le disons clairement : voici nos projets, présentés comme tels.', nlH: 'Les chiffres de la semaine, dans votre boîte mail.', nlP: 'Un seul email par semaine, que du concret : cas réels, chiffres vérifiés, zéro généralité.', date: 'fr-FR' },
+  en: { tag: 'Numbers before slogans', sub: 'Newsletter', more: 'See all', up: 'Coming up', all: 'All stories', top: 'Top stories', calH: 'A new article every day, 7 days a week.', dailySub: 'In English and French · see the week →', calP: 'One topic per day, in English and French. Here is the week ahead.', today: 'Today', done: 'Published', soon: 'Coming up', calNl: 'Get the week by email', calNlP: 'One email, the best of the 7 days.', behindH: 'Behind Marge', behindP: 'Marge is published by ALTURA. We say so plainly: here are our projects, presented as ours.', nlH: 'The week’s numbers, in your inbox.', nlP: 'One email a week, only what you can use: real cases, verified numbers, no filler.', date: 'en-US' },
 };
 const FONTS = '<link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>';
 const fixFonts = (html) => {
@@ -200,7 +200,7 @@ function calendar(lang, schedule) {
     cells.push(it && it.slug ? `<a class="${cls}" href="${prettyUrl(it.slug)}">${inner}</a>` : `<a class="${cls}" href="${catPath(lang, cat.id)}">${inner}</a>`);
   }
   cells.push(`<a class="cal-day cal-nl" href="#newsletter"><span class="cal-date"><b>${esc(m.sub)}</b></span><span class="cal-title">${esc(m.calNl)}</span><span class="cal-status">${esc(m.calNlP)}</span></a>`);
-  return `<section class="j-cal" aria-labelledby="cal-h"><div class="j-wrap"><div class="j-sec-h"><h2 id="cal-h">${esc(m.calH)}</h2></div><p class="j-cal-p">${esc(m.calP)}</p><div class="cal-grid">${cells.join('')}</div></div></section>`;
+  return `<section class="j-cal" id="calendrier" aria-labelledby="cal-h"><div class="j-wrap"><div class="j-sec-h"><h2 id="cal-h">${esc(m.calH)}</h2></div><p class="j-cal-p">${esc(m.calP)}</p><div class="cal-grid">${cells.join('')}</div></div></section>`;
 }
 
 function buildLangIndex(lang, published, schedule) {
@@ -211,7 +211,8 @@ function buildLangIndex(lang, published, schedule) {
   const rest = list.slice(5);
   const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}"><span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
   const catSecs = rest.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(m.all)}</h2></div><div class="j-grid">${rest.slice(0, 12).map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
-  const body = `<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
+  const body = `<a class="j-daily" href="#calendrier"><span class="j-daily-dot" aria-hidden="true"></span><strong>${esc(m.calH)}</strong><span class="j-daily-sub">${esc(m.dailySub)}</span></a>
+<div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
 ${calendar(lang, schedule)}
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
 <div class="j-wrap">${catSecs}</div>

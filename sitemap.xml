@@ -104,6 +104,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/tech"/>
   </url>
   <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/categorie/durable</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/durable"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/durable"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/category/durable</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/categorie/durable"/>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/category/durable"/>
+  </url>
+  <url>
     <loc>DOMAIN_PLACEHOLDER/fr/categorie/business</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>daily</changefreq>

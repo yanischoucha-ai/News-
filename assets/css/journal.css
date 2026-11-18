@@ -474,3 +474,16 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 2rem; }
   .cal-day { min-height: 0; padding: .9rem 1rem; }
   .cal-status { margin-top: .1rem; }
 }
+
+/* Bandeau « un article par jour » */
+.j-daily { display: flex; align-items: center; justify-content: center; gap: .7rem; flex-wrap: wrap; background: var(--ac); color: #fff; padding: .85rem 1.2rem; text-align: center; font-size: 1.02rem; line-height: 1.3; }
+.j-daily strong { font-weight: 800; letter-spacing: -.005em; font-size: 1.1rem; }
+.j-daily-sub { font-size: .88rem; opacity: .92; font-weight: 500; }
+.j-daily-dot { width: .6rem; height: .6rem; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0 rgba(255,255,255,.7); animation: jping 2s infinite; flex: none; }
+.j-daily:hover { background: var(--ac-dim); color: #fff; }
+@keyframes jping { 70% { box-shadow: 0 0 0 .55rem rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+@media (prefers-reduced-motion: reduce) { .j-daily-dot { animation: none; } }
+.j-cal .j-sec-h h2 { font-family: var(--sans); font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; text-transform: none; line-height: 1.1; }
+.j-cal .j-sec-h h2::after { content: ""; display: block; width: 3.2rem; height: .28rem; background: var(--ac); border-radius: 2px; margin-top: .6rem; }
+.j-cal .j-sec-h { border-bottom: 0; }
+@media (max-width: 600px) { .j-daily { font-size: .95rem; padding: .75rem 1rem; gap: .25rem .6rem; } .j-daily strong { font-size: 1rem; } }

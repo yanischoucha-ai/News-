@@ -7,14 +7,14 @@
 (function () {
   // ─── PLANNING ÉDITORIAL ───────────────────────────────────────────────────
   // Chaque entrée : { date: "YYYY-MM-DD", title, lang, slug, tag, cat, min, desc }
-  // cat = airbnb|ia|immobilier|artisans|tech|business|social (défaut : selon le jour de la semaine) ; min = minutes de lecture ; desc = résumé 1-2 phrases (cartes, listes)
+  // cat = airbnb|ia|immobilier|artisans|tech|durable|business|social (défaut : selon le jour de la semaine) ; min = minutes de lecture ; desc = résumé 1-2 phrases (cartes, listes)
   // La scheduled task met à jour ce tableau en ajoutant les nouvelles entrées
   // ── THÉMATIQUE PAR JOUR ───────────────────────────────────────────────────
   // Lun: Airbnb & gestion locative → residencemanager.online
   // Mar: IA & automatisation business
   // Mer: Immobilier & investissement → residencemanager.online (si locatif)
   // Jeu: Contractors & artisans / trades
-  // Ven: Tech & outils productivité
+  // Ven: Tech & outils productivité (semaine ISO paire) / Tech & développement durable (impaire, cat: durable)
   // Sam: Business & entrepreneuriat
   // Dim: Réseaux sociaux & personal branding → mayapilot.com
 
