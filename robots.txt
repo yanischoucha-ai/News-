@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: DOMAIN_PLACEHOLDER/sitemap.xml
+Sitemap: DOMAIN_PLACEHOLDER/sitemap-tribune.xml

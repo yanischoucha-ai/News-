@@ -83,7 +83,7 @@ const footer = (lang) => {
 <div class="sf-inner">
 <div class="sf-brand"><a class="sf-logo" href="/">${BRAND}</a><p>${esc(t.footAbout)}</p></div>
 <div class="sf-col"><h4>${t.footTitle1}</h4>${CATS.map((c) => `<a href="${catPath(lang, c.id)}">${esc(c[lang].name)}</a>`).join('')}</div>
-<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
+<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${lang === 'fr' ? '/fr/tribune' : '/en/community'}">${lang === 'fr' ? 'Tribune des auteurs' : 'Community voices'}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
 </div>
 <div class="sf-legal">${esc(lang === 'fr' ? `${BRAND} est édité par ALTURA. ` : `${BRAND} is published by ALTURA. `)}${esc(t.legal)} <a href="${PAGES.reuse[lang]}">${esc(t.legalMore)}</a>.</div>
 </footer>`;
@@ -168,6 +168,7 @@ ${nav(lang, alt, current)}
 ${body}
 ${footer(lang)}
 <script src="/assets/js/site.js" defer></script>
+${body.includes('au-form') ? '<script src="/assets/js/author.js" defer></script>' : ''}
 </body>
 </html>
 `;

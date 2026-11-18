@@ -5,31 +5,92 @@
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/fr", "destination": "/fr/index.html" },
-    { "source": "/en", "destination": "/en/index.html" },
-    { "source": "/fr/(.*)", "destination": "/fr/$1" },
-    { "source": "/en/(.*)", "destination": "/en/$1" },
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" }
-  ]
+    {
+      "source": "/fr/tribune",
+      "destination": "/api/contrib?lang=fr"
+    },
+    {
+      "source": "/fr/tribune/:slug",
+      "destination": "/api/contrib?lang=fr&slug=:slug"
+    },
+    {
+      "source": "/en/community",
+      "destination": "/api/contrib?lang=en"
+    },
+    {
+      "source": "/en/community/:slug",
+      "destination": "/api/contrib?lang=en&slug=:slug"
+    },
+    {
+      "source": "/sitemap-tribune.xml",
+      "destination": "/api/contrib?sitemap=1"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr",
+      "destination": "/fr/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/fr/(.*)",
+      "destination": "/fr/$1"
+    },
+    {
+      "source": "/en/(.*)",
+      "destination": "/en/$1"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    }
+  ],
+  "functions": {
+    "api/contrib.js": {
+      "includeFiles": "{fr/reutilisation-contenu.html,en/content-reuse.html,assets/js/md.js}"
+    }
+  }
 }

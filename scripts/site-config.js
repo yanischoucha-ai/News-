@@ -99,13 +99,18 @@ const T = {
 // ── Pages de contenu ─────────────────────────────────────────────────────────
 const contribForm = (lang) => {
   const fr = lang === 'fr';
-  return `<form class="s-form-stack" data-s-form="contribution" data-ok="${fr ? 'Merci ! Votre proposition est bien reçue, nous la lisons avec attention.' : 'Thank you! Your pitch has been received and we will read it carefully.'}">
-  <div class="s-field"><label for="c-email">${fr ? 'Votre email' : 'Your email'}</label><input id="c-email" type="email" name="email" required maxlength="254" autocomplete="email" placeholder="${fr ? 'vous@exemple.com' : 'you@example.com'}"></div>
-  <div class="s-field"><label for="c-title">${fr ? 'Sujet et angle' : 'Topic and angle'}</label><input id="c-title" name="title" required maxlength="200" placeholder="${fr ? 'Ex : j’ai réduit mes charges de 30 % en 6 mois' : 'Ex: I cut my overhead by 30% in 6 months'}"></div>
-  <div class="s-field"><label for="c-pitch">${fr ? 'Votre proposition' : 'Your pitch'}</label><textarea id="c-pitch" name="pitch" required minlength="20" maxlength="8000" placeholder="${fr ? 'Ce que vous avez vécu ou mesuré. Vous pouvez aussi coller l’article complet.' : 'What you lived or measured. You can also paste the full article.'}"></textarea></div>
+  return `<form class="s-form-stack au-form" novalidate data-lang="${lang}">
+  <div class="s-field"><label for="a-name">${fr ? 'Votre nom (ou pseudo) affiché' : 'Your displayed name'}</label><input id="a-name" name="name" required maxlength="80" autocomplete="name"></div>
+  <div class="s-field"><label for="a-email">${fr ? 'Votre email (jamais publié)' : 'Your email (never published)'}</label><input id="a-email" type="email" name="email" required maxlength="120" autocomplete="email" placeholder="${fr ? 'vous@exemple.com' : 'you@example.com'}"></div>
+  <div class="s-field"><label for="a-lang">${fr ? 'Langue du texte' : 'Language of the text'}</label><select id="a-lang" name="lang"><option value="fr"${fr ? ' selected' : ''}>Français</option><option value="en"${fr ? '' : ' selected'}>English</option></select></div>
+  <div class="s-field"><label for="a-title">${fr ? 'Titre' : 'Title'}</label><input id="a-title" name="title" required minlength="15" maxlength="140" placeholder="${fr ? 'Ex : j’ai réduit mes charges de 30 % en 6 mois' : 'Ex: I cut my overhead by 30% in 6 months'}"></div>
+  <div class="s-field"><label for="a-summary">${fr ? 'Résumé en une phrase (facultatif)' : 'One-sentence summary (optional)'}</label><input id="a-summary" name="summary" maxlength="300"></div>
+  <div class="s-field"><label for="a-body">${fr ? 'Votre texte (300 mots minimum)' : 'Your text (300 words minimum)'}</label><textarea id="a-body" name="body" required style="min-height:320px" placeholder="${fr ? 'Écrivez ici. Titres : ## Titre. Gras : **mot**. Lien : [texte](https://…)' : 'Write here. Headings: ## Title. Bold: **word**. Link: [text](https://…)'}"></textarea><small class="au-count" aria-live="polite">0 ${fr ? 'mot' : 'words'}</small></div>
+  <div class="s-field"><label for="a-bio">${fr ? 'Courte bio (facultatif)' : 'Short bio (optional)'}</label><input id="a-bio" name="bio" maxlength="300"></div>
+  <div class="s-field"><label for="a-url">${fr ? 'Lien vers votre site (facultatif, https://…)' : 'Link to your site (optional, https://…)'}</label><input id="a-url" name="url" type="url" maxlength="200" placeholder="https://"></div>
   <input type="text" name="website" class="s-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <p class="s-terms">${fr ? `En envoyant, vous confirmez que le texte est inédit et de vous. Vous gardez vos droits, ${BRAND} publie avec votre signature (FR/EN).` : `By submitting, you confirm the text is original and yours. You keep your rights; ${BRAND} publishes with your byline (EN/FR).`}</p>
-  <button type="submit">${fr ? 'Envoyer' : 'Send'}</button>
+  <p class="s-terms">${fr ? `En publiant, vous confirmez que le texte est de vous et que vous en êtes responsable. Il est publié immédiatement et sans relecture, sous votre nom, avec une licence non exclusive pour ${BRAND}. Les liens sont déclarés « nofollow ».` : `By publishing, you confirm the text is yours and that you are responsible for it. It goes live immediately, without editorial review, under your name, with a non-exclusive licence for ${BRAND}. Links are marked “nofollow”.`}</p>
+  <button type="submit">${fr ? 'Publier maintenant' : 'Publish now'}</button>
   <p class="s-form-msg" role="status" aria-live="polite"></p>
 </form>`;
 };
@@ -126,59 +131,45 @@ const PAGE_CONTENT = {
   write: {
     fr: {
       title: `Écrire pour ${BRAND}`,
-      meta: `Proposez un article à ${BRAND} : cas réels, chiffres, analyses de terrain. Vous gardez vos droits, nous publions avec votre signature et un lien vers votre site.`,
+      meta: `Publiez votre texte sur ${BRAND} en deux minutes, sans compte : renseignez votre email, écrivez, c’est en ligne tout de suite avec votre signature et un lien vers votre site.`,
       html: () => `<h1>Écrire pour ${BRAND}</h1>
-<p class="s-intro">Vous gérez des logements, des chantiers, une agence, un projet IA ? Vous avez vu ce qui marche et ce qui ne marche pas. Nous publions chaque jour en français et en anglais, et nous cherchons des auteurs qui parlent de ce qu’ils font réellement.</p>
-<h2>Ce que nous publions</h2>
+<p class="s-intro">Pas de compte, pas de mot de passe. Vous renseignez votre email, vous écrivez, et votre texte est en ligne immédiatement, signé de votre nom, avec un lien vers votre site.</p>
+<h2>Ce qui marche ici</h2>
 <ul>
-<li>Des cas réels avec des chiffres : chiffre d’affaires, marges, délais, coûts, avant et après.</li>
-<li>Des analyses qui contredisent l’idée reçue, appuyées sur des données ou une expérience vérifiable.</li>
+<li>Des cas réels avec des chiffres : revenus, marges, délais, coûts, avant et après.</li>
 <li>Des méthodes que vous avez appliquées vous-même, avec ce qui a raté.</li>
+<li>Des analyses appuyées sur des données ou une expérience vérifiable.</li>
 </ul>
-<h2>Ce que nous refusons</h2>
+<h2>Les règles (appliquées automatiquement)</h2>
 <ul>
-<li>Les contenus génériques qui pourraient être signés par n’importe qui.</li>
-<li>Les articles sponsorisés déguisés et les liens d’affiliation non déclarés.</li>
-<li>Les listes « 10 astuces » sans cas ni données.</li>
+<li>300 mots minimum, texte inédit et de vous.</li>
+<li>3 liens maximum dans le texte, plus un lien vers votre site. Tous les liens sont en « nofollow ».</li>
+<li>Pas de spam, pas de contenu dupliqué, pas de contenu illégal. 2 textes par jour et par email.</li>
+<li>Vous gardez vos droits et restez responsable de ce que vous publiez. Un texte problématique peut être retiré à tout moment.</li>
 </ul>
-<h2>Comment ça se passe</h2>
-<ol>
-<li>Vous nous envoyez le sujet et l’angle, ou l’article complet.</li>
-<li>Nous lisons chaque proposition et revenons vers vous par email.</li>
-<li>Nous éditons ensemble : vérification des chiffres, structure, titre.</li>
-<li>Publication avec votre nom, une courte bio et un lien vers votre site ou votre profil.</li>
-</ol>
-<h2>Conditions</h2>
-<p>Vous restez propriétaire de votre texte. Vous nous accordez une licence non exclusive pour le publier sur ${BRAND}, en français et en anglais (traduction comprise). Le texte doit être inédit. Un seul lien promotionnel vers votre activité est accepté, et il est assumé comme tel.</p>
-${contribForm('fr')}`,
+${contribForm('fr')}
+<p>Voir les textes déjà publiés : <a href="/fr/tribune">Tribune des auteurs</a>. Un texte à retirer ou à signaler : <a href="${PAGES.reuse.fr}">nous écrire</a>.</p>`,
     },
     en: {
       title: `Write for ${BRAND}`,
-      meta: `Pitch an article to ${BRAND}: real cases, numbers, field-level analysis. You keep your rights; we publish with your byline and a link to your site.`,
+      meta: `Publish your piece on ${BRAND} in two minutes, no account: enter your email, write, and it goes live right away with your byline and a link to your site.`,
       html: () => `<h1>Write for ${BRAND}</h1>
-<p class="s-intro">You run rentals, job sites, an agency, an AI project? You’ve seen what works and what doesn’t. We publish every day in English and French, and we’re looking for authors who write about what they actually do.</p>
-<h2>What we publish</h2>
+<p class="s-intro">No account, no password. Enter your email, write, and your piece goes live immediately under your name, with a link to your site.</p>
+<h2>What works here</h2>
 <ul>
 <li>Real cases with numbers: revenue, margins, lead times, costs, before and after.</li>
-<li>Analysis that challenges received wisdom, backed by data or verifiable experience.</li>
 <li>Methods you applied yourself, including what went wrong.</li>
+<li>Analysis backed by data or verifiable experience.</li>
 </ul>
-<h2>What we turn down</h2>
+<h2>The rules (applied automatically)</h2>
 <ul>
-<li>Generic content anyone could have signed.</li>
-<li>Disguised sponsored posts and undisclosed affiliate links.</li>
-<li>“10 tips” lists with no case or data.</li>
+<li>300 words minimum, original and yours.</li>
+<li>3 links maximum in the text, plus a link to your site. All links are “nofollow”.</li>
+<li>No spam, no duplicate content, nothing illegal. 2 pieces a day per email.</li>
+<li>You keep your rights and remain responsible for what you publish. A problematic piece can be removed at any time.</li>
 </ul>
-<h2>How it works</h2>
-<ol>
-<li>You send the topic and angle, or the full article.</li>
-<li>We read every pitch and reply by email.</li>
-<li>We edit together: number checks, structure, headline.</li>
-<li>We publish with your name, a short bio and a link to your site or profile.</li>
-</ol>
-<h2>Terms</h2>
-<p>You remain the owner of your text. You grant us a non-exclusive licence to publish it on ${BRAND}, in English and French (translation included). The text must be unpublished. One promotional link to your business is accepted and is presented as such.</p>
-${contribForm('en')}`,
+${contribForm('en')}
+<p>See published pieces: <a href="/en/community">Community voices</a>. To report or remove a piece: <a href="${PAGES.reuse.en}">write to us</a>.</p>`,
     },
   },
   reuse: {

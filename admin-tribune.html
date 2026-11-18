@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Admin Tribune</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;color:#111}input,button{font:inherit;padding:.5rem .7rem}button{cursor:pointer}table{width:100%;border-collapse:collapse;margin-top:1rem}td,th{border-bottom:1px solid #ddd;padding:.5rem;text-align:left;vertical-align:top;font-size:14px}.del{color:#b00020}.m{color:#666}</style></head>
+<body><h1>Tribune : textes publiés</h1>
+<form id="k"><input id="key" type="password" placeholder="Clé admin" autocomplete="current-password" required> <button>Voir</button> <span id="e" class="del"></span></form>
+<table id="t" hidden><thead><tr><th>Date</th><th>Titre</th><th>Auteur / email</th><th>Mots</th><th></th></tr></thead><tbody></tbody></table>
+<script>
+var U='https://tucpoqyxtbxqqwtjmyqk.supabase.co/rest/v1/rpc/',K='sb_publishable_AUE4MfiPR88DXuiY1FP9fg_pbHRWUUb',key='';
+function rpc(n,b){return fetch(U+n,{method:'POST',headers:{'Content-Type':'application/json',apikey:K,Authorization:'Bearer '+K},body:JSON.stringify(b)}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function load(){rpc('marge_admin_list',{p_key:key}).then(function(rows){
+ document.getElementById('e').textContent='';document.getElementById('t').hidden=false;
+ var tb=document.querySelector('#t tbody');tb.innerHTML=rows.length?'':'<tr><td colspan=5 class=m>Aucun texte.</td></tr>';
+ rows.forEach(function(r){var tr=document.createElement('tr');
+  tr.innerHTML='<td>'+esc((r.published_at||'').slice(0,10))+'</td><td><a target=_blank href="'+(r.lang==='en'?'/en/community/':'/fr/tribune/')+esc(r.slug)+'">'+esc(r.title)+'</a></td><td>'+esc(r.author_name)+'<br><span class=m>'+esc(r.author_email)+'</span></td><td>'+r.words+'</td><td><button class=del>Supprimer</button></td>';
+  tr.querySelector('button').onclick=function(){if(!confirm('Supprimer ce texte ?'))return;rpc('marge_admin_delete',{p_key:key,p_id:r.id}).then(load)};tb.appendChild(tr)})
+}).catch(function(){document.getElementById('e').textContent='Clé invalide.';document.getElementById('t').hidden=true})}
+document.getElementById('k').onsubmit=function(e){e.preventDefault();key=document.getElementById('key').value;load()};
+</script></body></html>
