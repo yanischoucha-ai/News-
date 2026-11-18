@@ -46,6 +46,21 @@
     <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/ia-pour-artisans-comment-se-lancer"/>
   </url>
 
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/investir-location-courte-duree-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/investir-location-courte-duree-2026"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/fr/7-outils-ia-business-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="DOMAIN_PLACEHOLDER/fr/7-outils-ia-business-2026"/>
+  </url>
+
   <!-- Articles EN -->
   <url>
     <loc>DOMAIN_PLACEHOLDER/en/airbnb-host-concierge-app-2026</loc>
@@ -60,6 +75,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/ai-for-hvac-plumbing-contractors"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/airbnb-host-plateau-3-listings</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/airbnb-host-plateau-3-listings"/>
+  </url>
+  <url>
+    <loc>DOMAIN_PLACEHOLDER/en/honest-guide-ai-tools-contractors-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="DOMAIN_PLACEHOLDER/en/honest-guide-ai-tools-contractors-2026"/>
   </url>
 
 </urlset>
