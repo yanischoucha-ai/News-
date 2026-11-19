@@ -120,3 +120,7 @@ Un article doit se lire comme écrit par quelqu'un qui connaît le terrain et pr
 - **Interdits** : les tournures passe-partout (« dans un monde où », « il est important de noter », « en conclusion », « plongeons dans », « un véritable game changer », « à l'ère du numérique »), les listes de trois adjectifs, les ouvertures et conclusions motivationnelles, les répétitions de la question, les « Voici X conseils » sans contenu.
 - **Aucune fausse expérience** : jamais de « j'ai testé », « dans mon agence », « un client m'a dit » inventés, et aucun faux auteur ni faux témoignage. Le texte est signé du média ; les témoignages cités viennent de sources publiques avec lien. Ne pas chercher à imiter un humain précis, chercher à être utile et précis.
 - **Relecture finale** : relire à voix haute mentalement ; si une phrase pourrait figurer dans n'importe quel article du même sujet, la remplacer par un fait précis ou la supprimer.
+
+## 11. Date visible sur chaque article (consigne permanente du propriétaire)
+
+Chaque article affiche sa date de publication : `new-article.js` l'écrit dans l'en-tête (`article-date`), dans le JSON-LD (`datePublished`, `dateModified`), dans « Citer cet article » et sur les cartes du site. Toujours renseigner `date` (jour d'exécution) ; ne jamais la laisser vide ni la modifier à la main. En cas de réécriture, renseigner `modified`. Le fonctionnement est 100 % autonome : aucune validation humaine, publication, commit et push chaque jour sans demander d'accord.
