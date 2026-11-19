@@ -244,16 +244,52 @@ html.mh-lock, html.mh-lock body { overflow: hidden; }
 .s-cat-head {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 1.2rem;
+  padding: 3rem 1.5rem 2rem;
+  background: none;
+  color: var(--ink);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
 }
+.s-cat-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ac);
+  margin-bottom: .9rem;
+}
+.s-cat-kicker::before { content: ""; width: 1.6rem; height: 2px; background: var(--ac); }
 .s-cat-head h1 {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-  letter-spacing: -.025em;
+  font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
   color: var(--ink);
+  margin: 0;
 }
-.s-cat-head p { color: var(--ink2); max-width: 600px; font-size: 1.05rem; line-height: 1.55; margin-top: .5rem; }
+.s-cat-head p {
+  font-family: var(--serif);
+  color: var(--ink2);
+  max-width: 640px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  margin: 1rem 0 0;
+}
+.s-cat-meta { display: block; margin-top: 1.2rem; font-size: .78rem; color: var(--muted); }
+
+/* grille d'articles : cartes séparées (pas de cellules grises vides) */
+.j-grid { gap: 1rem; background: none; border: 0; border-radius: 0; overflow: visible; }
+.j-grid .j-item { border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; transition: border-color .15s, background .15s; }
+.j-grid .j-item:last-child { border-bottom: 1px solid var(--border); }
+.j-grid .j-item:hover { border-color: var(--ac); background: var(--bg); }
+.s-section { margin: 0 auto; }
+.s-section + .s-section { padding-top: 2.75rem; }
+@media (max-width: 860px) { .s-cat-head { padding: 2rem 1.25rem 1.5rem; } }
+
 .s-section { max-width: 1200px; padding: 1rem 1.5rem 0; }
 .s-h2 { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-top: 2px solid var(--ink); padding-top: .6rem; }
 .s-upcoming li { font-size: 1rem; }
@@ -524,3 +560,6 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 2rem; }
   .mh-burger-txt { display: none; }
   .mh-burger { padding: 0 .85rem; }
 }
+.s-upcoming li { align-items: baseline; }
+.s-upcoming li > * { margin: 0; padding: 0; }
+@media (max-width: 860px) { .s-upcoming li { flex-direction: column; gap: .15rem; padding: .8rem 0; } .s-upcoming time { flex: none; } }

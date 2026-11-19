@@ -230,7 +230,9 @@ function buildCategory(lang, cat, schedule, published) {
   const list = published.filter((a) => a.lang === lang && a.cat === cat.id);
   const today = parisToday();
   const next = schedule.filter((a) => !a.slug && a.lang === lang && a.cat === cat.id && a.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3);
-  const body = `<header class="s-cat-head"><h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p></header>
+  const n = list.length;
+  const countTxt = lang === 'fr' ? `${n} article${n > 1 ? 's' : ''} publié${n > 1 ? 's' : ''}` : `${n} article${n > 1 ? 's' : ''} published`;
+  const body = `<header class="s-cat-head"><span class="s-cat-kicker">${lang === 'fr' ? 'Rubrique' : 'Section'}</span><h1>${esc(c.name)}</h1><p>${esc(c.desc)}</p><span class="s-cat-meta">${countTxt}${next.length ? ` · ${lang === 'fr' ? 'prochain le' : 'next on'} ${fmt(next[0].date, lang)}` : ''}</span></header>
 <section class="s-section">
 ${list.length ? `<div class="j-grid">${list.map((a) => jItem(a, lang, true)).join('')}</div>` : `<p class="s-empty">${esc(t.emptyCat)}</p>`}
 </section>
