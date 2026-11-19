@@ -65,6 +65,22 @@ Le script refuse l'article (exit 1 + liste d'erreurs) en cas de tournure génér
 
 `bodyHtml` : uniquement `h2`, `h3`, `p`, `ul`, `ol`, `blockquote`, `table`, `div.article-callout`. Un `id` sur chaque `h2`. Sources citées en ligne avec `<a href>`. Pas de `<h1>`.
 
+## 5 bis. Photo d'illustration (une par article, obligatoire)
+
+Consigne du propriétaire : **jamais d'image générée par IA, jamais d'image prise sur Google Images ou un site tiers**. Uniquement des photos libres de droits d'Unsplash (licence Unsplash gratuite), créditées.
+
+1. Chercher avec l'outil Firecrawl `firecrawl_scrape`, format `links`, sur `https://unsplash.com/s/photos/<mots-cles-en-anglais>?license=free&orientation=landscape`. Choisir une photo concrète et liée au sujet (un métier, un lieu, un objet du quotidien du lecteur), sans logo de marque visible, et différente des photos déjà utilisées dans `assets/data/images.json`.
+2. Ouvrir la page de la photo avec `firecrawl_scrape` (format `markdown`, `includeTags: ["h1"]`, c'est moins cher). Vérifier que le titre de la page contient « Free Photo on Unsplash » (sinon c'est Unsplash+, payant : en prendre une autre). Relever dans les métadonnées l'identifiant `photo-…` (dans `og:image`), le nom du photographe (`og:title` : « Photo by X on Unsplash ») et son profil (`twitter:creator` → `https://unsplash.com/@…`).
+3. Télécharger deux tailles (le nom de fichier est le slug sans `.html`) :
+   ```
+   curl -sfL -o assets/img/articles/<slug>.jpg    "https://images.unsplash.com/<photo-id>?w=1600&h=900&fit=crop&crop=entropy&q=72&fm=jpg"
+   curl -sfL -o assets/img/articles/<slug>-sm.jpg "https://images.unsplash.com/<photo-id>?w=720&h=405&fit=crop&crop=entropy&q=72&fm=jpg"
+   ```
+4. Ajouter l'entrée dans `assets/data/images.json` (clé = slug complet, ex. `/fr/mon-article.html`) : `photo`, `page` (URL de la page Unsplash), `author`, `authorUrl`, `alt` `{ "fr": …, "en": … }` décrivant ce qu'on voit réellement sur la photo.
+5. `node scripts/update-editorial-clock.js` affiche alors la photo sur l'accueil, les rubriques et l'article, avec le crédit « Photo : Auteur / Unsplash » sous l'image, et l'ajoute en `og:image` pour les partages.
+
+Si Unsplash ne répond pas, publier l'article sans photo (le site le gère) et le signaler dans le compte rendu, plutôt que de prendre une image d'une autre origine.
+
 ## 6. Mise à jour du site et commit
 
 ```

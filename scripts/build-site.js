@@ -19,6 +19,29 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const prettyUrl = (slug) => slug.replace(/\.html$/, '');
 const catById = (id) => CATS.find((c) => c.id === id) || CATS[0];
 
+// ── Images d'illustration (assets/data/images.json, photos libres de droits créditées) ──
+const IMAGES = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/data/images.json'), 'utf8')); } catch (e) { return {}; } })();
+const imgOf = (slug) => {
+  const v = IMAGES[slug];
+  if (!v) return null;
+  const base = path.basename(slug, '.html');
+  const big = `/assets/img/articles/${base}.jpg`;
+  const sm = `/assets/img/articles/${base}-sm.jpg`;
+  if (!fs.existsSync(path.join(ROOT, big.slice(1)))) return null;
+  return { ...v, big, sm: fs.existsSync(path.join(ROOT, sm.slice(1))) ? sm : big };
+};
+const altOf = (im, lang) => (im.alt && (im.alt[lang] || im.alt.fr || im.alt.en)) || '';
+const thumb = (a, lang, cls = 'j-thumb', size = 'sm', eager = false) => {
+  const im = imgOf(a.slug);
+  if (!im) return '';
+  return `<span class="${cls}"><img src="${size === 'big' ? im.big : im.sm}" alt="${esc(altOf(im, lang))}" width="${size === 'big' ? 1600 : 720}" height="${size === 'big' ? 900 : 405}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></span>`;
+};
+const creditHtml = (im, lang) => {
+  const src = im.source || 'Unsplash';
+  const srcUrl = im.page || 'https://unsplash.com';
+  return `${lang === 'fr' ? 'Photo' : 'Photo'} : <a href="${esc(im.authorUrl || srcUrl)}" rel="noopener">${esc(im.author)}</a> / <a href="${esc(srcUrl)}" rel="noopener">${esc(src)}</a>`;
+};
+
 // ── Données ──────────────────────────────────────────────────────────────────
 function readSchedule() {
   const src = fs.readFileSync(path.join(ROOT, 'assets/js/editorial-clock.js'), 'utf8');
@@ -174,7 +197,7 @@ ${body.includes('au-form') ? '<script src="/assets/js/author.js" defer></script>
 `;
 }
 
-const jItem = (a, lang, withDesc) => `<a class="j-item" href="${prettyUrl(a.slug)}"><span class="j-kicker">${esc(catById(a.cat)[lang].name)}</span><h3>${esc(a.title)}</h3>${withDesc && a.desc ? `<p>${esc(a.desc)}</p>` : ''}<span class="j-meta">${fmt(a.date, lang)}${a.min ? ` · ${a.min} ${T[lang].readMin}` : ''}</span></a>`;
+const jItem = (a, lang, withDesc) => `<a class="j-item${imgOf(a.slug) ? ' has-img' : ''}" href="${prettyUrl(a.slug)}">${thumb(a, lang)}<span class="j-kicker">${esc(catById(a.cat)[lang].name)}</span><h3>${esc(a.title)}</h3>${withDesc && a.desc ? `<p>${esc(a.desc)}</p>` : ''}<span class="j-meta">${fmt(a.date, lang)}${a.min ? ` · ${a.min} ${T[lang].readMin}` : ''}</span></a>`;
 
 
 const parisToday = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Paris' });
@@ -210,7 +233,7 @@ function buildLangIndex(lang, published, schedule) {
   const lead = list[0];
   const side = list.slice(1, 5);
   const rest = list.slice(5);
-  const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}"><span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
+  const leadHtml = lead ? `<a class="j-lead" href="${prettyUrl(lead.slug)}">${thumb(lead, lang, 'j-lead-img', 'big', true)}<span class="j-kicker">${esc(catById(lead.cat)[lang].name)}</span><h2>${esc(lead.title)}</h2>${lead.desc ? `<p>${esc(lead.desc)}</p>` : ''}<span class="j-meta">${fmt(lead.date, lang)}${lead.min ? ` · ${lead.min} ${t.readMin}` : ''}</span></a>` : '';
   const catSecs = rest.length ? `<section class="j-sec"><div class="j-sec-h"><h2>${esc(m.all)}</h2></div><div class="j-grid">${rest.slice(0, 12).map((a) => jItem(a, lang, true)).join('')}</div></section>` : '';
   const body = `<a class="j-daily" href="#calendrier"><span class="j-daily-dot" aria-hidden="true"></span><strong>${esc(m.calH)}</strong><span class="j-daily-sub">${esc(m.dailySub)}</span></a>
 <div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
@@ -280,6 +303,15 @@ function processArticle(file, lang) {
     html = html.replace(/"publisher": \{[^}]*\}/, `"publisher": { "@type": "Organization", "name": "${BRAND}", "url": "${DOMAIN}" }`);
     html = html.replace(/<p class="meta">(ALTURA|Résidence Manager) ·/, lang === 'fr' ? `<p class="meta">Rédaction ${BRAND} ·` : `<p class="meta">${BRAND} Newsroom ·`);
   }
+  // photo d'illustration + og:image (assets/data/images.json)
+  const slug = '/' + lang + '/' + path.basename(file);
+  const im = imgOf(slug);
+  if (im) {
+    const fig = `<figure class="article-hero"><img src="${im.big}" alt="${esc(altOf(im, lang))}" width="1600" height="900" fetchpriority="high" decoding="async"><figcaption>${creditHtml(im, lang)}</figcaption></figure>`;
+    html = setBlock(html, 'IMG', fig, (h, b) => h.replace(/(<header class="article-header">[\s\S]*?<\/header>)/, (m) => `${m}\n      ${b}`));
+    const og = `<meta property="og:image" content="${DOMAIN}${im.big}">\n  <meta property="og:image:width" content="1600">\n  <meta property="og:image:height" content="900">\n  <meta property="og:image:alt" content="${esc(altOf(im, lang))}">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${DOMAIN}${im.big}">`;
+    html = setBlock(html, 'OGIMG', og, (h, b) => h.replace('</head>', () => `  ${b}\n</head>`));
+  }
   html = fixFonts(html);
   html = html.replace(/\n?<footer>\s*<p>&copy;[\s\S]*?<\/footer>\n?/, '\n');
   const head = nav(lang, alt, null);
@@ -300,6 +332,7 @@ function buildHome(published) {
   const en = published.filter((a) => a.lang === 'en');
   const picks = [fr[0], en[0], fr[1], en[1]].filter(Boolean);
   const feat = picks.map((a, i) => `<a class="featured-card${i === 0 ? ' big' : ''}" href="${prettyUrl(a.slug)}">
+  ${thumb(a, a.lang, 'card-img', i === 0 ? 'big' : 'sm', i === 0)}
   <div class="card-tag">${esc(catById(a.cat)[a.lang].name)} · ${a.lang.toUpperCase()}</div>
   <h3>${esc(a.title)}</h3>
   ${a.desc ? `<p>${esc(a.desc)}</p>` : ''}
