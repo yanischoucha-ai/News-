@@ -34,8 +34,8 @@
 
     // ── SEMAINE 47 (19–22 nov) ───────────────────────────────────────────────
     // Jeu 19 — Contractors & artisans
-    { date: "2026-11-19", title: "Artisan : comment répondre à chaque devis sans perdre 2h par jour", lang: "fr", slug: null, tag: "Artisans" },
-    { date: "2026-11-19", title: "The Contractor's Guide to Google Reviews in 2026", lang: "en", slug: null, tag: "Contractors" },
+    { date: "2026-11-19", title: "Devis : répondre dans l'heure sans y passer 2 h par jour (calcul et gabarit)", lang: "fr", slug: "/fr/devis-repondre-vite-sans-y-passer-2h-par-jour.html", tag: "Artisans", cat: "artisans", min: 8, desc: "Un point de taux de signature vaut 390 € de marge par mois sur 20 devis à 6 500 €. Le calcul à refaire, le devis d'une page conforme et deux messages à copier." },
+    { date: "2026-11-19", title: "Contractor Google Reviews in 2026: The Rating Math and What Google Now Removes", lang: "en", slug: "/en/contractor-google-reviews-2026-rating-math-policy.html", tag: "Contractors", cat: "artisans", min: 7, desc: "BrightLocal's 2026 survey says 47% skip businesses under 20 reviews. How many reviews lift 4.3 to 4.5, what Google bars you from asking, and what changed this fall." },
     // Ven 20 — Tech & outils productivité
     { date: "2026-11-20", title: "Extensions Chrome pour indépendants : les 5 qui font gagner du temps, et comment le mesurer", lang: "fr", slug: null, tag: "Productivité" },
     { date: "2026-11-20", title: "5 Chrome Extensions That Save Entrepreneurs an Hour Every Day", lang: "en", slug: null, tag: "Productivity" },
