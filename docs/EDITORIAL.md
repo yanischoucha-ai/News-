@@ -35,6 +35,16 @@ Formats : un **calculateur** (page HTML statique avec JavaScript intégré, sans
 
 Règles : chaque paramètre par défaut est présenté comme un exemple modifiable, avec sa source ou la mention « exemple, à remplacer par vos chiffres » ; aucune donnée inventée présentée comme réelle ; la méthode de calcul est expliquée sous l'outil avec 3 sources dont une primaire ; l'outil est testé (cas de calcul vérifiés à la main) avant publication ; page responsive, accessible, avec date de mise à jour ; ajoutée au sitemap, liée depuis la page du pilier concerné et depuis l'accueil. Un seul lien de réseau contextuel au plus, selon les règles de `docs/PRODUITS.md` ; l'outil doit rester pleinement utile sans lui. Si la qualité n'est pas au niveau, ne rien publier et le noter dans le journal.
 
+## Recherche, chiffres et actualité (exigence centrale, vérifiée chaque jour par le manager)
+
+Un article de ce média vaut par ce qu'il apprend au lecteur. Sans recherche réelle, on n'écrit pas :
+- **Recherche d'abord** : avant d'écrire, lire les sources (pages officielles, textes de loi, études, pages tarifs, changelogs), pas seulement leurs résumés. Au moins 3 sources, dont une primaire, ouvertes et lues pendant l'exécution.
+- **Des chiffres vérifiables** : chaque article porte plusieurs données chiffrées précises (montant, taux, seuil, date, taille d'échantillon), chacune rattachée à sa source et à sa date. Un chiffre sans source ou invention est supprimé. Un calcul refaisable par le lecteur avec ses propres données figure dans chaque article.
+- **Tenir le lecteur au courant** : chaque article signale au moins un changement ou une nouveauté datés des 60 derniers jours (loi, taux, tarif, fonctionnalité, étude) et dit ce que cela change concrètement pour le lecteur cette semaine. Les articles déjà publiés dont un chiffre ou une règle a changé sont mis à jour par le manager, avec la date de mise à jour visible.
+- **Dire les limites** : quand les sources divergent ou qu'une étude est biaisée, donner la fourchette et l'explication plutôt qu'un chiffre unique.
+
+Le manager de 8h relit chaque jour les articles du jour et quelques anciens selon ce critère. Un article qui ne le respecte pas est amélioré avant toute autre chose, ou mis en `noindex` s'il est irrécupérable.
+
 ## 0. Préparation
 
 1. `cd /home/claude/news-` (sinon `git clone https://github.com/yanischoucha-ai/News-.git /home/claude/news-`), puis `git pull --rebase origin main`.
