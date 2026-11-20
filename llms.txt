@@ -13,6 +13,7 @@
 - Social media & branding: Algorithms, frequency, formats: what the data says, not the gurus.
 
 ## Articles (English)
+- [Heat pump for a UK rental or short-let: the £7,500 grant won't fix a 3.3-to-1 price gap](https://www.margebrief.com/en/heat-pump-rental-uk-price-cap-ratio-2026): On mains gas a heat pump saves about £48 a year at the Ofgem cap and needs an SPF above 2.77. Where the £7,500 grant pays back, and what ends 31 March 2027.
 - [Contractor Google Reviews in 2026: The Rating Math and What Google Now Removes](https://www.margebrief.com/en/contractor-google-reviews-2026-rating-math-policy): BrightLocal's 2026 survey says 47% skip businesses under 20 reviews. How many reviews lift 4.3 to 4.5, what Google bars you from asking, and what changed this fall.
 - [Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)](https://www.margebrief.com/en/airbnb-host-plateau-3-listings): The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall.
 - [The Honest Guide to AI Tools for Small Contractors in 2026](https://www.margebrief.com/en/honest-guide-ai-tools-contractors-2026): What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers.
@@ -20,6 +21,7 @@
 - [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://www.margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
 
 ## Articles (Français)
+- [Meublé de tourisme classé F : la pompe à chaleur se rembourse en 4 à 10 ans, mais sans MaPrimeRénov'](https://www.margebrief.com/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027): DPE F ou G en meublé de tourisme : calendrier 2025-2034, fin annoncée des aides au 1er janvier 2027, calcul de retour sur investissement refaisable.
 - [Devis : répondre dans l'heure sans y passer 2 h par jour (calcul et gabarit)](https://www.margebrief.com/fr/devis-repondre-vite-sans-y-passer-2h-par-jour): Un point de taux de signature vaut 390 € de marge par mois sur 20 devis à 6 500 €. Le calcul à refaire, le devis d'une page conforme et deux messages à copier.
 - [Faut-il encore investir en location courte durée en 2026 ?](https://www.margebrief.com/fr/investir-location-courte-duree-2026): La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve.
 - [Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer](https://www.margebrief.com/fr/7-outils-ia-business-2026): Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant.
