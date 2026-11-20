@@ -20,6 +20,7 @@ Le média est une référence business utile aux lecteurs d'abord. Il a 3 pilier
 - Le vendredi n'est plus « Tech & outils / développement durable » : c'est le pilier SaaS. Le sujet « durable » n'existe que s'il sert directement les hôtes (rénovation d'un meublé), le mercredi.
 - Si le titre planifié d'une entrée du SCHEDULE sort du pilier du jour, retitre-le dans l'esprit du pilier et renseigne `cat` explicitement (lundi `airbnb`, mardi et jeudi `artisans`, mercredi `immobilier`, vendredi `tech`, samedi `business`, dimanche `social`).
 - La valeur passe avant tout : l'article doit rester utile et complet si on retire toute mention de produit. Pas de site « de pub » : le propriétaire et ses produits sont nommés sur la page À propos, et les liens suivent PRODUITS.md (un seul lien contextuel, environ 2 articles sur 3, transparence naturelle quand un outil est présenté).
+- Le site doit faire venir des clients aux 3 produits : le bilan hebdomadaire du manager (dimanche) liste les articles et contenus phares qui portent un lien de réseau avec leur suivi (`utm_campaign`), signale ceux dont le lien est mal placé ou jamais pertinent, et rappelle que les visites se lisent dans les statistiques de chaque produit.
 - Qualité avant volume : un article générique, répétitif ou sans donnée sourcée n'est pas publié.
 
 
