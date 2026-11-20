@@ -277,10 +277,6 @@ ${contactForm('en')}`,
 };
 
 // Articles mis en noindex tant qu'ils n'ont pas été réécrits au niveau des règles actuelles (docs/EDITORIAL.md)
-const NOINDEX = [
-  '/fr/investir-location-courte-duree-2026.html',
-  '/en/airbnb-host-plateau-3-listings.html',
-  '/en/honest-guide-ai-tools-contractors-2026.html'
-];
+const NOINDEX = [];
 
 module.exports = { BRAND, DOMAIN, YEAR, READERS, CATS, pillarForDate, PAGES, catPath, T, PAGE_CONTENT, NOINDEX };
