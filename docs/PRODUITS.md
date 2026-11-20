@@ -8,7 +8,7 @@ Source : pages officielles des produits (relevées le 18 nov. 2026). Le média e
 
 Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zéro initial). Une mention n'est autorisée que si **toutes** les conditions de sa ligne sont vraies. Sinon : aucune mention, l'article est écrit comme si ces produits n'existaient pas.
 
-| Jour | Produit | Condition FR | Condition EN (marché US/UK) |
+| Jour | Produit | Condition FR | Condition EN (marché US) |
 |---|---|---|---|
 | Lundi | Résidence Manager | W pair | W impair |
 | Mercredi | Résidence Manager | W = 1 modulo 4 (1, 5, 9, 13…), sujet location courte durée ou gestion locative | W = 3 modulo 4 (3, 7, 11, 15…), même condition de sujet |
@@ -18,7 +18,7 @@ Soit W le numéro de semaine ISO de la date de publication (`date +%V`, sans zé
 
 Cette table remplace toute mention « article FR uniquement » d'un prompt de tâche. Résultat attendu : environ 2 à 4 mentions par semaine sur 14 articles, FR et EN alternées. Si la condition de sujet n'est pas remplie, ne pas forcer : pas de mention.
 
-**Règles propres aux mentions EN (honnêteté)** : le média vise aussi les États-Unis et le Royaume-Uni. Vérifié le 18 nov. 2026 avec un navigateur en anglais :
+**Règles propres aux mentions EN (honnêteté)** : le média vise la France (articles FR) et les États-Unis (articles EN) ; le Royaume-Uni n'est pas une cible. Vérifié le 18 nov. 2026 avec un navigateur en anglais :
 - **Résidence Manager** a une version anglaise (la langue suit celle du navigateur, avec un sélecteur FR/EN). Un article EN peut donc mentionner et lier Résidence Manager normalement, sans réserve de langue. Ne jamais affirmer qu'il est « implanté » ou « adopté » aux États-Unis ou au Royaume-Uni, et ne citer que des faits listés dans « Faits autorisés ».
 - **AlturaCom** (https://alturacom-production.odoo.com) était encore en français ce jour-là, et n'a pas de présence commerciale américaine établie sur le site. Dans un article EN, pour AlturaCom : ne jamais affirmer une offre ou une implantation aux États-Unis, ne citer aucun prix ni fonctionnalité qui ne figure pas dans « Faits autorisés », et écrire que le site est actuellement en français (« the site is currently in French »). L'éditeur supprimera cette réserve quand la version anglaise d'AlturaCom sera en ligne.
 - **Maya Pilot** : mêmes règles que dans « Faits autorisés » (statut honnête, rien d'inventé).
@@ -31,7 +31,7 @@ Objectif : la majorité des articles envoient un lien normal vers un site du ré
 - **Variation obligatoire** : avant d'écrire, regarder les liens réseau des 5 derniers articles publiés (`grep -o 'href="https://[^"]*\(residencemanager\|mayapilot\|alturacom\)[^"]*"' fr/*.html en/*.html` avec leur ancre) puis varier : ne pas reprendre la même ancre, ne pas placer le lien dans le même type d'endroit (alterner : exemple dans le corps, outil cité dans une liste, renvoi dans un encadré de méthode, réponse de FAQ), ne pas viser deux fois de suite le même site si le sujet permet de choisir.
 - **Se fondre dans les sources** : quand l'article cite des outils ou des ressources, le lien réseau figure dans une liste de 2 à 4 références **externes réelles** (concurrents, administration, étude), traitées avec la même loyauté et la même longueur. Jamais un lien isolé dans un paragraphe qui parle d'autre chose que de lui-même.
 - **Ton** : aucun vocabulaire commercial (« solution », « découvrez », « essayez », « gagnez du temps »), aucune promesse, aucun appel à l'action. Le lien est un renvoi parmi d'autres, au même registre que les liens vers les sources.
-- **Quel site** selon le sujet : Airbnb, location courte durée, gestion locative, conciergerie, immobilier locatif → https://www.residencemanager.online ; réseaux sociaux, marketing de contenu, SaaS, personal branding → https://mayapilot.com ; artisans, PME, site web, visibilité en ligne, vidéo, IA et automatisation en entreprise, business → https://alturacom-production.odoo.com. Si la mention produit du jour est autorisée et faite, elle tient lieu de lien : n'en ajouter aucun autre.
+- **Quel site** selon le sujet : Airbnb, location courte durée, gestion locative, conciergerie, immobilier locatif → https://www.residencemanager.online ; marketing de contenu et réseaux sociaux d'un éditeur de SaaS, croissance d'un SaaS → https://mayapilot.com ; artisans, PME, site web, visibilité en ligne, vidéo, IA et automatisation en entreprise, business → https://alturacom-production.odoo.com. Si la mention produit du jour est autorisée et faite, elle tient lieu de lien : n'en ajouter aucun autre.
 - **Forme** : lien HTML normal dans une phrase utile (exemple, ressource, outil à tester), sans `rel="nofollow"` ni `rel="sponsored"`, ouvert dans le même onglet. Texte d'ancre descriptif et **varié** d'un article à l'autre (« gestion des départs et du ménage », « un portail voyageur par QR code », « agence de communication digitale »…), jamais « cliquez ici », jamais deux fois la même ancre de suite.
 - **Placement** : dans le corps, à l'endroit où le lecteur en a besoin, pas dans la conclusion ni dans un bloc à part, pas de bouton. Le lien reste un renvoi, pas un argumentaire : pas de superlatif ni de promesse. Les faits sur le produit restent limités à « Faits autorisés ». Un simple lien de référence n'exige pas de mention de l'éditeur dans la phrase (le pied de page indique « Marge Brief est édité par AlturaCom ») ; une phrase qui présente l'outil, elle, garde la transparence naturelle.
 - **Compte rendu** : « backlink : oui/non, URL, ancre ».
@@ -47,6 +47,8 @@ Objectif : la majorité des articles envoient un lien normal vers un site du ré
 
 ## Faits autorisés
 
+Les trois produits sont opérationnels et attendent leurs premiers clients (confirmé par l'éditeur le 21 nov. 2026). On peut donc les décrire au présent, mais jamais citer de clients, de résultats chiffrés, d'avis ou d'études de cas : il n'y en a pas encore.
+
 ### Résidence Manager : https://www.residencemanager.online
 - Plateforme pour hôtes et conciergeries : réunit Airbnb, Booking et le ménage au même endroit.
 - Portail voyageur par QR code posé dans le logement : code d'accès, WiFi, guide du logement, météo, en 5 langues, sans application à télécharger.
@@ -61,7 +63,7 @@ Objectif : la majorité des articles envoient un lien normal vers un site du ré
 - Rien n'est publié sans l'accord de l'utilisateur.
 - Analyse de stratégie gratuite, sans carte ni compte, en environ 2 minutes.
 - Tarifs affichés : à partir de 29 € par mois sans engagement (offre Démarrage), tout compris.
-- Statut honnête à respecter : la publication sur Instagram est **en construction**, Facebook arrive ensuite, le paiement en ligne n'est pas encore ouvert. Ne jamais affirmer que l'outil publie déjà automatiquement.
+- Statut (confirmé par l'éditeur le 21 nov. 2026) : l'outil est opérationnel, y compris la publication, et peut être décrit au présent. Ne rien affirmer au-delà de ce qu'affichent les pages officielles de mayapilot.com ; en cas de doute sur une fonction (Facebook, paiement en ligne), ne pas la citer. Il n'a pas encore de clientèle : aucun client, résultat ou témoignage à citer.
 - Interdit : les chiffres des exemples du site (visiteurs, abonnés, MRR : ils sont fictifs), « Kinélys / Devisimo / Coachéo » comme cas réels, toute promesse de clients gagnés.
 
 ### AlturaCom (AlturaCom) : https://alturacom-production.odoo.com

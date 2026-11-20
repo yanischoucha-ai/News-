@@ -2,6 +2,27 @@
 
 Source unique de vérité pour les 7 tâches planifiées (une par jour de semaine, 7h00 Paris). Chaque exécution produit **2 articles : 1 FR + 1 EN**, avec pour objectif d'être les meilleurs articles possibles sur leur sujet : plus utiles, plus précis et mieux sourcés que ce que le lecteur trouve en première page de Google.
 
+## Piliers éditoriaux (prime sur les rubriques « SPÉCIFIQUE AU JOUR » des prompts de tâche)
+
+Le média est une référence business utile aux lecteurs d'abord. Il a 3 piliers, chacun lié à un produit du réseau (voir PRODUITS.md) ; chaque article appartient à un pilier et à un seul :
+
+| Jour | Pilier | Sujets |
+|---|---|---|
+| Lundi | Hôtes et location courte durée | gestion, conciergerie, rentabilité nette, occupation |
+| Mercredi | Hôtes et location courte durée | réglementation, fiscalité, investissement locatif, rénovation d'un meublé |
+| Mardi | Artisans et petites entreprises de services | appels manqués, devis, IA et automatisation pour artisans |
+| Jeudi | Artisans et petites entreprises de services | tarifs, visibilité, avis Google, outils |
+| Samedi | Artisans et indépendants | statuts, facturation, prix, trésorerie |
+| Vendredi | Marketing des éditeurs de SaaS | contenu, outils, mesure, croissance |
+| Dimanche | Marketing des éditeurs de SaaS | réseaux sociaux, algorithmes, LinkedIn, personal branding |
+
+- Marchés : l'article FR vise la France, l'article EN vise exclusivement les États-Unis. Le Royaume-Uni n'est pas une cible.
+- Le vendredi n'est plus « Tech & outils / développement durable » : c'est le pilier SaaS. Le sujet « durable » n'existe que s'il sert directement les hôtes (rénovation d'un meublé), le mercredi.
+- Si le titre planifié d'une entrée du SCHEDULE sort du pilier du jour, retitre-le dans l'esprit du pilier et renseigne `cat` explicitement (lundi `airbnb`, mardi et jeudi `artisans`, mercredi `immobilier`, vendredi `tech`, samedi `business`, dimanche `social`).
+- La valeur passe avant tout : l'article doit rester utile et complet si on retire toute mention de produit. Pas de site « de pub » : le propriétaire et ses produits sont nommés sur la page À propos, et les liens suivent PRODUITS.md (un seul lien contextuel, environ 2 articles sur 3, transparence naturelle quand un outil est présenté).
+- Qualité avant volume : un article générique, répétitif ou sans donnée sourcée n'est pas publié.
+
+
 ## 0. Préparation
 
 1. `cd /home/claude/news-` (sinon `git clone https://github.com/yanischoucha-ai/News-.git /home/claude/news-`), puis `git pull --rebase origin main`.
