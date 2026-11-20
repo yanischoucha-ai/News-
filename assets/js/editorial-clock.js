@@ -7,7 +7,7 @@
 (function () {
   // ─── PLANNING ÉDITORIAL ───────────────────────────────────────────────────
   // Chaque entrée : { date: "YYYY-MM-DD", title, lang, slug, tag, cat, min, desc }
-  // cat = airbnb|ia|immobilier|artisans|tech|durable|business|social (défaut : selon le jour de la semaine) ; min = minutes de lecture ; desc = résumé 1-2 phrases (cartes, listes)
+  // cat = hotes|artisans|saas (3 piliers) ; si absent : selon le jour (voir ci-dessous). min = minutes de lecture ; desc = résumé 1-2 phrases (cartes, listes)
   // La scheduled task met à jour ce tableau en ajoutant les nouvelles entrées
   // ── PILIERS PAR JOUR (FR = France, EN = États-Unis uniquement) ────────────
   // Lun: Hôtes & location courte durée → residencemanager.online
@@ -21,15 +21,15 @@
   const SCHEDULE = [
     // ── PUBLIÉS ──────────────────────────────────────────────────────────────
     // Mardi 10 nov (IA)
-    { date: "2026-11-10", title: "Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie", cat: "airbnb", min: 6, desc: "À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures." },
-    { date: "2026-11-10", title: "Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb", cat: "airbnb", min: 5, desc: "Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe." },
+    { date: "2026-11-10", title: "Conciergerie Airbnb à 20 % ou gestion directe : le calcul qui tranche en 2026", lang: "fr", slug: "/fr/automatiser-conciergerie-airbnb.html", tag: "Conciergerie", cat: "hotes", min: 6, desc: "À 20 % de commission, une conciergerie doit faire passer l'occupation de 65 à 81 % pour battre la gestion directe. Calcul, coûts d'outils et seuil d'heures." },
+    { date: "2026-11-10", title: "Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss", lang: "en", slug: "/en/airbnb-host-concierge-app-2026.html", tag: "Airbnb", cat: "hotes", min: 5, desc: "Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe." },
     // Mercredi 11 nov (Immobilier)
     { date: "2026-11-11", title: "IA et artisans : par où commencer quand 27 % seulement s'y mettent", lang: "fr", slug: "/fr/ia-pour-artisans-comment-se-lancer.html", tag: "IA & PME", cat: "artisans", min: 5, desc: "27 % des artisans utilisent l'IA, moins de 10 % dans le BTP : les trois usages à tester d'abord, le calcul de gain à refaire et les règles CNIL sur les appels." },
     { date: "2026-11-11", title: "Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist", lang: "en", slug: "/en/ai-for-hvac-plumbing-contractors.html", tag: "AI", cat: "artisans", min: 4, desc: "HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices." },
     // Mardi 18 nov (IA + Immobilier)
-    { date: "2026-11-18", title: "Faut-il encore investir en location courte durée en 2026 ?", lang: "fr", slug: "/fr/investir-location-courte-duree-2026.html", tag: "Immobilier", cat: "immobilier", min: 7, desc: "La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve." },
-    { date: "2026-11-18", title: "Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA", cat: "ia", min: 4, desc: "Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant." },
-    { date: "2026-11-18", title: "Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)", lang: "en", slug: "/en/airbnb-host-plateau-3-listings.html", tag: "Airbnb", cat: "airbnb", min: 7, desc: "The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall." },
+    { date: "2026-11-18", title: "Faut-il encore investir en location courte durée en 2026 ?", lang: "fr", slug: "/fr/investir-location-courte-duree-2026.html", tag: "Immobilier", cat: "hotes", min: 7, desc: "La LCD traverse une crise réglementaire. Mais certains profils s'en sortent très bien. On regarde les chiffres en face, sans vous vendre du rêve." },
+    { date: "2026-11-18", title: "Outils IA pour un petit business : les prix publiés et l'ordre dans lequel les essayer", lang: "fr", slug: "/fr/7-outils-ia-business-2026.html", tag: "Tech & IA", cat: "saas", min: 4, desc: "Prix lus sur les pages des éditeurs (Claude, Otter, Make, Tidio, Notion), coût d'une pile complète à 81 $ par mois et ordre d'essai du moins au plus engageant." },
+    { date: "2026-11-18", title: "Why Most Airbnb Hosts Plateau at 3 Listings (And How to Break Through)", lang: "en", slug: "/en/airbnb-host-plateau-3-listings.html", tag: "Airbnb", cat: "hotes", min: 7, desc: "The 3-listing wall is real. It's not about motivation or market. It's about systems, and here's the honest breakdown of why hosts stall." },
     { date: "2026-11-18", title: "The Honest Guide to AI Tools for Small Contractors in 2026", lang: "en", slug: "/en/honest-guide-ai-tools-contractors-2026.html", tag: "AI Tools", cat: "artisans", min: 8, desc: "What actually works for HVAC, plumbing, and electrical contractors, and what's just hype. No affiliate links, just real ROI numbers." },
 
     // ── SEMAINE 47 (19–22 nov) ───────────────────────────────────────────────
@@ -37,83 +37,82 @@
     { date: "2026-11-19", title: "Devis : répondre dans l'heure sans y passer 2 h par jour (calcul et gabarit)", lang: "fr", slug: "/fr/devis-repondre-vite-sans-y-passer-2h-par-jour.html", tag: "Artisans", cat: "artisans", min: 8, desc: "Un point de taux de signature vaut 390 € de marge par mois sur 20 devis à 6 500 €. Le calcul à refaire, le devis d'une page conforme et deux messages à copier." },
     { date: "2026-11-19", title: "Contractor Google Reviews in 2026: The Rating Math and What Google Now Removes", lang: "en", slug: "/en/contractor-google-reviews-2026-rating-math-policy.html", tag: "Contractors", cat: "artisans", min: 7, desc: "BrightLocal's 2026 survey says 47% skip businesses under 20 reviews. How many reviews lift 4.3 to 4.5, what Google bars you from asking, and what changed this fall." },
     // Ven 20 — Tech & outils productivité
-    { date: "2026-11-20", title: "Meublé de tourisme classé F : la pompe à chaleur se rembourse en 4 à 10 ans, mais sans MaPrimeRénov'", lang: "fr", slug: "/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027.html", tag: "Durable", cat: "durable", min: 9, desc: "DPE F ou G en meublé de tourisme : calendrier 2025-2034, fin annoncée des aides au 1er janvier 2027, calcul de retour sur investissement refaisable." },
-    { date: "2026-11-20", title: "Heat pump for a UK rental or short-let: the £7,500 grant won't fix a 3.3-to-1 price gap", lang: "en", slug: "/en/heat-pump-rental-uk-price-cap-ratio-2026.html", tag: "Sustainability", cat: "durable", min: 7, desc: "On mains gas a heat pump saves about £48 a year at the Ofgem cap and needs an SPF above 2.77. Where the £7,500 grant pays back, and what ends 31 March 2027." },
+    { date: "2026-11-20", title: "Meublé de tourisme classé F : la pompe à chaleur se rembourse en 4 à 10 ans, mais sans MaPrimeRénov'", lang: "fr", slug: "/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027.html", tag: "Durable", cat: "hotes", min: 9, desc: "DPE F ou G en meublé de tourisme : calendrier 2025-2034, fin annoncée des aides au 1er janvier 2027, calcul de retour sur investissement refaisable." },
     // Sam 21 — Business & entrepreneuriat
-    { date: "2026-11-21", title: "Micro-entreprise ou SASU : le calcul à faire avant de choisir (barèmes 2026)", lang: "fr", slug: null, tag: "Business", cat: "business" },
-    { date: "2026-11-21", title: "Sole Trader vs LLC: What American Contractors Actually Need to Know", lang: "en", slug: null, tag: "Business", cat: "business" },
+    { date: "2026-11-21", title: "Micro-entreprise ou SASU : le calcul à faire avant de choisir (barèmes 2026)", lang: "fr", slug: null, tag: "Business" },
+    { date: "2026-11-21", title: "Sole Trader vs LLC: What American Contractors Actually Need to Know", lang: "en", slug: null, tag: "Business" },
     // Dim 22 — Réseaux sociaux → MayaPilot
-    { date: "2026-11-22", title: "Community management d'un SaaS : combien publier par semaine avant que l'engagement baisse ?", lang: "fr", slug: null, tag: "Réseaux sociaux", cat: "social" },
-    { date: "2026-11-22", title: "How Often Should a SaaS Post on Social Media? What the Engagement Data Shows", lang: "en", slug: null, tag: "Social Media", cat: "social" },
+    { date: "2026-11-22", title: "Community management d'un SaaS : combien publier par semaine avant que l'engagement baisse ?", lang: "fr", slug: null, tag: "Réseaux sociaux" },
+    { date: "2026-11-22", title: "How Often Should a SaaS Post on Social Media? What the Engagement Data Shows", lang: "en", slug: null, tag: "Social Media" },
 
     // ── SEMAINE 48 (23–29 nov) ───────────────────────────────────────────────
     // Lun 23 — Airbnb & gestion locative → residencemanager.online
-    { date: "2026-11-23", title: "Comment gérer 5 logements Airbnb seul en 2026 (sans agence)", lang: "fr", slug: null, tag: "Gestion locative", cat: "airbnb" },
-    { date: "2026-11-23", title: "How to Manage 5 Airbnb Listings Solo in 2026 (Without an Agency)", lang: "en", slug: null, tag: "Airbnb Management", cat: "airbnb" },
+    { date: "2026-11-23", title: "Comment gérer 5 logements Airbnb seul en 2026 (sans agence)", lang: "fr", slug: null, tag: "Gestion locative" },
+    { date: "2026-11-23", title: "How to Manage 5 Airbnb Listings Solo in 2026 (Without an Agency)", lang: "en", slug: null, tag: "Airbnb Management" },
     // Mar 24 — IA & automatisation
-    { date: "2026-11-24", title: "Relances de devis automatiques pour artisans : Make, Zapier ou à la main ? Le calcul", lang: "fr", slug: null, tag: "Automatisation", cat: "artisans" },
-    { date: "2026-11-24", title: "Automating Quote Follow-Ups for Contractors: Zapier vs Make vs Doing It by Hand", lang: "en", slug: null, tag: "Automation", cat: "artisans" },
+    { date: "2026-11-24", title: "Relances de devis automatiques pour artisans : Make, Zapier ou à la main ? Le calcul", lang: "fr", slug: null, tag: "Automatisation" },
+    { date: "2026-11-24", title: "Automating Quote Follow-Ups for Contractors: Zapier vs Make vs Doing It by Hand", lang: "en", slug: null, tag: "Automation" },
     // Mer 25 — Immobilier → residencemanager.online
-    { date: "2026-11-25", title: "Loi Le Meur 2026 : ce qui change vraiment pour les hôtes Airbnb", lang: "fr", slug: null, tag: "Réglementation", cat: "immobilier" },
-    { date: "2026-11-25", title: "France's New Airbnb Regulations in 2026: What Every Host Needs to Know", lang: "en", slug: null, tag: "Regulation", cat: "immobilier" },
+    { date: "2026-11-25", title: "Loi Le Meur 2026 : ce qui change vraiment pour les hôtes Airbnb", lang: "fr", slug: null, tag: "Réglementation" },
+    { date: "2026-11-25", title: "France's New Airbnb Regulations in 2026: What Every Host Needs to Know", lang: "en", slug: null, tag: "Regulation" },
     // Jeu 26 — Contractors & artisans
-    { date: "2026-11-26", title: "Plombier, électricien : comment fixer ses tarifs sans perdre des clients", lang: "fr", slug: null, tag: "Artisans", cat: "artisans" },
-    { date: "2026-11-26", title: "How to Price Your Trade Services Without Losing Jobs in 2026", lang: "en", slug: null, tag: "Contractors", cat: "artisans" },
+    { date: "2026-11-26", title: "Plombier, électricien : comment fixer ses tarifs sans perdre des clients", lang: "fr", slug: null, tag: "Artisans" },
+    { date: "2026-11-26", title: "How to Price Your Trade Services Without Losing Jobs in 2026", lang: "en", slug: null, tag: "Contractors" },
     // Ven 27 — Tech & outils
-    { date: "2026-11-27", title: "Calendrier éditorial d'un SaaS : Notion, Airtable ou tableur ? Comparatif chiffré", lang: "fr", slug: null, tag: "Marketing SaaS", cat: "tech" },
-    { date: "2026-11-27", title: "A SaaS Content Calendar: Notion vs Airtable vs a Spreadsheet", lang: "en", slug: null, tag: "SaaS Marketing", cat: "tech" },
+    { date: "2026-11-27", title: "Calendrier éditorial d'un SaaS : Notion, Airtable ou tableur ? Comparatif chiffré", lang: "fr", slug: null, tag: "Marketing SaaS" },
+    { date: "2026-11-27", title: "A SaaS Content Calendar: Notion vs Airtable vs a Spreadsheet", lang: "en", slug: null, tag: "SaaS Marketing" },
     // Sam 28 — Business
-    { date: "2026-11-28", title: "Comment facturer ce que vous valez vraiment (sans avoir peur)", lang: "fr", slug: null, tag: "Business", cat: "business" },
-    { date: "2026-11-28", title: "How to Charge What You're Actually Worth (Without Flinching)", lang: "en", slug: null, tag: "Business", cat: "business" },
+    { date: "2026-11-28", title: "Comment facturer ce que vous valez vraiment (sans avoir peur)", lang: "fr", slug: null, tag: "Business" },
+    { date: "2026-11-28", title: "How to Charge What You're Actually Worth (Without Flinching)", lang: "en", slug: null, tag: "Business" },
     // Dim 29 — Réseaux sociaux → MayaPilot
-    { date: "2026-11-29", title: "Quand publier sur LinkedIn pour vendre un SaaS B2B : ce que disent les données", lang: "fr", slug: null, tag: "LinkedIn", cat: "social" },
-    { date: "2026-11-29", title: "Best Time to Post on LinkedIn for a B2B SaaS: What the Data Says", lang: "en", slug: null, tag: "LinkedIn", cat: "social" },
+    { date: "2026-11-29", title: "Quand publier sur LinkedIn pour vendre un SaaS B2B : ce que disent les données", lang: "fr", slug: null, tag: "LinkedIn" },
+    { date: "2026-11-29", title: "Best Time to Post on LinkedIn for a B2B SaaS: What the Data Says", lang: "en", slug: null, tag: "LinkedIn" },
 
     // ── SEMAINE 49 (30 nov–6 déc) ────────────────────────────────────────────
     // Lun 30 — Airbnb → residencemanager.online
-    { date: "2026-11-30", title: "Check-in automatique Airbnb : guide complet 2026 (boîte à clés, Nuki, Igloohome)", lang: "fr", slug: null, tag: "Gestion locative", cat: "airbnb" },
-    { date: "2026-11-30", title: "Airbnb Self Check-In in 2026: Smart Locks, Key Boxes & the Best Options", lang: "en", slug: null, tag: "Airbnb", cat: "airbnb" },
+    { date: "2026-11-30", title: "Check-in automatique Airbnb : guide complet 2026 (boîte à clés, Nuki, Igloohome)", lang: "fr", slug: null, tag: "Gestion locative" },
+    { date: "2026-11-30", title: "Airbnb Self Check-In in 2026: Smart Locks, Key Boxes & the Best Options", lang: "en", slug: null, tag: "Airbnb" },
     // Mar 1 déc — IA
-    { date: "2026-12-01", title: "Prospecter des chantiers par e-mail quand on est artisan : taux de réponse et limites légales", lang: "fr", slug: null, tag: "Prospection", cat: "artisans" },
-    { date: "2026-12-01", title: "Cold Email for Contractors in 2026: Reply Rates and Where CAN-SPAM Draws the Line", lang: "en", slug: null, tag: "Prospecting", cat: "artisans" },
+    { date: "2026-12-01", title: "Prospecter des chantiers par e-mail quand on est artisan : taux de réponse et limites légales", lang: "fr", slug: null, tag: "Prospection" },
+    { date: "2026-12-01", title: "Cold Email for Contractors in 2026: Reply Rates and Where CAN-SPAM Draws the Line", lang: "en", slug: null, tag: "Prospecting" },
     // Mer 2 — Immobilier
-    { date: "2026-12-02", title: "Investir dans un Airbnb rural en 2026 : les villes qui surperforment", lang: "fr", slug: null, tag: "Investissement", cat: "immobilier" },
-    { date: "2026-12-02", title: "Rural Airbnb Investing in 2026: The Markets That Are Still Growing", lang: "en", slug: null, tag: "Real Estate", cat: "immobilier" },
+    { date: "2026-12-02", title: "Investir dans un Airbnb rural en 2026 : les villes qui surperforment", lang: "fr", slug: null, tag: "Investissement" },
+    { date: "2026-12-02", title: "Rural Airbnb Investing in 2026: The Markets That Are Still Growing", lang: "en", slug: null, tag: "Real Estate" },
     // Jeu 3 — Contractors
-    { date: "2026-12-03", title: "CRM pour artisans : lequel choisir en 2026 (comparatif honnête)", lang: "fr", slug: null, tag: "Outils artisans", cat: "artisans" },
-    { date: "2026-12-03", title: "Best CRM for Small Contractors in 2026: Jobber vs Housecall Pro vs ServiceTitan", lang: "en", slug: null, tag: "Contractor Tools", cat: "artisans" },
+    { date: "2026-12-03", title: "CRM pour artisans : lequel choisir en 2026 (comparatif honnête)", lang: "fr", slug: null, tag: "Outils artisans" },
+    { date: "2026-12-03", title: "Best CRM for Small Contractors in 2026: Jobber vs Housecall Pro vs ServiceTitan", lang: "en", slug: null, tag: "Contractor Tools" },
     // Ven 4 — Tech
-    { date: "2026-12-04", title: "Outils IA gratuits pour produire le contenu d'un SaaS : ce qui tient la route en 2026", lang: "fr", slug: null, tag: "Marketing SaaS", cat: "tech" },
-    { date: "2026-12-04", title: "Free AI Tools for SaaS Content Marketing in 2026: What Holds Up", lang: "en", slug: null, tag: "SaaS Marketing", cat: "tech" },
+    { date: "2026-12-04", title: "Outils IA gratuits pour produire le contenu d'un SaaS : ce qui tient la route en 2026", lang: "fr", slug: null, tag: "Marketing SaaS" },
+    { date: "2026-12-04", title: "Free AI Tools for SaaS Content Marketing in 2026: What Holds Up", lang: "en", slug: null, tag: "SaaS Marketing" },
     // Sam 5 — Business
-    { date: "2026-12-05", title: "Trouver ses premiers clients en freelance : ce qui marche vraiment en 2026", lang: "fr", slug: null, tag: "Freelance", cat: "business" },
-    { date: "2026-12-05", title: "How to Land Your First Freelance Clients in 2026 (No Fluff Guide)", lang: "en", slug: null, tag: "Freelance", cat: "business" },
+    { date: "2026-12-05", title: "Trouver ses premiers clients en freelance : ce qui marche vraiment en 2026", lang: "fr", slug: null, tag: "Freelance" },
+    { date: "2026-12-05", title: "How to Land Your First Freelance Clients in 2026 (No Fluff Guide)", lang: "en", slug: null, tag: "Freelance" },
     // Dim 6 — Réseaux sociaux → MayaPilot
-    { date: "2026-12-06", title: "Fondateur de SaaS : une présence LinkedIn en 30 minutes par semaine", lang: "fr", slug: null, tag: "LinkedIn", cat: "social" },
-    { date: "2026-12-06", title: "SaaS Founder LinkedIn Presence in 30 Minutes a Week", lang: "en", slug: null, tag: "LinkedIn", cat: "social" },
+    { date: "2026-12-06", title: "Fondateur de SaaS : une présence LinkedIn en 30 minutes par semaine", lang: "fr", slug: null, tag: "LinkedIn" },
+    { date: "2026-12-06", title: "SaaS Founder LinkedIn Presence in 30 Minutes a Week", lang: "en", slug: null, tag: "LinkedIn" },
 
     // ── SEMAINE 50 (7–13 déc) ────────────────────────────────────────────────
     // Lun 7 — Airbnb → residencemanager.online
-    { date: "2026-12-07", title: "Comment augmenter son taux d'occupation Airbnb en hiver 2026", lang: "fr", slug: null, tag: "Airbnb", cat: "airbnb" },
-    { date: "2026-12-07", title: "How to Boost Your Airbnb Occupancy Rate in Winter 2026", lang: "en", slug: null, tag: "Airbnb", cat: "airbnb" },
+    { date: "2026-12-07", title: "Comment augmenter son taux d'occupation Airbnb en hiver 2026", lang: "fr", slug: null, tag: "Airbnb" },
+    { date: "2026-12-07", title: "How to Boost Your Airbnb Occupancy Rate in Winter 2026", lang: "en", slug: null, tag: "Airbnb" },
     // Mar 8 — IA
-    { date: "2026-12-08", title: "Quel assistant IA pour un artisan : répondre aux clients et rédiger ses devis", lang: "fr", slug: null, tag: "IA & PME", cat: "artisans" },
-    { date: "2026-12-08", title: "Which AI Assistant for a Contractor: Replying to Leads and Writing Estimates", lang: "en", slug: null, tag: "AI", cat: "artisans" },
+    { date: "2026-12-08", title: "Quel assistant IA pour un artisan : répondre aux clients et rédiger ses devis", lang: "fr", slug: null, tag: "IA & PME" },
+    { date: "2026-12-08", title: "Which AI Assistant for a Contractor: Replying to Leads and Writing Estimates", lang: "en", slug: null, tag: "AI" },
     // Mer 9 — Immobilier
-    { date: "2026-12-09", title: "Location meublée non professionnelle (LMNP) en 2026 : guide fiscal complet", lang: "fr", slug: null, tag: "Fiscalité", cat: "immobilier" },
-    { date: "2026-12-09", title: "Short-Term Rental Tax Guide for US Hosts in 2026", lang: "en", slug: null, tag: "Tax", cat: "immobilier" },
+    { date: "2026-12-09", title: "Location meublée non professionnelle (LMNP) en 2026 : guide fiscal complet", lang: "fr", slug: null, tag: "Fiscalité" },
+    { date: "2026-12-09", title: "Short-Term Rental Tax Guide for US Hosts in 2026", lang: "en", slug: null, tag: "Tax" },
     // Jeu 10 — Contractors
-    { date: "2026-12-10", title: "Avis Google pour plombiers et électriciens : ce que montrent les données sur la visibilité locale", lang: "fr", slug: null, tag: "Artisans", cat: "artisans" },
-    { date: "2026-12-10", title: "Google Reviews for Contractors: What the Data Shows About Local Visibility and Conversions", lang: "en", slug: null, tag: "Contractors", cat: "artisans" },
+    { date: "2026-12-10", title: "Avis Google pour plombiers et électriciens : ce que montrent les données sur la visibilité locale", lang: "fr", slug: null, tag: "Artisans" },
+    { date: "2026-12-10", title: "Google Reviews for Contractors: What the Data Shows About Local Visibility and Conversions", lang: "en", slug: null, tag: "Contractors" },
     // Ven 11 — Tech
-    { date: "2026-12-11", title: "Mesurer ce que rapporte le contenu d'un SaaS : les indicateurs qui comptent", lang: "fr", slug: null, tag: "Marketing SaaS", cat: "tech" },
-    { date: "2026-12-11", title: "Measuring What SaaS Content Actually Earns: The Metrics That Matter", lang: "en", slug: null, tag: "SaaS Marketing", cat: "tech" },
+    { date: "2026-12-11", title: "Mesurer ce que rapporte le contenu d'un SaaS : les indicateurs qui comptent", lang: "fr", slug: null, tag: "Marketing SaaS" },
+    { date: "2026-12-11", title: "Measuring What SaaS Content Actually Earns: The Metrics That Matter", lang: "en", slug: null, tag: "SaaS Marketing" },
     // Sam 12 — Business
-    { date: "2026-12-12", title: "Construire une offre à 1000€/mois récurrents : le modèle qui marche", lang: "fr", slug: null, tag: "Business", cat: "business" },
-    { date: "2026-12-12", title: "How to Build a $1,000/Month Recurring Revenue Stream as a Freelancer", lang: "en", slug: null, tag: "Business", cat: "business" },
+    { date: "2026-12-12", title: "Construire une offre à 1000€/mois récurrents : le modèle qui marche", lang: "fr", slug: null, tag: "Business" },
+    { date: "2026-12-12", title: "How to Build a $1,000/Month Recurring Revenue Stream as a Freelancer", lang: "en", slug: null, tag: "Business" },
     // Dim 13 — Réseaux sociaux → MayaPilot
-    { date: "2026-12-13", title: "Instagram pour un SaaS : ce qui fonctionne et ce qui ne marche pas en 2026", lang: "fr", slug: null, tag: "Réseaux sociaux", cat: "social" },
-    { date: "2026-12-13", title: "Instagram for a SaaS Company in 2026: What Works and What Doesn't", lang: "en", slug: null, tag: "Social Media", cat: "social" },
+    { date: "2026-12-13", title: "Instagram pour un SaaS : ce qui fonctionne et ce qui ne marche pas en 2026", lang: "fr", slug: null, tag: "Réseaux sociaux" },
+    { date: "2026-12-13", title: "Instagram for a SaaS Company in 2026: What Works and What Doesn't", lang: "en", slug: null, tag: "Social Media" },
   ];
 
   // ─── HELPERS ──────────────────────────────────────────────────────────────

@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Page générée par scripts/build-site.js — ne pas éditer à la main (modifier scripts/site-config.js) -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missed call cost calculator | Marge Brief</title>
+  <meta name="description" content="What unanswered calls cost you: lost jobs, revenue and margin, using your own rates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.margebrief.com/en/tools/missed-call-cost-calculator">
+  <link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cout-appel-manque">
+  <link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/missed-call-cost-calculator">
+  <meta property="og:site_name" content="Marge Brief">
+  <meta property="og:title" content="Missed call cost calculator | Marge Brief">
+  <meta property="og:description" content="What unanswered calls cost you: lost jobs, revenue and margin, using your own rates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.margebrief.com/en/tools/missed-call-cost-calculator">
+  <link rel="stylesheet" href="/assets/css/blog.css?v=5388675a">
+  <link rel="stylesheet" href="/assets/css/site.css?v=837c806f">
+  <link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/journal.css?v=8e60a645">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Missed call cost calculator","description":"What unanswered calls cost you: lost jobs, revenue and margin, using your own rates.","url":"https://www.margebrief.com/en/tools/missed-call-cost-calculator","inLanguage":"en","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Marge Brief","url":"https://www.margebrief.com/"}}</script>
+</head>
+<body>
+<!--S:HEAD-->
+<header class="mh">
+  <div class="mh-bar">
+    <a class="mh-logo" href="/en/">Marge Brief<i>.</i></a>
+    <p class="mh-tag">The daily brief to grow your business</p>
+    <div class="mh-tools">
+      <a class="mh-write" href="/en/write-for-us">Write for us</a>
+      <span class="mh-lang"><a href="/fr/outils/calculateur-cout-appel-manque">FR</a><a href="/en/tools/missed-call-cost-calculator" aria-current="true">EN</a></span>
+      <a class="mh-sub" href="/en/#newsletter">Newsletter</a>
+      <button class="mh-burger" type="button" aria-expanded="false" aria-controls="mh-menu" aria-label="Menu"><span class="mh-burger-ico" aria-hidden="true"></span><span class="mh-burger-txt">Menu</span></button>
+    </div>
+  </div>
+  <nav class="mh-nav" id="mh-menu" aria-label="Browse by topic">
+    <div class="mh-nav-in">
+      <a class="mh-nav-home" href="/en/">Latest articles</a>
+      <a href="/en/category/hotes">Hosts &amp; short-term rentals</a><a href="/en/category/artisans" aria-current="page">Contractors &amp; small service businesses</a><a href="/en/category/saas">SaaS marketing &amp; growth</a>
+      <div class="mh-nav-extra"><a href="/en/search">Search</a><a href="/en/write-for-us">Write for us</a><a class="mh-nav-cta" href="/en/#newsletter">Newsletter</a></div>
+    </div>
+  </nav>
+</header>
+<!--/S:HEAD-->
+<main class="s-page s-tool" data-tool="artisans" data-lang="en">
+<h1>Missed call cost calculator</h1>
+<p class="s-intro">Enter your numbers (example values to replace). The math runs in your browser.</p>
+<form class="s-form-stack s-tool-form" onsubmit="return false">
+<div class="s-field"><label for="t-calls">Prospect calls per week</label><input id="t-calls" name="calls" type="number" inputmode="decimal" step="any" min="0" value="25"></div>
+<div class="s-field"><label for="t-miss">Share of calls missed (%)</label><input id="t-miss" name="miss" type="number" inputmode="decimal" step="any" min="0" value="30"></div>
+<div class="s-field"><label for="t-lost">Share of missed callers who go to a competitor (%)</label><input id="t-lost" name="lost" type="number" inputmode="decimal" step="any" min="0" value="60"></div>
+<div class="s-field"><label for="t-close">Share of calls that become a job (%)</label><input id="t-close" name="close" type="number" inputmode="decimal" step="any" min="0" value="30"></div>
+<div class="s-field"><label for="t-job">Average job value ($)</label><input id="t-job" name="job" type="number" inputmode="decimal" step="any" min="0" value="2500"></div>
+<div class="s-field"><label for="t-margin">Margin on a job (%)</label><input id="t-margin" name="margin" type="number" inputmode="decimal" step="any" min="0" value="30"></div>
+</form>
+<section class="s-tool-out" aria-live="polite"><h2>Result</h2><dl><div><dt>Jobs lost per month</dt><dd id="o0">–</dd></div><div><dt>Revenue lost per year</dt><dd id="o1">–</dd></div><div><dt>Margin lost per year</dt><dd id="o2">–</dd></div><div><dt>Cost of one missed call</dt><dd id="o3">–</dd></div></dl></section>
+<h2>How it is calculated</h2>
+<ul><li>Lost missed calls = calls × share missed × share who go elsewhere.</li><li>Jobs lost = lost missed calls × close rate.</li><li>Revenue lost = jobs lost × average job value; margin lost = revenue lost × margin.</li><li>Cost of one missed call = close rate × average job × share who go elsewhere × margin.</li></ul>
+<h2>Limits</h2>
+<p>Each rate is an estimate you should measure yourself (call log, signed quotes). An answering service or tool has a cost too: compare its monthly price to the margin lost.</p>
+<p class="s-form-note">Free tool, no signup. The values you enter stay in your browser. Published 2026-11-21.</p>
+<script src="/assets/js/tools.js?v=98c453b2" defer></script>
+</main>
+<footer class="site-footer">
+<div class="sf-inner">
+<div class="sf-brand"><a class="sf-logo" href="/">Marge Brief</a><p>One article in English and one in French every day, for people running a real business.</p></div>
+<div class="sf-col"><h4>Topics</h4><a href="/en/category/hotes">Hosts &amp; short-term rentals</a><a href="/en/category/artisans">Contractors &amp; small service businesses</a><a href="/en/category/saas">SaaS marketing &amp; growth</a></div>
+<div class="sf-col"><h4>The publication</h4><a href="/en/">Latest articles</a><a href="/en/write-for-us">Write for us</a><a href="/en/community">Community voices</a><a href="/en/editorial-method">How we work</a><a href="/en/content-reuse">Quoting and reusing our articles</a><a href="/en/about">About</a><a href="/en/how-we-make-money">How we make money</a><a href="/en/contact">Contact</a><a href="/en/legal-notice">Legal notice</a><a href="/en/search">Search</a><a href="/fr/">Français</a></div>
+</div>
+<div class="sf-legal">Marge Brief is published by <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>. © 2026 Marge Brief. All rights reserved. Reproduction is prohibited without written permission. Short quotations are allowed provided you credit Marge Brief and link to the source article. <a href="/en/content-reuse">Quoting and reuse terms</a>.</div>
+</footer>
+<script src="/assets/js/site.js?v=f8fef373" defer></script>
+
+</body>
+</html>

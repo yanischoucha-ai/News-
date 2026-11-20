@@ -1,19 +1,13 @@
 # Marge Brief
 
-> Marge Brief is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. Marge Brief is published by AlturaCom (https://alturacom-production.odoo.com), a digital agency; products of the same publisher are disclosed as such.
+> Marge Brief is a bilingual (French/English) independent publication with one new sourced article every day, covering three pillars only: short-term rental hosts, contractors and small service businesses, and SaaS marketing and growth. English content targets the United States, French content targets France. Every article states its numbers, shows the calculation and cites its sources. Marge Brief is published by AlturaCom (https://alturacom-production.odoo.com), a digital agency; products of the same publisher are disclosed as such.
 
 ## Sections
-- Airbnb & short-term rentals: Systems, pricing and regulation: what actually works for hosts and property managers.
-- AI & automation: The AI tools and automations that really save time, and the ones that cost more than they return.
-- Real estate & investing: Market data, tax and yield: the numbers to run before you buy, with sources.
-- Contractors & trades: Quotes, pricing, reviews, tools: the daily reality of contractors and tradespeople.
-- Tech & productivity: Honest tool tests, comparisons and real pricing, so you can choose without falling for the marketing page.
-- Tech & sustainability: Responsible tech, energy, retrofits and tools that really cut footprint and bills: sourced numbers, no greenwashing.
-- Business & freelance: Pricing, legal structure, first clients, recurring revenue: analysis before slogans.
-- Social media & branding: Algorithms, frequency, formats: what the data says, not the gurus.
+- Hosts & short-term rentals: Operations, net profitability, regulation, taxes and rental investing: the numbers and rules every short-term rental host in the US should know.
+- Contractors & small service businesses: Missed calls, quotes, pricing, visibility, reviews, business structure and cash flow: the daily reality of US contractors and small service businesses, with the math.
+- SaaS marketing & growth: Content, community management, social media and algorithms: what grows a SaaS company, with data and methods you can apply this week.
 
 ## Articles (English)
-- [Heat pump for a UK rental or short-let: the £7,500 grant won't fix a 3.3-to-1 price gap](https://www.margebrief.com/en/heat-pump-rental-uk-price-cap-ratio-2026): On mains gas a heat pump saves about £48 a year at the Ofgem cap and needs an SPF above 2.77. Where the £7,500 grant pays back, and what ends 31 March 2027.
 - [Contractor Google Reviews in 2026: The Rating Math and What Google Now Removes](https://www.margebrief.com/en/contractor-google-reviews-2026-rating-math-policy): BrightLocal's 2026 survey says 47% skip businesses under 20 reviews. How many reviews lift 4.3 to 4.5, what Google bars you from asking, and what changed this fall.
 - [Missed Calls in HVAC and Plumbing: The Math to Run Before You Buy an AI Receptionist](https://www.margebrief.com/en/ai-for-hvac-plumbing-contractors): HVAC shops reportedly answer only 34% of calls. A formula for what each missed call costs, a break-even for answering services, and the FCC ruling on AI voices.
 - [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://www.margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.

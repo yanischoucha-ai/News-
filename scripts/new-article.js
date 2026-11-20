@@ -18,7 +18,7 @@
  *   "sources": [ { "title": "...", "publisher": "...", "url": "https://...", "date": "2026-10" }, ... ],   // 3 minimum
  *   "faq": [ { "q": "...", "a": "..." }, ... ],      // 4, réponses tirées de l'article
  *   "tags": ["...", "..."],
- *   "cat": "airbnb|ia|immobilier|artisans|tech|business|social"   // facultatif (défaut : entrée du SCHEDULE)
+ *   "cat": "hotes|artisans|saas"   // facultatif (défaut : entrée du SCHEDULE)
  *   "replace": true, "modified": "2026-11-18"   // facultatif : réécrit un article déjà publié (même slug, date d'origine conservée)
  * }
  * Le script REFUSE l'article (exit 1) s'il contient des tournures génériques, moins de 3 sources, ou une longueur hors plage.
@@ -28,7 +28,7 @@ const path = require('path');
 const C = require('./site-config');
 
 const ROOT = path.join(__dirname, '..');
-const { BRAND, DOMAIN, CATS } = C;
+const { BRAND, DOMAIN, CATS, pillarForDate } = C;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const plain = (h) => h.replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ').replace(/\s+/g, ' ').trim();
 
@@ -178,7 +178,7 @@ function main() {
   if (a.replace) { a.date = (lines[idx].match(/date: "([^"]+)"/) || [])[1] || a.date; }
   const old = lines[idx];
   const tag = (old.match(/tag: "([^"]*)"/) || [])[1] || '';
-  const defCat = CATS.find((c) => c.dow === new Date(a.date + 'T12:00:00Z').getUTCDay()).id;
+  const defCat = pillarForDate(a.date);
   const cat = a.cat || (old.match(/cat: "([^"]*)"/) || [])[1] || defCat;
   if (!CATS.some((c) => c.id === cat)) fail([`cat inconnue : ${cat}`]);
 

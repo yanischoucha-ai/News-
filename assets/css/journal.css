@@ -600,3 +600,16 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 2rem; }
 }
 .article-container .article-hero { margin: -.5rem 0 2.25rem; padding: 0; max-width: none; }
 @media (max-width: 860px) { .article-container .article-hero { margin: -.5rem -1rem 2rem; } }
+
+/* Outils, recherche, sources */
+.s-tool-form{display:grid;gap:.9rem;max-width:36rem;margin:1.2rem 0}
+.s-tool-out{background:#f4f6f3;border:1px solid #dfe5dc;border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0;max-width:36rem}
+.s-tool-out dl{display:grid;gap:.6rem;margin:0}
+.s-tool-out dt{font-size:.85rem;color:#566}
+.s-tool-out dd{margin:0;font-size:1.35rem;font-weight:650}
+.s-results{list-style:none;padding:0;margin:1rem 0}
+.s-results li{padding:.7rem 0;border-bottom:1px solid #e5e5e5}
+.s-results p{margin:.2rem 0 0;color:#566;font-size:.95rem}
+.s-sources{padding-left:1.1rem;font-size:.95rem}
+.s-sources li{margin:.3rem 0;overflow-wrap:anywhere}
+.article-updated{color:#566;font-size:.9rem}

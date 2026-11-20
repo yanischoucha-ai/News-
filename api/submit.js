@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
   let row;
 
   if (type === 'newsletter') {
-    row = { email, lang, source: clip(b.page, 200) };
+    row = { email, lang, source: clip(b.page, 200), pillar: ['hotes', 'artisans', 'saas'].includes(b.pillar) ? b.pillar : 'all' };
   } else if (type === 'contribution') {
     row = {
       name: clip(b.name, 120) || String(email).split('@')[0].slice(0, 120), email, lang, title: clip(b.title, 200),
@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
   if (!url || !key) return res.status(503).json({ error: 'not_configured' });
 
   try {
-    const q = type === 'newsletter' ? '?on_conflict=email' : '';
+    const q = type === 'newsletter' ? '?on_conflict=email,pillar' : '';
     const r = await fetch(`${url}/rest/v1/${TABLES[type]}${q}`, {
       method: 'POST',
       headers: {

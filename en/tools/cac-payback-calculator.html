@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- Page générée par scripts/build-site.js — ne pas éditer à la main (modifier scripts/site-config.js) -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAC and payback period calculator | Marge Brief</title>
+  <meta name="description" content="Customer acquisition cost, payback period and LTV/CAC for a SaaS, computed from your own numbers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.margebrief.com/en/tools/cac-payback-calculator">
+  <link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cac-delai-recuperation">
+  <link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/cac-payback-calculator">
+  <meta property="og:site_name" content="Marge Brief">
+  <meta property="og:title" content="CAC and payback period calculator | Marge Brief">
+  <meta property="og:description" content="Customer acquisition cost, payback period and LTV/CAC for a SaaS, computed from your own numbers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.margebrief.com/en/tools/cac-payback-calculator">
+  <link rel="stylesheet" href="/assets/css/blog.css?v=5388675a">
+  <link rel="stylesheet" href="/assets/css/site.css?v=837c806f">
+  <link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/journal.css?v=8e60a645">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CAC and payback period calculator","description":"Customer acquisition cost, payback period and LTV/CAC for a SaaS, computed from your own numbers.","url":"https://www.margebrief.com/en/tools/cac-payback-calculator","inLanguage":"en","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Marge Brief","url":"https://www.margebrief.com/"}}</script>
+</head>
+<body>
+<!--S:HEAD-->
+<header class="mh">
+  <div class="mh-bar">
+    <a class="mh-logo" href="/en/">Marge Brief<i>.</i></a>
+    <p class="mh-tag">The daily brief to grow your business</p>
+    <div class="mh-tools">
+      <a class="mh-write" href="/en/write-for-us">Write for us</a>
+      <span class="mh-lang"><a href="/fr/outils/calculateur-cac-delai-recuperation">FR</a><a href="/en/tools/cac-payback-calculator" aria-current="true">EN</a></span>
+      <a class="mh-sub" href="/en/#newsletter">Newsletter</a>
+      <button class="mh-burger" type="button" aria-expanded="false" aria-controls="mh-menu" aria-label="Menu"><span class="mh-burger-ico" aria-hidden="true"></span><span class="mh-burger-txt">Menu</span></button>
+    </div>
+  </div>
+  <nav class="mh-nav" id="mh-menu" aria-label="Browse by topic">
+    <div class="mh-nav-in">
+      <a class="mh-nav-home" href="/en/">Latest articles</a>
+      <a href="/en/category/hotes">Hosts &amp; short-term rentals</a><a href="/en/category/artisans">Contractors &amp; small service businesses</a><a href="/en/category/saas" aria-current="page">SaaS marketing &amp; growth</a>
+      <div class="mh-nav-extra"><a href="/en/search">Search</a><a href="/en/write-for-us">Write for us</a><a class="mh-nav-cta" href="/en/#newsletter">Newsletter</a></div>
+    </div>
+  </nav>
+</header>
+<!--/S:HEAD-->
+<main class="s-page s-tool" data-tool="saas" data-lang="en">
+<h1>CAC and payback period calculator</h1>
+<p class="s-intro">Enter your numbers (example values to replace). The math runs in your browser.</p>
+<form class="s-form-stack s-tool-form" onsubmit="return false">
+<div class="s-field"><label for="t-spend">Sales and marketing spend per month ($)</label><input id="t-spend" name="spend" type="number" inputmode="decimal" step="any" min="0" value="8000"></div>
+<div class="s-field"><label for="t-new">New paying customers per month</label><input id="t-new" name="new" type="number" inputmode="decimal" step="any" min="0" value="20"></div>
+<div class="s-field"><label for="t-arpa">Average monthly revenue per customer ($)</label><input id="t-arpa" name="arpa" type="number" inputmode="decimal" step="any" min="0" value="80"></div>
+<div class="s-field"><label for="t-gm">Gross margin (%)</label><input id="t-gm" name="gm" type="number" inputmode="decimal" step="any" min="0" value="80"></div>
+<div class="s-field"><label for="t-churn">Monthly churn (% of customers lost per month)</label><input id="t-churn" name="churn" type="number" inputmode="decimal" step="any" min="0" value="3"></div>
+</form>
+<section class="s-tool-out" aria-live="polite"><h2>Result</h2><dl><div><dt>CAC</dt><dd id="o0">–</dd></div><div><dt>Payback period (months)</dt><dd id="o1">–</dd></div><div><dt>LTV</dt><dd id="o2">–</dd></div><div><dt>LTV / CAC</dt><dd id="o3">–</dd></div></dl></section>
+<h2>How it is calculated</h2>
+<ul><li>CAC = spend ÷ new customers.</li><li>Payback = CAC ÷ (monthly revenue × gross margin).</li><li>LTV = monthly revenue × gross margin ÷ monthly churn.</li><li>LTV/CAC = LTV ÷ CAC.</li></ul>
+<h2>Limits</h2>
+<p>Assumes constant churn and ignores expansion revenue. With few customers the figures swing month to month: use an average over several months.</p>
+<p class="s-form-note">Free tool, no signup. The values you enter stay in your browser. Published 2026-11-21.</p>
+<script src="/assets/js/tools.js?v=98c453b2" defer></script>
+</main>
+<footer class="site-footer">
+<div class="sf-inner">
+<div class="sf-brand"><a class="sf-logo" href="/">Marge Brief</a><p>One article in English and one in French every day, for people running a real business.</p></div>
+<div class="sf-col"><h4>Topics</h4><a href="/en/category/hotes">Hosts &amp; short-term rentals</a><a href="/en/category/artisans">Contractors &amp; small service businesses</a><a href="/en/category/saas">SaaS marketing &amp; growth</a></div>
+<div class="sf-col"><h4>The publication</h4><a href="/en/">Latest articles</a><a href="/en/write-for-us">Write for us</a><a href="/en/community">Community voices</a><a href="/en/editorial-method">How we work</a><a href="/en/content-reuse">Quoting and reusing our articles</a><a href="/en/about">About</a><a href="/en/how-we-make-money">How we make money</a><a href="/en/contact">Contact</a><a href="/en/legal-notice">Legal notice</a><a href="/en/search">Search</a><a href="/fr/">Français</a></div>
+</div>
+<div class="sf-legal">Marge Brief is published by <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>. © 2026 Marge Brief. All rights reserved. Reproduction is prohibited without written permission. Short quotations are allowed provided you credit Marge Brief and link to the source article. <a href="/en/content-reuse">Quoting and reuse terms</a>.</div>
+</footer>
+<script src="/assets/js/site.js?v=f8fef373" defer></script>
+
+</body>
+</html>

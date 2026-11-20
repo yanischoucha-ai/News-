@@ -24,52 +24,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/fr/categorie/airbnb</loc>
+    <loc>https://www.margebrief.com/fr/categorie/hotes</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/airbnb"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/airbnb"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/hotes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/hotes"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/en/category/airbnb</loc>
+    <loc>https://www.margebrief.com/en/category/hotes</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/airbnb"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/airbnb"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/fr/categorie/ia</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/ia"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/ia"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/category/ia</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/ia"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/ia"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/fr/categorie/immobilier</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/immobilier"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/immobilier"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/category/immobilier</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/immobilier"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/immobilier"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/hotes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/hotes"/>
   </url>
   <url>
     <loc>https://www.margebrief.com/fr/categorie/artisans</loc>
@@ -88,68 +56,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/artisans"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/fr/categorie/tech</loc>
+    <loc>https://www.margebrief.com/fr/categorie/saas</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/tech"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/tech"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/saas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/saas"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/en/category/tech</loc>
+    <loc>https://www.margebrief.com/en/category/saas</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/tech"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/tech"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/fr/categorie/durable</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/durable"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/durable"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/category/durable</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/durable"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/durable"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/fr/categorie/business</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/business"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/business"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/category/business</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/business"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/business"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/fr/categorie/social</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/social"/>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/category/social</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/social"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/categorie/saas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/category/saas"/>
   </url>
   <url>
     <loc>https://www.margebrief.com/fr/ecrire-pour-nous</loc>
@@ -200,13 +120,135 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/editorial-method"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027</loc>
+    <loc>https://www.margebrief.com/fr/a-propos</loc>
     <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/about"/>
   </url>
   <url>
-    <loc>https://www.margebrief.com/en/heat-pump-rental-uk-price-cap-ratio-2026</loc>
+    <loc>https://www.margebrief.com/en/about</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/about"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/contact</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/contact"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/contact</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/contact"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/mentions-legales</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/legal-notice"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/legal-notice</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/legal-notice"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/comment-nous-gagnons-de-l-argent</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/comment-nous-gagnons-de-l-argent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/how-we-make-money"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/how-we-make-money</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/comment-nous-gagnons-de-l-argent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/how-we-make-money"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/recherche</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/recherche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/search"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/search</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/recherche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/search"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/outils/calculateur-rentabilite-location-courte-duree</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-rentabilite-location-courte-duree"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/short-term-rental-profit-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/tools/short-term-rental-profit-calculator</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-rentabilite-location-courte-duree"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/short-term-rental-profit-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/outils/calculateur-cout-appel-manque</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cout-appel-manque"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/missed-call-cost-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/tools/missed-call-cost-calculator</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cout-appel-manque"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/missed-call-cost-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/outils/calculateur-cac-delai-recuperation</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cac-delai-recuperation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/cac-payback-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/tools/cac-payback-calculator</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/calculateur-cac-delai-recuperation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/cac-payback-calculator"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

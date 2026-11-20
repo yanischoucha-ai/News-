@@ -101,5 +101,82 @@
     "api/contrib.js": {
       "includeFiles": "{fr/reutilisation-contenu.html,en/content-reuse.html,assets/js/md.js}"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/fr/categorie/airbnb",
+      "destination": "/fr/categorie/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/airbnb",
+      "destination": "/en/category/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/immobilier",
+      "destination": "/fr/categorie/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/immobilier",
+      "destination": "/en/category/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/durable",
+      "destination": "/fr/categorie/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/durable",
+      "destination": "/en/category/hotes",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/ia",
+      "destination": "/fr/categorie/saas",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/ia",
+      "destination": "/en/category/saas",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/tech",
+      "destination": "/fr/categorie/saas",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/tech",
+      "destination": "/en/category/saas",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/business",
+      "destination": "/fr/categorie/saas",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/business",
+      "destination": "/en/category/saas",
+      "permanent": true
+    },
+    {
+      "source": "/fr/categorie/social",
+      "destination": "/fr/categorie/saas",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/social",
+      "destination": "/en/category/saas",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-pump-rental-uk-price-cap-ratio-2026",
+      "destination": "/en/",
+      "permanent": true
+    }
+  ]
 }

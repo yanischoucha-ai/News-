@@ -8,31 +8,26 @@ const READERS = '100+'; // audience hebdomadaire déclarée
 
 // Rubriques = thématiques par jour de semaine (0 = dimanche)
 const CATS = [
-  { id: 'airbnb', dow: 1,
-    fr: { name: 'Airbnb & gestion locative', desc: 'Automatiser, optimiser, passer de 1 à 10 logements : ce qui marche vraiment pour les hôtes et conciergeries.' },
-    en: { name: 'Airbnb & short-term rentals', desc: 'Systems, pricing and regulation: what actually works for hosts and property managers.' } },
-  { id: 'ia', dow: 2,
-    fr: { name: 'IA & automatisation', desc: 'Les outils IA et automatisations qui font vraiment gagner du temps, et ceux qui coûtent plus qu’ils ne rapportent.' },
-    en: { name: 'AI & automation', desc: 'The AI tools and automations that really save time, and the ones that cost more than they return.' } },
-  { id: 'immobilier', dow: 3,
-    fr: { name: 'Immobilier & investissement', desc: 'Marché, fiscalité, rendement : les calculs à faire avant d’acheter, avec des chiffres sourcés.' },
-    en: { name: 'Real estate & investing', desc: 'Market data, tax and yield: the numbers to run before you buy, with sources.' } },
-  { id: 'artisans', dow: 4,
-    fr: { name: 'Artisans & métiers', desc: 'Devis, tarifs, avis clients, outils : le quotidien des artisans et indépendants, de praticien à praticien.' },
-    en: { name: 'Contractors & trades', desc: 'Quotes, pricing, reviews, tools: the daily reality of contractors and tradespeople.' } },
-  { id: 'tech', dow: 5,
-    fr: { name: 'Tech & productivité', desc: 'Tests d’outils honnêtes, comparatifs et vrais prix, pour choisir sans se faire piéger par la fiche marketing.' },
-    en: { name: 'Tech & productivity', desc: 'Honest tool tests, comparisons and real pricing, so you can choose without falling for the marketing page.' } },
-  { id: 'durable', dow: null, // thème transversal : publié le vendredi une semaine ISO sur deux (voir docs/EDITORIAL.md)
-    fr: { name: 'Tech & développement durable', desc: 'Numérique responsable, énergie, rénovation, outils qui réduisent vraiment l’empreinte et la facture : chiffres sourcés, sans greenwashing.' },
-    en: { name: 'Tech & sustainability', desc: 'Responsible tech, energy, retrofits and tools that really cut footprint and bills: sourced numbers, no greenwashing.' } },
-  { id: 'business', dow: 6,
-    fr: { name: 'Business & freelance', desc: 'Pricing, statut, premiers clients, revenus récurrents : l’analyse avant les slogans.' },
-    en: { name: 'Business & freelance', desc: 'Pricing, legal structure, first clients, recurring revenue: analysis before slogans.' } },
-  { id: 'social', dow: 0,
-    fr: { name: 'Réseaux sociaux & marque', desc: 'Algorithmes, fréquence, formats : ce que disent les données, pas les gourous.' },
-    en: { name: 'Social media & branding', desc: 'Algorithms, frequency, formats: what the data says, not the gurus.' } },
+  { id: 'hotes',
+    fr: { name: 'Hôtes & location courte durée', desc: 'Gestion, rentabilité nette, réglementation, fiscalité, investissement locatif : les calculs et les règles à connaître quand on loue en courte durée en France.' },
+    en: { name: 'Hosts & short-term rentals', desc: 'Operations, net profitability, regulation, taxes and rental investing: the numbers and rules every short-term rental host in the US should know.' } },
+  { id: 'artisans',
+    fr: { name: 'Artisans & petites entreprises de services', desc: 'Appels manqués, devis, tarifs, visibilité, avis, statuts, trésorerie : le quotidien des artisans et des petites entreprises de services, chiffres à l’appui.' },
+    en: { name: 'Contractors & small service businesses', desc: 'Missed calls, quotes, pricing, visibility, reviews, business structure and cash flow: the daily reality of US contractors and small service businesses, with the math.' } },
+  { id: 'saas',
+    fr: { name: 'Marketing & croissance SaaS', desc: 'Contenu, community management, réseaux sociaux, algorithmes : ce qui fait croître un éditeur de SaaS, avec des données et des méthodes applicables.' },
+    en: { name: 'SaaS marketing & growth', desc: 'Content, community management, social media and algorithms: what grows a SaaS company, with data and methods you can apply this week.' } },
 ];
+
+// Pilier d'une date (planning) : lun/mer = hôtes, mar/jeu/sam = artisans, ven/dim = SaaS
+function pillarForDate(date) {
+  const d = new Date(date + 'T12:00:00Z');
+  const dow = d.getUTCDay();
+  if (dow === 1 || dow === 3) return 'hotes';
+  if (dow === 2 || dow === 4) return 'artisans';
+  if (dow === 5 || dow === 0) return 'saas';
+  return 'artisans';
+}
 
 // Pages statiques : chemin par langue (chaque langue a son équivalent)
 const PAGES = {
@@ -47,11 +42,11 @@ const T = {
     locale: 'fr-FR',
     tagline: 'Tech · Business · Immobilier',
     siteTitle: 'Le brief quotidien pour développer son activité',
-    siteDesc: 'Un article en français et un en anglais chaque jour pour les hôtes Airbnb, artisans et indépendants. Données vérifiées, cas réels, zéro généralité.',
-    heroTag: 'Airbnb · Artisans · IA · Business',
-    heroH1: 'Hôtes Airbnb, artisans, indépendants : arrêtez de deviner. Lisez les chiffres.',
+    siteDesc: 'Un article en français et un en anglais chaque jour pour les hôtes en location courte durée, les artisans et les éditeurs de SaaS. Données sourcées, calculs refaisables, zéro généralité.',
+    heroTag: 'Hôtes · Artisans · Croissance SaaS',
+    heroH1: 'Hôtes, artisans, éditeurs de SaaS : arrêtez de deviner. Refaites les calculs.',
     heroSub: 'Chaque jour, un article en français et un en anglais, construits sur des données vérifiées et des cas réels. Pas de liste « 10 astuces », pas de généralités.',
-    proof: ['1 article FR + 1 EN par jour', '8 rubriques', 'Gratuit, sans spam'],
+    proof: ['1 article FR + 1 EN par jour', '3 piliers', 'Gratuit, sans spam'],
     emailPh: 'votre@email.com', emailLabel: 'Votre email',
     heroCta: 'Recevoir le meilleur de la semaine',
     note: 'Gratuit. Votre email sert uniquement à vous envoyer la newsletter, désinscription en un clic.',
@@ -73,11 +68,11 @@ const T = {
     locale: 'en',
     tagline: 'Tech · Business · Real Estate',
     siteTitle: 'The daily brief to grow your business',
-    siteDesc: 'One article in English and one in French every day for Airbnb hosts, contractors and solo founders. Verified data, real cases, zero generalities.',
-    heroTag: 'Airbnb · Contractors · AI · Business',
-    heroH1: 'Airbnb hosts, contractors, solo founders: stop guessing. Read the numbers.',
+    siteDesc: 'One article in English and one in French every day for short-term rental hosts, contractors and SaaS founders in the US. Sourced data, calculations you can redo, zero generalities.',
+    heroTag: 'Hosts · Contractors · SaaS growth',
+    heroH1: 'Hosts, contractors, SaaS founders: stop guessing. Run the numbers.',
     heroSub: 'Every day, one article in English and one in French, built on verified data and real cases. No “10 tips” lists, no generalities.',
-    proof: ['One EN + one FR article daily', '8 topics', 'Free, no spam'],
+    proof: ['One EN + one FR article daily', '3 pillars', 'Free, no spam'],
     emailPh: 'you@email.com', emailLabel: 'Your email',
     heroCta: 'Get the best of the week',
     note: 'Free. Your email is only used to send the newsletter; unsubscribe in one click.',
@@ -288,4 +283,4 @@ const NOINDEX = [
   '/en/honest-guide-ai-tools-contractors-2026.html'
 ];
 
-module.exports = { BRAND, DOMAIN, YEAR, READERS, CATS, PAGES, catPath, T, PAGE_CONTENT, NOINDEX };
+module.exports = { BRAND, DOMAIN, YEAR, READERS, CATS, pillarForDate, PAGES, catPath, T, PAGE_CONTENT, NOINDEX };

@@ -11,7 +11,10 @@ const fs = require('fs');
 const path = require('path');
 const C = require('./site-config');
 
-const { BRAND, DOMAIN, CATS, PAGES, T, PAGE_CONTENT, catPath, NOINDEX } = C;
+const { BRAND, DOMAIN, CATS, PAGES, T, PAGE_CONTENT, catPath, NOINDEX, pillarForDate } = C;
+const EX = require('./extras');
+Object.assign(PAGES, EX.PAGES); Object.assign(PAGE_CONTENT, EX.CONTENT);
+const SLUG_CAT = {};
 const ROOT = path.join(__dirname, '..');
 const rd = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const wr = (p, s) => { fs.mkdirSync(path.dirname(path.join(ROOT, p)), { recursive: true }); fs.writeFileSync(path.join(ROOT, p), s); };
@@ -48,7 +51,7 @@ function readSchedule() {
   const m = src.match(/const SCHEDULE = (\[[\s\S]*?\]);/);
   if (!m) throw new Error('SCHEDULE introuvable dans editorial-clock.js');
   const list = new Function('return ' + m[1])();
-  return list.map((a) => ({ ...a, cat: a.cat || CATS.find((c) => c.dow === new Date(a.date + 'T12:00:00Z').getUTCDay()).id }));
+  return list.map((a) => ({ ...a, cat: a.cat || pillarForDate(a.date) }));
 }
 
 const FR_M = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
@@ -59,9 +62,10 @@ function fmt(date, lang) {
 }
 
 // ── Partials ─────────────────────────────────────────────────────────────────
-const nlForm = (lang, id, cta) => {
+const nlForm = (lang, id, cta, pillar) => {
   const t = T[lang];
   return `<form class="s-form" data-s-form="newsletter" data-ok="${esc(t.nlOk)}">
+  <input type="hidden" name="pillar" value="${pillar || 'all'}">
   <label class="s-sr" for="nl-${id}">${t.emailLabel}</label>
   <input id="nl-${id}" type="email" name="email" required maxlength="254" placeholder="${t.emailPh}" autocomplete="email">
   <input type="text" name="website" class="s-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -70,12 +74,15 @@ const nlForm = (lang, id, cta) => {
 </form>`;
 };
 
-const newsletter = (lang) => {
+const newsletter = (lang, pillar) => {
   const t = T[lang];
+  const pc = pillar && CATS.find((c) => c.id === pillar);
+  const title = pc ? (lang === 'fr' ? `La newsletter ${pc.fr.name}` : `The ${pc.en.name} newsletter`) : t.nlTitle;
+  const lead = pc ? (lang === 'fr' ? 'Les meilleurs articles et outils de ce pilier, par email, sans autre sujet.' : 'The best articles and tools of this pillar, by email, nothing else.') : t.nlLead;
   return `<section class="s-newsletter"><div class="s-newsletter-inner">
-<h2>${esc(t.nlTitle)}</h2>
-<p class="s-lead">${esc(t.nlLead)}</p>
-${nlForm(lang, 'box', t.nlCta)}
+<h2>${esc(title)}</h2>
+<p class="s-lead">${esc(lead)}</p>
+${nlForm(lang, 'box', t.nlCta, pillar)}
 <p class="s-form-note">${esc(t.note)}</p>
 </div></section>`;
 };
@@ -106,7 +113,7 @@ const footer = (lang) => {
 <div class="sf-inner">
 <div class="sf-brand"><a class="sf-logo" href="/">${BRAND}</a><p>${esc(t.footAbout)}</p></div>
 <div class="sf-col"><h4>${t.footTitle1}</h4>${CATS.map((c) => `<a href="${catPath(lang, c.id)}">${esc(c[lang].name)}</a>`).join('')}</div>
-<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${lang === 'fr' ? '/fr/tribune' : '/en/community'}">${lang === 'fr' ? 'Tribune des auteurs' : 'Community voices'}</a><a href="${PAGES.method[lang]}">${lang === 'fr' ? 'Comment nous travaillons' : 'How we work'}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
+<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${lang === 'fr' ? '/fr/tribune' : '/en/community'}">${lang === 'fr' ? 'Tribune des auteurs' : 'Community voices'}</a><a href="${PAGES.method[lang]}">${lang === 'fr' ? 'Comment nous travaillons' : 'How we work'}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="${PAGES.about[lang]}">${lang === 'fr' ? 'À propos' : 'About'}</a><a href="${PAGES.money[lang]}">${lang === 'fr' ? 'Comment nous gagnons de l’argent' : 'How we make money'}</a><a href="${PAGES.contact[lang]}">Contact</a><a href="${PAGES.legal[lang]}">${lang === 'fr' ? 'Mentions légales' : 'Legal notice'}</a><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="/${other}/">${esc(t.other)}</a></div>
 </div>
 <div class="sf-legal">${esc(lang === 'fr' ? `${BRAND} est édité par ` : `${BRAND} is published by `)}<a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>. ${esc(t.legal)} <a href="${PAGES.reuse[lang]}">${esc(t.legalMore)}</a>.</div>
 </footer>`;
@@ -143,7 +150,7 @@ const nav = (lang, alt, current) => {
     <div class="mh-nav-in">
       <a class="mh-nav-home" href="/${lang}/"${current === 'home' ? ' aria-current="page"' : ''}>${esc(t.latest)}</a>
       ${cats}
-      <div class="mh-nav-extra"><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
+      <div class="mh-nav-extra"><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
     </div>
   </nav>
 </header>
@@ -210,8 +217,7 @@ function calendar(lang, schedule) {
   const cells = [];
   for (let i = 0; i < 7; i++) {
     const date = addDays(today, i);
-    const dow = new Date(date + 'T12:00:00Z').getUTCDay();
-    const cat = CATS.find((c) => c.dow === dow);
+    const cat = catById(pillarForDate(date));
     const items = schedule.filter((a) => a.lang === lang && a.date === date);
     const it = items.find((a) => a.slug) || items[0];
     const wd = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' }).format(new Date(date + 'T12:00:00Z'));
@@ -247,6 +253,25 @@ ${calendar(lang, schedule)}
   }));
 }
 
+function pillarExtras(lang, cat, list) {
+  const fr = lang === 'fr';
+  const tools = EX.TOOLS.filter((t) => t.id === cat.id);
+  const src = new Map();
+  list.forEach((a) => {
+    const f = path.join(ROOT, a.slug.replace(/^\//, ''));
+    if (!fs.existsSync(f)) return;
+    const h = fs.readFileSync(f, 'utf8');
+    const m = h.match(/<ol class="article-sources">([\s\S]*?)<\/ol>/);
+    if (!m) return;
+    (m[1].match(/<a [^>]*href="https?:[^"]+"[^>]*>[\s\S]*?<\/a>/g) || []).forEach((x) => {
+      const u = (x.match(/href="([^"]+)"/) || [])[1]; const tx = x.replace(/<[^>]+>/g, '').trim();
+      if (u && !/residencemanager|mayapilot|alturacom|margebrief/.test(u) && !src.has(u)) src.set(u, tx);
+    });
+  });
+  return `${tools.length ? `<section class="s-section"><h2 class="s-h2">${fr ? 'Outils gratuits' : 'Free tools'}</h2><ul class="s-upcoming">${tools.map((t) => `<li><a href="${EX.toolPath(t, lang)}">${esc(t[lang].title)}</a> <span>${esc(t[lang].desc)}</span></li>`).join('')}</ul></section>` : ''}
+${src.size ? `<section class="s-section"><h2 class="s-h2">${fr ? 'Sources citées dans nos articles' : 'Sources cited in our articles'}</h2><ul class="s-sources">${[...src].map(([u, tx]) => `<li><a href="${esc(u)}" rel="noopener">${esc(tx || u)}</a></li>`).join('')}</ul></section>` : ''}`;
+}
+
 function buildCategory(lang, cat, schedule, published) {
   const t = T[lang];
   const c = cat[lang];
@@ -260,8 +285,9 @@ function buildCategory(lang, cat, schedule, published) {
 ${list.length ? `<div class="j-grid">${list.map((a) => jItem(a, lang, true)).join('')}</div>` : `<p class="s-empty">${esc(t.emptyCat)}</p>`}
 </section>
 ${next.length ? `<section class="s-section"><h2 class="s-h2">${esc(t.upcoming)}</h2><ul class="s-upcoming">${next.map((a) => `<li><time datetime="${a.date}">${fmt(a.date, lang)}</time><span>${esc(a.title)}</span></li>`).join('')}</ul></section>` : ''}
+${pillarExtras(lang, cat, list)}
 <div style="height:2.5rem"></div>
-${newsletter(lang)}`;
+${newsletter(lang, cat.id)}`;
   const urlPath = catPath(lang, cat.id);
   wr(urlPath.slice(1) + '.html', shell({
     lang, title: `${c.name} | ${BRAND}`, desc: c.desc, urlPath, alt: { fr: catPath('fr', cat.id), en: catPath('en', cat.id) }, body, current: cat.id,
@@ -312,6 +338,11 @@ function processArticle(file, lang) {
     const og = `<meta property="og:image" content="${DOMAIN}${im.big}">\n  <meta property="og:image:width" content="1600">\n  <meta property="og:image:height" content="900">\n  <meta property="og:image:alt" content="${esc(altOf(im, lang))}">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${DOMAIN}${im.big}">`;
     html = setBlock(html, 'OGIMG', og, (h, b) => h.replace('</head>', () => `  ${b}\n</head>`));
   }
+  const pc = SLUG_CAT[slug];
+  if (pc) html = html.replace(/<span class="article-tag">[^<]*<\/span>/, `<span class="article-tag">${esc(catById(pc)[lang].name).replace(/&amp;/g, '&amp;')}</span>`);
+  const dm = (html.match(/"dateModified":"(\d{4}-\d{2}-\d{2})"/) || [])[1];
+  html = html.replace(/<span class="article-updated">[^<]*<\/span>\s*/, '');
+  if (dm) html = html.replace(/(<span class="article-date">[^<]*<\/span>)/, `$1\n          <span class="article-updated">${lang === 'fr' ? 'Mis à jour et vérifié le' : 'Updated and verified'} ${fmt(dm, lang)}</span>`);
   html = fixFonts(html);
   html = html.replace(/\n?<footer>\s*<p>&copy;[\s\S]*?<\/footer>\n?/, '\n');
   const head = nav(lang, alt, null);
@@ -319,7 +350,7 @@ function processArticle(file, lang) {
   else html = html.replace(/<nav[\s\S]*?<\/nav>/, () => head);
   const hasMain = html.includes('</main>');
   html = html.replace(/<!--S:PROMO-->[\s\S]*?<!--\/S:PROMO-->\n?/, '');
-  html = setBlock(html, 'NEWSLETTER', newsletter(lang), (h, b) => (hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
+  html = setBlock(html, 'NEWSLETTER', newsletter(lang, SLUG_CAT[slug]), (h, b) => (hasMain ? h.replace('</main>', () => `${b}\n</main>`) : h.replace('</body>', () => `${b}\n</body>`)));
   html = setBlock(html, 'FOOTER', footer(lang), (h, b) => (hasMain ? h.replace('</main>', () => `</main>\n${b}`) : h.replace('</body>', () => `${b}\n</body>`)));
   fs.writeFileSync(file, html);
 }
@@ -368,6 +399,7 @@ function buildSitemap(published) {
   const out = [url('/', latest, 'daily', '1.0'), url('/fr/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' }), url('/en/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' })];
   CATS.forEach((c) => ['fr', 'en'].forEach((l) => out.push(url(catPath(l, c.id), latest, 'daily', '0.7', { fr: catPath('fr', c.id), en: catPath('en', c.id) }))));
   Object.values(PAGES).forEach((pg) => ['fr', 'en'].forEach((l) => out.push(url(pg[l], latest, 'yearly', '0.3', pg))));
+  EX.TOOLS.forEach((t) => ['fr', 'en'].forEach((l) => out.push(url(EX.toolPath(t, l), latest, 'monthly', '0.7', { fr: EX.toolPath(t, 'fr'), en: EX.toolPath(t, 'en') }))));
   published.filter((a) => !NOINDEX.includes(a.slug)).forEach((a) => out.push(url(prettyUrl(a.slug), a.date, 'monthly', '0.8')));
   wr('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${out.join('\n')}\n</urlset>\n`);
 }
@@ -380,7 +412,7 @@ function buildLlms(allPublished) {
     .map((a) => `- [${a.title}](${DOMAIN}${prettyUrl(a.slug)})${a.desc ? ': ' + a.desc.replace(/\s+/g, ' ') : ''}`);
   const txt = `# ${BRAND}
 
-> ${BRAND} is a bilingual (French/English) independent publication with one new sourced article every day, covering short-term rental and property management, real estate investment, AI and automation for small businesses, trades and contractors, business and freelancing, social media, tech and sustainability. Every article states its numbers, shows the calculation and cites its sources. ${BRAND} is published by AlturaCom (https://alturacom-production.odoo.com), a digital agency; products of the same publisher are disclosed as such.
+> ${BRAND} is a bilingual (French/English) independent publication with one new sourced article every day, covering three pillars only: short-term rental hosts, contractors and small service businesses, and SaaS marketing and growth. English content targets the United States, French content targets France. Every article states its numbers, shows the calculation and cites its sources. ${BRAND} is published by AlturaCom (https://alturacom-production.odoo.com), a digital agency; products of the same publisher are disclosed as such.
 
 ## Sections
 ${CATS.map((c) => `- ${c.en.name}: ${c.en.desc}`).join('\n')}
@@ -443,6 +475,22 @@ function applyNoindex() {
   });
 }
 
+function buildTool(t, lang) {
+  const c = t[lang]; const urlPath = EX.toolPath(t, lang);
+  const alt = { fr: EX.toolPath(t, 'fr'), en: EX.toolPath(t, 'en') };
+  wr(urlPath.slice(1) + '.html', shell({
+    lang, title: `${c.title} | ${BRAND}`, desc: c.desc, urlPath, alt, body: EX.toolBody(t, lang), current: t.id,
+    jsonld: { '@context': 'https://schema.org', '@type': 'WebApplication', name: c.title, description: c.desc, url: DOMAIN + urlPath, inLanguage: T[lang].locale, applicationCategory: 'BusinessApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: lang === 'fr' ? 'EUR' : 'USD' }, publisher: { '@type': 'Organization', name: BRAND, url: DOMAIN + '/' } },
+  }));
+}
+
+function buildSearchIndex(published) {
+  const idx = [];
+  published.filter((a) => !NOINDEX.includes(a.slug)).forEach((a) => idx.push({ t: a.title, d: a.desc || '', u: prettyUrl(a.slug), l: a.lang }));
+  EX.TOOLS.forEach((t) => ['fr', 'en'].forEach((l) => idx.push({ t: t[l].title, d: t[l].desc, u: EX.toolPath(t, l), l })));
+  wr('assets/data/search.json', JSON.stringify(idx));
+}
+
 function build() {
   const schedule = readSchedule();
   const published = schedule.filter((a) => a.slug).sort((a, b) => b.date.localeCompare(a.date));
@@ -451,7 +499,10 @@ function build() {
     buildLangIndex(lang, published, schedule);
     CATS.forEach((cat) => buildCategory(lang, cat, schedule, published));
     Object.keys(PAGES).forEach((k) => buildStaticPage(k, lang));
+    EX.TOOLS.forEach((t) => buildTool(t, lang));
   });
+  published.forEach((a) => { SLUG_CAT[a.slug] = a.cat; });
+  buildSearchIndex(published);
 
   const generated = new Set(['index.html', ...Object.values(PAGES).map((p) => path.basename(p.fr) + '.html'), ...Object.values(PAGES).map((p) => path.basename(p.en) + '.html')]);
   ['fr', 'en'].forEach((lang) => {
