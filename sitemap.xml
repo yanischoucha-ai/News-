@@ -184,6 +184,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/content-reuse"/>
   </url>
   <url>
+    <loc>https://www.margebrief.com/fr/methode-editoriale</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/methode-editoriale"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/editorial-method"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/editorial-method</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/methode-editoriale"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/editorial-method"/>
+  </url>
+  <url>
     <loc>https://www.margebrief.com/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -208,25 +224,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.margebrief.com/fr/investir-location-courte-duree-2026</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.margebrief.com/fr/7-outils-ia-business-2026</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/airbnb-host-plateau-3-listings</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.margebrief.com/en/honest-guide-ai-tools-contractors-2026</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

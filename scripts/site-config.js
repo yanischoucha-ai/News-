@@ -38,6 +38,7 @@ const CATS = [
 const PAGES = {
   write: { fr: '/fr/ecrire-pour-nous', en: '/en/write-for-us' },
   reuse: { fr: '/fr/reutilisation-contenu', en: '/en/content-reuse' },
+  method: { fr: '/fr/methode-editoriale', en: '/en/editorial-method' },
 };
 const catPath = (lang, id) => (lang === 'fr' ? `/fr/categorie/${id}` : `/en/category/${id}`);
 
@@ -172,6 +173,58 @@ ${contribForm('en')}
 <p>See published pieces: <a href="/en/community">Community voices</a>. To report or remove a piece: <a href="${PAGES.reuse.en}">write to us</a>.</p>`,
     },
   },
+  method: {
+    fr: {
+      title: 'Comment nous travaillons',
+      meta: `Qui publie ${BRAND}, comment les articles sont écrits et vérifiés, quand l’IA intervient, ce que nous ne faisons jamais et comment signaler une erreur.`,
+      html: () => `<h1>Comment nous travaillons</h1>
+<p class="s-intro">${BRAND} publie chaque jour des articles sourcés pour les hôtes de location courte durée, les artisans et les indépendants. Cette page dit qui publie, comment, avec quelles règles, et comment nous corriger.</p>
+<h2>Qui publie</h2>
+<p>${BRAND} est édité par <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>, une agence de communication digitale. L’éditeur développe aussi d’autres services, comme Résidence Manager (outil pour hôtes) et Maya Pilot (outil de marketing pour éditeurs de logiciels). Quand un article renvoie vers l’un de ces services, nous l’indiquons dans le texte : ce n’est jamais présenté comme un avis indépendant.</p>
+<h2>Comment les articles sont faits</h2>
+<p>Les articles sont rédigés avec l’aide d’une intelligence artificielle (Claude, d’Anthropic) à partir de recherches sur des sources identifiées, puis publiés automatiquement selon des règles de contrôle écrites. Nous ne prétendons pas qu’ils sont écrits à la main, et nous ne leur inventons ni auteur fictif ni expérience personnelle.</p>
+<h2>Les règles que chaque article doit respecter</h2>
+<ul>
+<li>Au moins trois sources, dont une source primaire (texte de loi, administration, étude d’origine), listées en bas de l’article avec leur lien.</li>
+<li>Un calcul ou un critère chiffré que vous pouvez refaire avec vos propres chiffres, avec les hypothèses affichées.</li>
+<li>Une date de vérification visible. Quand une information change, l’article est corrigé et la date mise à jour.</li>
+<li>Les limites annoncées : quand les chiffres existants viennent d’éditeurs d’outils ou d’études fragiles, nous le disons.</li>
+<li>Aucun chiffre, témoignage, prix ou expérience inventé. Aucune promesse de revenus ou de résultats.</li>
+<li>Si un jour ne permet pas d’apporter un fait ou un calcul utile, nous publions moins plutôt que de remplir.</li>
+</ul>
+<h2>Ce que nous ne sommes pas</h2>
+<p>Nos articles informent, ils ne remplacent pas un conseil juridique, fiscal, comptable ou financier. Pour une décision engageante, vérifiez auprès d’un professionnel et auprès de la source officielle citée.</p>
+<h2>Les textes d’auteurs invités</h2>
+<p>La <a href="/fr/tribune">Tribune</a> accueille des textes écrits par des lecteurs. Ils sont publiés immédiatement, après des contrôles automatiques, puis relus a posteriori ; nous retirons ceux qui ne respectent pas nos règles. Ils engagent leurs auteurs, pas la rédaction.</p>
+<h2>Signaler une erreur</h2>
+<p>Une erreur, un chiffre périmé, une source qui ne dit pas ce que nous écrivons ? Signalez-le via la page <a href="${PAGES.reuse.fr}">Citer et réutiliser nos articles</a>, où figure le moyen de nous contacter. Nous vérifions et corrigeons, et nous datons la correction.</p>`
+    },
+    en: {
+      title: 'How we work',
+      meta: `Who publishes ${BRAND}, how articles are written and checked, where AI is involved, what we never do, and how to report an error.`,
+      html: () => `<h1>How we work</h1>
+<p class="s-intro">${BRAND} publishes sourced articles every day for short-term rental hosts, tradespeople and independents. This page says who publishes it, how, under which rules, and how to correct us.</p>
+<h2>Who publishes</h2>
+<p>${BRAND} is published by <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>, a digital communication agency. The publisher also develops other services, such as Résidence Manager (a tool for hosts) and Maya Pilot (a marketing tool for software companies). When an article points to one of them, we say so in the text: it is never presented as an independent review.</p>
+<h2>How articles are made</h2>
+<p>Articles are written with the help of artificial intelligence (Claude, by Anthropic) from research on identified sources, then published automatically under written quality rules. We do not claim they are handwritten, and we never invent a fictional author or personal experience for them.</p>
+<h2>Rules every article must meet</h2>
+<ul>
+<li>At least three sources, including a primary source (legislation, a public agency, the original study), listed at the bottom of the article with links.</li>
+<li>A calculation or numerical test you can redo with your own numbers, with the assumptions shown.</li>
+<li>A visible verification date. When something changes, the article is corrected and the date updated.</li>
+<li>Limits stated: when existing figures come from tool vendors or weak studies, we say so.</li>
+<li>No invented figure, testimonial, price or experience. No promise of income or results.</li>
+<li>If a day does not yield a useful new fact or calculation, we publish less rather than fill space.</li>
+</ul>
+<h2>What we are not</h2>
+<p>Our articles inform; they do not replace legal, tax, accounting or financial advice. For a binding decision, check with a professional and with the official source cited.</p>
+<h2>Guest texts</h2>
+<p>The <a href="/en/community">Community</a> section hosts texts written by readers. They are published immediately after automated checks, then reviewed afterwards; we remove those that break our rules. They represent their authors, not the editorial team.</p>
+<h2>Report an error</h2>
+<p>An error, an outdated figure, a source that does not say what we wrote? Report it through the <a href="${PAGES.reuse.en}">Citing and reusing our articles</a> page, which explains how to contact us. We check and correct, and we date the correction.</p>`
+    }
+  },
   reuse: {
     fr: {
       title: 'Citer et réutiliser nos articles',
@@ -228,4 +281,11 @@ ${contactForm('en')}`,
   },
 };
 
-module.exports = { BRAND, DOMAIN, YEAR, READERS, CATS, PAGES, catPath, T, PAGE_CONTENT };
+// Articles mis en noindex tant qu'ils n'ont pas été réécrits au niveau des règles actuelles (docs/EDITORIAL.md)
+const NOINDEX = [
+  '/fr/investir-location-courte-duree-2026.html',
+  '/en/airbnb-host-plateau-3-listings.html',
+  '/en/honest-guide-ai-tools-contractors-2026.html'
+];
+
+module.exports = { BRAND, DOMAIN, YEAR, READERS, CATS, PAGES, catPath, T, PAGE_CONTENT, NOINDEX };

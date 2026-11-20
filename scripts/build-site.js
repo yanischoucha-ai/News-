@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const C = require('./site-config');
 
-const { BRAND, DOMAIN, CATS, PAGES, T, PAGE_CONTENT, catPath } = C;
+const { BRAND, DOMAIN, CATS, PAGES, T, PAGE_CONTENT, catPath, NOINDEX } = C;
 const ROOT = path.join(__dirname, '..');
 const rd = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const wr = (p, s) => { fs.mkdirSync(path.dirname(path.join(ROOT, p)), { recursive: true }); fs.writeFileSync(path.join(ROOT, p), s); };
@@ -106,7 +106,7 @@ const footer = (lang) => {
 <div class="sf-inner">
 <div class="sf-brand"><a class="sf-logo" href="/">${BRAND}</a><p>${esc(t.footAbout)}</p></div>
 <div class="sf-col"><h4>${t.footTitle1}</h4>${CATS.map((c) => `<a href="${catPath(lang, c.id)}">${esc(c[lang].name)}</a>`).join('')}</div>
-<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${lang === 'fr' ? '/fr/tribune' : '/en/community'}">${lang === 'fr' ? 'Tribune des auteurs' : 'Community voices'}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
+<div class="sf-col"><h4>${t.footTitle2}</h4><a href="/${lang}/">${esc(t.latest)}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a href="${lang === 'fr' ? '/fr/tribune' : '/en/community'}">${lang === 'fr' ? 'Tribune des auteurs' : 'Community voices'}</a><a href="${PAGES.method[lang]}">${lang === 'fr' ? 'Comment nous travaillons' : 'How we work'}</a><a href="${PAGES.reuse[lang]}">${esc(t.reuse)}</a><a href="/${other}/">${esc(t.other)}</a></div>
 </div>
 <div class="sf-legal">${esc(lang === 'fr' ? `${BRAND} est édité par ` : `${BRAND} is published by `)}<a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>. ${esc(t.legal)} <a href="${PAGES.reuse[lang]}">${esc(t.legalMore)}</a>.</div>
 </footer>`;
@@ -368,13 +368,14 @@ function buildSitemap(published) {
   const out = [url('/', latest, 'daily', '1.0'), url('/fr/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' }), url('/en/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' })];
   CATS.forEach((c) => ['fr', 'en'].forEach((l) => out.push(url(catPath(l, c.id), latest, 'daily', '0.7', { fr: catPath('fr', c.id), en: catPath('en', c.id) }))));
   Object.values(PAGES).forEach((pg) => ['fr', 'en'].forEach((l) => out.push(url(pg[l], latest, 'yearly', '0.3', pg))));
-  published.forEach((a) => out.push(url(prettyUrl(a.slug), a.date, 'monthly', '0.8')));
+  published.filter((a) => !NOINDEX.includes(a.slug)).forEach((a) => out.push(url(prettyUrl(a.slug), a.date, 'monthly', '0.8')));
   wr('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${out.join('\n')}\n</urlset>\n`);
 }
 
 
 // ── llms.txt : plan du site lisible par les assistants IA (ChatGPT, Claude, Perplexity…) ──
-function buildLlms(published) {
+function buildLlms(allPublished) {
+  const published = allPublished.filter((a) => !NOINDEX.includes(a.slug));
   const L = (lang) => published.filter((a) => (a.lang || (a.slug && a.slug.startsWith('en/') ? 'en' : null)) === lang || prettyUrl(a.slug).startsWith('/' + lang + '/'))
     .map((a) => `- [${a.title}](${DOMAIN}${prettyUrl(a.slug)})${a.desc ? ': ' + a.desc.replace(/\s+/g, ' ') : ''}`);
   const txt = `# ${BRAND}
@@ -393,6 +394,9 @@ ${L('fr').join('\n') || '- (à venir)'}
 ## Community authors
 - [Community voices](${DOMAIN}/en/community): pieces by independent authors, published without editorial review, links marked nofollow.
 - [Tribune des auteurs](${DOMAIN}/fr/tribune)
+
+## Editorial method
+- [How we work](${DOMAIN}${PAGES.method.en}): who publishes, how articles are written and checked (AI-assisted, sourced, dated), rules and corrections. Français : [Comment nous travaillons](${DOMAIN}${PAGES.method.fr}).
 
 ## Reuse and citation
 - [Citing and reusing our articles](${DOMAIN}${PAGES.reuse.en}): short quotations with attribution and a link to the source are welcome.
@@ -427,6 +431,18 @@ function versionAssets() {
   });
 }
 
+// Pages mises en noindex (articles à réécrire) : meta robots + hors sitemap
+function applyNoindex() {
+  NOINDEX.forEach((slug) => {
+    const f = path.join(ROOT, slug.replace(/^\//, ''));
+    if (!fs.existsSync(f)) return;
+    let html = fs.readFileSync(f, 'utf8');
+    const tag = '<meta name="robots" content="noindex, follow">';
+    const out = /<meta name="robots"[^>]*>/.test(html) ? html.replace(/<meta name="robots"[^>]*>/, tag) : html.replace('</head>', `  ${tag}\n</head>`);
+    if (out !== html) fs.writeFileSync(f, out);
+  });
+}
+
 function build() {
   const schedule = readSchedule();
   const published = schedule.filter((a) => a.slug).sort((a, b) => b.date.localeCompare(a.date));
@@ -447,6 +463,7 @@ function build() {
   buildHome(published);
   buildSitemap(published);
   buildLlms(published);
+  applyNoindex();
   versionAssets();
   console.log(`✅ build-site : ${published.length} articles publiés, ${CATS.length * 2} pages rubriques, sitemap régénéré`);
 }

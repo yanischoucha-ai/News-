@@ -140,3 +140,7 @@ Un article doit se lire comme écrit par quelqu'un qui connaît le terrain et pr
 ## 11. Date visible sur chaque article (consigne permanente du propriétaire)
 
 Chaque article affiche sa date de publication : `new-article.js` l'écrit dans l'en-tête (`article-date`), dans le JSON-LD (`datePublished`, `dateModified`), dans « Citer cet article » et sur les cartes du site. Toujours renseigner `date` (jour d'exécution) ; ne jamais la laisser vide ni la modifier à la main. En cas de réécriture, renseigner `modified`. Le fonctionnement est 100 % autonome : aucune validation humaine, publication, commit et push chaque jour sans demander d'accord.
+
+## 11. Page « Comment nous travaillons » : promesses publiques à tenir
+
+La page `/fr/methode-editoriale` (`/en/editorial-method`) promet publiquement : trois sources dont une primaire, un calcul refaisable, une date de vérification visible, les limites annoncées, aucun fait inventé, et « publier moins plutôt que remplir ». Chaque article doit tenir ces promesses ; sinon ne pas le publier. Les articles en retard sur ce niveau sont listés dans `NOINDEX` (scripts/site-config.js) : ils restent visibles mais hors index Google, hors sitemap et hors llms.txt, jusqu'à réécriture ; une fois réécrits, les retirer de la liste.
