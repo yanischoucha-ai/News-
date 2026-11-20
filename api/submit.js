@@ -44,18 +44,18 @@ module.exports = async (req, res) => {
   if (!url || !key) return res.status(503).json({ error: 'not_configured' });
 
   try {
-    const q = type === 'newsletter' ? '?on_conflict=email,pillar' : '';
+    const q = '';
     const r = await fetch(`${url}/rest/v1/${TABLES[type]}${q}`, {
       method: 'POST',
       headers: {
         apikey: key,
         Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
-        Prefer: type === 'newsletter' ? 'resolution=ignore-duplicates,return=minimal' : 'return=minimal',
+        Prefer: 'return=minimal',
       },
       body: JSON.stringify(row),
     });
-    if (!r.ok) return res.status(502).json({ error: 'storage' });
+    if (!r.ok && !(type === 'newsletter' && r.status === 409)) return res.status(502).json({ error: 'storage' });
     return res.status(200).json({ ok: true });
   } catch {
     return res.status(502).json({ error: 'storage' });
