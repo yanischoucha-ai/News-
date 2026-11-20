@@ -179,7 +179,9 @@ function main() {
   const old = lines[idx];
   const tag = (old.match(/tag: "([^"]*)"/) || [])[1] || '';
   const defCat = pillarForDate(a.date);
-  const cat = a.cat || (old.match(/cat: "([^"]*)"/) || [])[1] || defCat;
+  const LEGACY = { airbnb: 'hotes', immobilier: 'hotes', durable: 'hotes', ia: 'saas', tech: 'saas', business: 'saas', social: 'saas' };
+  const cat0 = a.cat || (old.match(/cat: "([^"]*)"/) || [])[1] || defCat;
+  const cat = LEGACY[cat0] || cat0;
   if (!CATS.some((c) => c.id === cat)) fail([`cat inconnue : ${cat}`]);
 
   const outPath = path.join(ROOT, a.lang, `${a.slug}.html`);

@@ -176,3 +176,19 @@ Chaque article affiche sa date de publication : `new-article.js` l'écrit dans l
 ## 11. Page « Comment nous travaillons » : promesses publiques à tenir
 
 La page `/fr/methode-editoriale` (`/en/editorial-method`) promet publiquement : trois sources dont une primaire, un calcul refaisable, une date de vérification visible, les limites annoncées, aucun fait inventé, et « publier moins plutôt que remplir ». Chaque article doit tenir ces promesses ; sinon ne pas le publier. Les articles en retard sur ce niveau sont listés dans `NOINDEX` (scripts/site-config.js) : ils restent visibles mais hors index Google, hors sitemap et hors llms.txt, jusqu'à réécriture ; une fois réécrits, les retirer de la liste.
+
+
+## 12. Brief des 3 piliers (prime sur tout prompt de tâche planifiée)
+
+Cette section remplace toute consigne contraire d'un prompt de tâche (thèmes par jour, « US/UK », rubriques `durable`, `tech`, `ia`, `social`, `business`, `immobilier`, `airbnb`).
+
+- **3 piliers uniquement**, `cat` = `hotes` | `artisans` | `saas`. Tout article appartient à l'un d'eux, rien d'autre. Jour par défaut : lun/mer hôtes, mar/jeu artisans, ven/dim SaaS, sam alterné par semaine ISO (impaire artisans, paire hôtes). Si le sujet prévu au planning ne rentre dans aucun pilier, le remplacer par un sujet du pilier du jour.
+  - Hôtes : gestion, rentabilité nette, réglementation, fiscalité, investissement locatif (la rénovation énergétique d'un meublé entre ici).
+  - Artisans / contractors / petites entreprises de services : appels manqués, devis, tarifs, visibilité, avis, statuts, trésorerie.
+  - SaaS : marketing et croissance des éditeurs (contenu, community management, réseaux sociaux, algorithmes). Les thèmes « outils IA / productivité » génériques n'existent plus.
+- **Marchés** : FR = France uniquement ; EN = États-Unis uniquement. Jamais le Royaume-Uni, ni aucun autre marché (pas de £, Ofgem, HMRC, NHS…).
+- **Valeur d'abord** : l'article doit rester utile sans aucun produit. Un calcul refaisable, une donnée sourcée ou une méthode applicable la semaine même. Moins vaut mieux qu'un article générique : si rien d'utile, publier 0 ou 1 article et le dire.
+- **Sources** : 3 minimum dont 1 primaire, date de publication et de mise à jour visibles (`dateModified`), date de vérification pour tout contenu fiscal ou légal.
+- **Produits** : au plus 1 lien contextuel par article, environ 2 articles sur 3, « un outil que nous éditons », jamais de bandeau/bouton/conclusion commerciale, jamais un avis indépendant. Les 3 produits (Résidence Manager, AlturaCom, Maya Pilot) sont opérationnels et sans clientèle : décrire au présent les fonctions réellement disponibles, jamais de client, résultat chiffré, témoignage ou étude de cas inventés. Concurrents décrits loyalement.
+- **Outils gratuits** : calculateurs sur le site (`/fr/outils/…`, `/en/tools/…`) : les citer et y renvoyer quand le sujet s'y prête (coût d'un appel manqué, rentabilité nette, CAC/payback).
+- **Jamais** : cacher l'éditeur, inventer un chiffre/témoignage/auteur, viser un autre marché que FR/US. Photos libres créditées, aucune image générée présentée comme réelle.
