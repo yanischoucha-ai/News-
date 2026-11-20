@@ -23,6 +23,17 @@ Le média est une référence business utile aux lecteurs d'abord. Il a 3 pilier
 - Qualité avant volume : un article générique, répétitif ou sans donnée sourcée n'est pas publié.
 
 
+## Contenus phares (responsabilité du manager de 8h)
+
+En plus des 2 articles quotidiens, le site publie chaque semaine **1 contenu phare** (donc environ 1 par mois et par pilier), construit par le manager de 8h, jamais par les tâches de publication du matin. C'est ce qui fait citer le site et le rend utile sans rien acheter. Rythme : si aucun contenu phare n'a été publié depuis 7 jours (voir `docs/JOURNAL.md`), le manager en construit un, un seul par exécution, en alternant les piliers : hôtes, artisans, SaaS.
+
+Formats : un **calculateur** (page HTML statique avec JavaScript intégré, sans inscription, sans traceur, version FR pour la France et version EN pour les États-Unis) ou un **baromètre** chiffré avec méthode publiée. Premiers contenus, dans cet ordre :
+1. Hôtes : rentabilité nette d'un meublé de tourisme (frais, taux de vacance, fiscalité LMNP en France, taxes et dépenses déductibles aux États-Unis).
+2. Artisans : coût réel d'un appel manqué (appels par semaine, part manquée, taux de conversion, panier moyen).
+3. SaaS : retour sur investissement du contenu (trafic, taux d'inscription, conversion payante, coût de production).
+
+Règles : chaque paramètre par défaut est présenté comme un exemple modifiable, avec sa source ou la mention « exemple, à remplacer par vos chiffres » ; aucune donnée inventée présentée comme réelle ; la méthode de calcul est expliquée sous l'outil avec 3 sources dont une primaire ; l'outil est testé (cas de calcul vérifiés à la main) avant publication ; page responsive, accessible, avec date de mise à jour ; ajoutée au sitemap, liée depuis la page du pilier concerné et depuis l'accueil. Un seul lien de réseau contextuel au plus, selon les règles de `docs/PRODUITS.md` ; l'outil doit rester pleinement utile sans lui. Si la qualité n'est pas au niveau, ne rien publier et le noter dans le journal.
+
 ## 0. Préparation
 
 1. `cd /home/claude/news-` (sinon `git clone https://github.com/yanischoucha-ai/News-.git /home/claude/news-`), puis `git pull --rebase origin main`.
