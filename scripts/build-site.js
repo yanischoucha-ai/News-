@@ -129,6 +129,11 @@ const fixFonts = (html) => {
   if (!html.includes('/assets/fonts/')) html = html.replace(/(\s*<link rel="stylesheet" href="[^"]*journal\.css">)/, `\n  ${FONTS}$1`);
   return html;
 };
+const shortTitle = (t) => {
+  if (t.length <= 60) return t;
+  const m = t.split(/\s*[:\u2014]\s+/)[0];
+  return m.length >= 25 && m.length <= 60 ? m : t;
+};
 const nav = (lang, alt, current) => {
   const t = T[lang]; const m = MH[lang];
   const nl = current === 'home' ? '#newsletter' : `/${lang}/#newsletter`;
@@ -188,6 +193,8 @@ function shell({ lang, title, desc, urlPath, alt, jsonld, body, type = 'website'
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:type" content="${type}">
   <meta property="og:url" content="${url}">
+  <meta property="og:image" content="${DOMAIN}/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/blog.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   ${FONTS}
@@ -324,6 +331,7 @@ function processArticle(file, lang) {
   if (/property="og:site_name"/.test(html)) html = html.replace(/<meta property="og:site_name" content="[^"]*">/, `<meta property="og:site_name" content="${BRAND}">`);
   else html = html.replace('</head>', `  <meta property="og:site_name" content="${BRAND}">\n</head>`);
   if (!html.includes('assets/js/site.js')) html = html.replace('</body>', '  <script src="/assets/js/site.js" defer></script>\n</body>');
+  html = html.replace(/<title>([^<]*?) \u2014 ([^<]*)<\/title>/, (m, a, b) => `<title>${shortTitle(a)} \u2014 ${b}</title>`);
   // anciens articles : habillage ALTURA / Résidence Manager → Marge Brief
   const legacy = /<p class="meta">(ALTURA|Résidence Manager) ·/.test(html);
   if (legacy) {

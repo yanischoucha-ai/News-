@@ -203,3 +203,6 @@ Cette section remplace toute consigne contraire d'un prompt de tâche (thèmes p
 - **Produits** : au plus 1 lien contextuel par article, environ 2 articles sur 3, « un outil que nous éditons », jamais de bandeau/bouton/conclusion commerciale, jamais un avis indépendant. Les 3 produits (Résidence Manager, AlturaCom, Maya Pilot) sont opérationnels et sans clientèle : décrire au présent les fonctions réellement disponibles, jamais de client, résultat chiffré, témoignage ou étude de cas inventés. Concurrents décrits loyalement.
 - **Outils gratuits** : calculateurs sur le site (`/fr/outils/…`, `/en/tools/…`) : les citer et y renvoyer quand le sujet s'y prête (coût d'un appel manqué, rentabilité nette, CAC/payback).
 - **Jamais** : cacher l'éditeur, inventer un chiffre/témoignage/auteur, viser un autre marché que FR/US. Photos libres créditées, aucune image générée présentée comme réelle.
+
+## 13. Plan SEO
+Voir docs/SEO-PLAN.md : clusters par pilier, titre ≤ 60 caractères, description 140–160, réponse directe en début de section.

@@ -26,7 +26,7 @@ const contactForm = (lang) => {
 
 const CONTENT = {
   about: {
-    fr: { title: 'À propos', meta: `${BRAND} : un média indépendant pour les professionnels qui font tourner une petite activité. Qui l’édite, quels produits l’éditeur publie, et comment nous travaillons.`,
+    fr: { title: 'À propos', meta: `${BRAND} : un média indépendant pour les professionnels d’une petite activité. Qui l’édite, quels produits il publie, comment nous travaillons.`,
       html: () => `<h1>À propos de ${BRAND}</h1>
 <p class="s-intro">${BRAND} est un média en ligne, en français pour la France et en anglais pour les États-Unis, destiné aux personnes qui font tourner une petite activité. Notre but : que vous repartiez avec un calcul, une source ou une méthode utilisables la semaine même, que vous achetiez quelque chose ou non.</p>
 <h2>Trois sujets, rien d’autre</h2>
