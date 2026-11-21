@@ -482,7 +482,7 @@ body > .s-newsletter, main .s-newsletter { margin: 2.5rem auto; }
 .sf-logo { color: #fff !important; font-weight: 800; font-size: 1.4rem; letter-spacing: -.03em; font-family: var(--sans); }
 .sf-logo i { color: var(--ac); font-style: normal; }
 .sf-legal a, .sf-col a:hover { color: #fff; }
-.sf-col h4 { color: #fff; }
+.sf-col .sf-h { color: #fff; }
 
 /* ── DIVERS ─────────────────────────────────────────────────────────────── */
 .sticky-cta { display: none !important; }

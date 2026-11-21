@@ -128,7 +128,7 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 6rem; }
 .sf-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
 .sf-logo { font: 400 1.25rem var(--s-serif); color: var(--s-gold) !important; text-decoration: none; }
 .sf-brand p { margin: .6rem 0 0; max-width: 300px; }
-.sf-col h4 { color: #fff; font: 700 .72rem var(--s-sans); letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .8rem; }
+.sf-col .sf-h { color: #fff; font: 700 .72rem var(--s-sans); letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .8rem; }
 .sf-col a { display: block; color: rgba(255,255,255,.6); text-decoration: none; padding: .2rem 0; }
 .sf-col a:hover { color: var(--s-gold); }
 .sf-legal { max-width: 1000px; margin: 2.2rem auto 0; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.12); font-size: .78rem; line-height: 1.6; }
@@ -140,3 +140,7 @@ body:has(.sticky-cta) .site-footer { padding-bottom: 6rem; }
   .nav-write { display: none; }
   .s-upcoming li { flex-direction: column; gap: .1rem; }
 }
+
+.skip-link{position:absolute;left:.5rem;top:-4rem;z-index:100;background:#fff;color:#000;padding:.6rem 1rem;border-radius:4px;text-decoration:none}
+.skip-link:focus{top:.5rem}
+.sf-col .sf-h{margin:0 0 .8rem}

@@ -27,5 +27,6 @@
       set(2, ltv > 0 ? cur.format(ltv) : na); set(3, ltv > 0 && cac > 0 ? nf.format(ltv / cac) + '×' : na);
     }
   }
+  root.addEventListener('submit', function (e) { e.preventDefault(); });
   root.addEventListener('input', run); run();
 })();

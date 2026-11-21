@@ -121,9 +121,9 @@ ${contactForm('en')}
   },
   search: {
     fr: { title: 'Recherche', meta: `Rechercher dans les articles et outils de ${BRAND}.`,
-      html: () => `<h1>Recherche</h1><div class="s-field"><label for="q">Rechercher un article ou un outil</label><input id="q" type="search" placeholder="Ex : appels manqués, DPE, CAC" autocomplete="off"></div><ul class="s-results" id="results" aria-live="polite"></ul><script src="/assets/js/search.js" defer></script>` },
+      html: () => `<h1>Recherche</h1><search><div class="s-field"><label for="q">Rechercher un article ou un outil</label><input id="q" type="search" placeholder="Ex : appels manqués, DPE, CAC" autocomplete="off"></div></search><ul class="s-results" id="results" aria-live="polite"></ul><script src="/assets/js/search.js" defer></script>` },
     en: { title: 'Search', meta: `Search ${BRAND} articles and tools.`,
-      html: () => `<h1>Search</h1><div class="s-field"><label for="q">Search articles and tools</label><input id="q" type="search" placeholder="Ex: missed calls, CAC, Airbnb tax" autocomplete="off"></div><ul class="s-results" id="results" aria-live="polite"></ul><script src="/assets/js/search.js" defer></script>` },
+      html: () => `<h1>Search</h1><search><div class="s-field"><label for="q">Search articles and tools</label><input id="q" type="search" placeholder="Ex: missed calls, CAC, Airbnb tax" autocomplete="off"></div></search><ul class="s-results" id="results" aria-live="polite"></ul><script src="/assets/js/search.js" defer></script>` },
   },
 };
 
@@ -177,7 +177,7 @@ function toolBody(t, lang) {
   return `<main class="s-page s-tool" data-tool="${t.id}" data-lang="${lang}">
 <h1>${c.title}</h1>
 <p class="s-intro">${c.intro}</p>
-<form class="s-form-stack s-tool-form" onsubmit="return false">
+<form class="s-form-stack s-tool-form">
 ${c.fields.map((f) => F(f[0], f[1], f[2])).join('\n')}
 </form>
 <section class="s-tool-out" aria-live="polite"><h2>${fr ? 'Résultat' : 'Result'}</h2><dl>${c.out.map((o, i) => `<div><dt>${o}</dt><dd id="o${i}">–</dd></div>`).join('')}</dl></section>
