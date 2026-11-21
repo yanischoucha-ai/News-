@@ -206,3 +206,7 @@ Cette section remplace toute consigne contraire d'un prompt de tâche (thèmes p
 
 ## 13. Plan SEO
 Avant de choisir le sujet, lis docs/SEO-PLAN.md : préfère un sujet d'un cluster listé (surtout ceux marqués « à créer ») plutôt qu'un sujet isolé, et relie l'article à l'outil gratuit et à l'article du même cluster. Titre ≤ 60 caractères (sujet en premier), description 140–160 caractères, réponse directe en début de section.
+
+## 13. Mention de l'IA dans les articles (consigne du propriétaire, 21 nov. 2026)
+
+Les articles, leurs méta-descriptions, résumés et FAQ ne contiennent jamais de formule du type « généré par IA », « écrit par une intelligence artificielle » ou « selon ChatGPT/Claude » pour désigner leur propre rédaction. Ne rien affirmer de faux en sens inverse : pas de faux auteur, pas de « notre rédaction a testé », pas de claim d'écriture manuelle (règle 3 inchangée). La page « Comment nous travaillons » est gérée séparément par le propriétaire ; ne pas la modifier sans son accord.
