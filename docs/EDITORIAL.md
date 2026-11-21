@@ -205,4 +205,4 @@ Cette section remplace toute consigne contraire d'un prompt de tâche (thèmes p
 - **Jamais** : cacher l'éditeur, inventer un chiffre/témoignage/auteur, viser un autre marché que FR/US. Photos libres créditées, aucune image générée présentée comme réelle.
 
 ## 13. Plan SEO
-Voir docs/SEO-PLAN.md : clusters par pilier, titre ≤ 60 caractères, description 140–160, réponse directe en début de section.
+Avant de choisir le sujet, lis docs/SEO-PLAN.md : préfère un sujet d'un cluster listé (surtout ceux marqués « à créer ») plutôt qu'un sujet isolé, et relie l'article à l'outil gratuit et à l'article du même cluster. Titre ≤ 60 caractères (sujet en premier), description 140–160 caractères, réponse directe en début de section.
