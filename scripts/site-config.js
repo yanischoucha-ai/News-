@@ -171,13 +171,13 @@ ${contribForm('en')}
   method: {
     fr: {
       title: 'Comment nous travaillons',
-      meta: `Qui publie ${BRAND}, comment les articles sont écrits et vérifiés, quand l’IA intervient, ce que nous ne faisons jamais et comment signaler une erreur.`,
+      meta: `Qui publie ${BRAND}, comment les articles sont écrits et vérifiés, ce que nous ne faisons jamais et comment signaler une erreur.`,
       html: () => `<h1>Comment nous travaillons</h1>
 <p class="s-intro">${BRAND} publie chaque jour des articles sourcés pour les hôtes de location courte durée, les artisans et les indépendants. Cette page dit qui publie, comment, avec quelles règles, et comment nous corriger.</p>
 <h2>Qui publie</h2>
 <p>${BRAND} est édité par <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>, une agence de communication digitale. L’éditeur développe aussi d’autres services, comme Résidence Manager (outil pour hôtes) et Maya Pilot (outil de marketing pour éditeurs de logiciels). Quand un article renvoie vers l’un de ces services, nous l’indiquons dans le texte : ce n’est jamais présenté comme un avis indépendant.</p>
 <h2>Comment les articles sont faits</h2>
-<p>Les articles sont rédigés avec l’aide d’une intelligence artificielle (Claude, d’Anthropic) à partir de recherches sur des sources identifiées, puis publiés automatiquement selon des règles de contrôle écrites. Nous ne prétendons pas qu’ils sont écrits à la main, et nous ne leur inventons ni auteur fictif ni expérience personnelle.</p>
+<p>Chaque article part de recherches sur des sources identifiées, dont au moins une source primaire (texte de loi, administration, étude, donnée publique). Les chiffres sont rattachés à leur source et à leur date, les calculs peuvent être refaits avec vos propres données, et tout ce qui est fiscal, légal ou réglementaire porte sa date de vérification. Nous n’inventons ni auteur fictif ni expérience personnelle.</p>
 <h2>Les règles que chaque article doit respecter</h2>
 <ul>
 <li>Au moins trois sources, dont une source primaire (texte de loi, administration, étude d’origine), listées en bas de l’article avec leur lien.</li>
@@ -202,7 +202,7 @@ ${contribForm('en')}
 <h2>Who publishes</h2>
 <p>${BRAND} is published by <a href="https://alturacom-production.odoo.com" rel="noopener">AlturaCom</a>, a digital communication agency. The publisher also develops other services, such as Résidence Manager (a tool for hosts) and Maya Pilot (a marketing tool for software companies). When an article points to one of them, we say so in the text: it is never presented as an independent review.</p>
 <h2>How articles are made</h2>
-<p>Articles are written with the help of artificial intelligence (Claude, by Anthropic) from research on identified sources, then published automatically under written quality rules. We do not claim they are handwritten, and we never invent a fictional author or personal experience for them.</p>
+<p>Every article starts from research on identified sources, including at least one primary source (statute, agency, study, public data). Figures are tied to their source and date, calculations can be redone with your own numbers, and anything tax, legal or regulatory carries its verification date. We never invent a fictional author or personal experience.</p>
 <h2>Rules every article must meet</h2>
 <ul>
 <li>At least three sources, including a primary source (legislation, a public agency, the original study), listed at the bottom of the article with links.</li>
