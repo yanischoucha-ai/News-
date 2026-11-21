@@ -196,7 +196,7 @@ ${contribForm('en')}
     },
     en: {
       title: 'How we work',
-      meta: `Who publishes ${BRAND}, how articles are written and checked, where AI is involved, what we never do, and how to report an error.`,
+      meta: `Who publishes ${BRAND}, how articles are written and checked, what we never do, and how to report an error.`,
       html: () => `<h1>How we work</h1>
 <p class="s-intro">${BRAND} publishes sourced articles every day for short-term rental hosts, tradespeople and independents. This page says who publishes it, how, under which rules, and how to correct us.</p>
 <h2>Who publishes</h2>
