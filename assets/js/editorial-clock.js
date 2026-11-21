@@ -39,8 +39,8 @@
     // Ven 20 — Tech & outils productivité
     { date: "2026-11-20", title: "Meublé de tourisme classé F : la pompe à chaleur se rembourse en 4 à 10 ans, mais sans MaPrimeRénov'", lang: "fr", slug: "/fr/pompe-a-chaleur-meuble-tourisme-dpe-aides-2027.html", tag: "Durable", cat: "hotes", min: 9, desc: "DPE F ou G en meublé de tourisme : calendrier 2025-2034, fin annoncée des aides au 1er janvier 2027, calcul de retour sur investissement refaisable." },
     // Sam 21 — Business & entrepreneuriat
-    { date: "2026-11-21", title: "Micro-entreprise ou SASU : le calcul à faire avant de choisir (barèmes 2026)", lang: "fr", slug: null, tag: "Business" },
-    { date: "2026-11-21", title: "Sole Trader vs LLC: What American Contractors Actually Need to Know", lang: "en", slug: null, tag: "Business" },
+    { date: "2026-11-21", title: "Micro-entreprise ou SASU en 2026 : le seuil qui compte n'est pas le chiffre d'affaires, c'est la part de frais", lang: "fr", slug: "/fr/micro-entreprise-ou-sasu-seuil-frais-calcul-2026.html", tag: "Business", cat: "artisans", min: 8, desc: "Micro-entreprise ou SASU en 2026 : calcul du net à 30 000, 60 000 et 83 600 € de CA, et la part de frais réels (36 à 53 %) où la société devient meilleure." },
+    { date: "2026-11-21", title: "Sole Proprietor vs. LLC vs. S-Corp: The Salary Share That Decides Whether the Election Pays (2026 Math)", lang: "en", slug: "/en/sole-proprietor-llc-s-corp-salary-share-math-2026.html", tag: "Business", cat: "artisans", min: 6, desc: "An LLC changes nothing on your federal tax. The S-corp election helps only while salary stays under about 65% of profit: 2026 math at $60K, $120K and $200K." },
     // Dim 22 — Réseaux sociaux → MayaPilot
     { date: "2026-11-22", title: "Community management d'un SaaS : combien publier par semaine avant que l'engagement baisse ?", lang: "fr", slug: null, tag: "Réseaux sociaux" },
     { date: "2026-11-22", title: "How Often Should a SaaS Post on Social Media? What the Engagement Data Shows", lang: "en", slug: null, tag: "Social Media" },
