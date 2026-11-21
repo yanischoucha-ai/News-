@@ -4,8 +4,8 @@
 
 /* ── TOKENS ─────────────────────────────────────────────────────────────── */
 :root {
-  --ac: #0ea35b;          /* accent vert */
-  --ac-dim: #0a7a44;      /* hover */
+  --ac: #0a7a44;          /* accent vert */
+  --ac-dim: #075c33;      /* hover */
   --ink: #0d0d0d;
   --ink2: #3a3a3a;
   --muted: #767676;
