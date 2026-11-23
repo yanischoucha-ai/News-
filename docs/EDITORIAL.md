@@ -28,7 +28,7 @@ Le média est une référence business utile aux lecteurs d'abord. Il a 3 pilier
 
 En plus des 2 articles quotidiens, le site publie chaque semaine **1 contenu phare** (donc environ 1 par mois et par pilier), construit par le manager de 8h, jamais par les tâches de publication du matin. C'est ce qui fait citer le site et le rend utile sans rien acheter. Rythme : si aucun contenu phare n'a été publié depuis 7 jours (voir `docs/JOURNAL.md`), le manager en construit un, un seul par exécution, en alternant les piliers : hôtes, artisans, SaaS.
 
-Formats : un **calculateur** (page HTML statique avec JavaScript intégré, sans inscription, sans traceur, version FR pour la France et version EN pour les États-Unis) ou un **baromètre** chiffré avec méthode publiée. Premiers contenus, dans cet ordre :
+Formats : un **calculateur** (page HTML statique avec JavaScript intégré, sans inscription, sans traceur, version FR pour la France et version EN pour les États-Unis) ou un **baromètre** chiffré avec méthode publiée. Premiers contenus (les 3 calculateurs ci-dessous EXISTENT déjà, construits le 21 nov. 2026 dans scripts/extras.js et assets/js/tools.js, pages /fr/outils/ et /en/tools/ : ne pas les reconstruire, les améliorer ou en créer de nouveaux sur d'autres sujets) :
 1. Hôtes : rentabilité nette d'un meublé de tourisme (frais, taux de vacance, fiscalité LMNP en France, taxes et dépenses déductibles aux États-Unis).
 2. Artisans : coût réel d'un appel manqué (appels par semaine, part manquée, taux de conversion, panier moyen).
 3. SaaS : retour sur investissement du contenu (trafic, taux d'inscription, conversion payante, coût de production).
