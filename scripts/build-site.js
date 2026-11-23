@@ -146,7 +146,7 @@ const nav = (lang, alt, current) => {
     <a class="mh-logo" href="/${lang}/">${BRAND}<i>.</i></a>
     <p class="mh-tag">${esc(m.tag)}</p>
     <div class="mh-tools">
-      <a class="mh-write mh-tools-link" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/">${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a>
+      <a class="mh-write mh-tools-link" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}">${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a>
       <a class="mh-write" href="${PAGES.write[lang]}">${esc(t.write)}</a>
       <span class="mh-lang"><a href="${alt.fr}"${lang === 'fr' ? ' aria-current="true"' : ''}>FR</a><a href="${alt.en}"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></span>
       <a class="mh-sub" href="${nl}">${m.sub}</a>
@@ -157,7 +157,7 @@ const nav = (lang, alt, current) => {
     <div class="mh-nav-in">
       <a class="mh-nav-home" href="/${lang}/"${current === 'home' ? ' aria-current="page"' : ''}>${esc(t.latest)}</a>
       ${cats}
-      <div class="mh-nav-extra"><a class="mh-nav-tools" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/"${current === 'tools' ? ' aria-current="page"' : ''}>${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
+      <div class="mh-nav-extra"><a class="mh-nav-tools" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}"${current === 'tools' ? ' aria-current="page"' : ''}>${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
     </div>
   </nav>
 </header>
@@ -265,7 +265,7 @@ ${calendar(lang, schedule)}
 }
 
 
-const TOOL_HOME = (lang) => `/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/`;
+const TOOL_HOME = (lang) => `/${lang}/${lang === 'fr' ? 'outils' : 'tools'}`;
 function toolCards(lang, ids) {
   const fr = lang === 'fr';
   return EX.TOOLS.filter((t) => !ids || ids.includes(t.id)).map((t) => `<a class="tool-card" href="${EX.toolPath(t, lang)}"><span class="tool-card-k">${fr ? 'Outil gratuit' : 'Free tool'}</span><strong>${esc(t[lang].title)}</strong><span>${esc(t[lang].desc)}</span><span class="tool-card-go">${fr ? 'Ouvrir le calculateur →' : 'Open the calculator →'}</span></a>`).join('');
@@ -279,7 +279,7 @@ function buildToolsIndex(lang) {
   const alt = { fr: TOOL_HOME('fr'), en: TOOL_HOME('en') };
   const title = fr ? 'Outils gratuits pour hôtes, artisans et éditeurs de SaaS' : 'Free tools for hosts, contractors and SaaS founders';
   const desc = fr ? 'Calculateurs gratuits, sans inscription : rentabilité d’une location courte durée, coût d’un appel manqué, CAC et délai de récupération.' : 'Free calculators, no signup: short-term rental profitability, cost of a missed call, CAC and payback period.';
-  wr(p.slice(1) + 'index.html', shell({ lang, title: `${title} | ${BRAND}`, desc, urlPath: p, alt, current: 'tools', body: `<main class="s-page"><h1>${title}</h1><p class="s-intro">${fr ? 'Chaque outil se calcule dans votre navigateur, rien n’est envoyé. Les valeurs affichées sont des exemples : remplacez-les par les vôtres.' : 'Every tool runs in your browser and nothing is sent. The values shown are examples: replace them with yours.'}</p><div class="tool-cards">${toolCards(lang)}</div></main>`, jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, url: DOMAIN + p, inLanguage: T[lang].locale } }));
+  wr(p.slice(1) + '/index.html', shell({ lang, title: `${title} | ${BRAND}`, desc, urlPath: p, alt, current: 'tools', body: `<main class="s-page"><h1>${title}</h1><p class="s-intro">${fr ? 'Chaque outil se calcule dans votre navigateur, rien n’est envoyé. Les valeurs affichées sont des exemples : remplacez-les par les vôtres.' : 'Every tool runs in your browser and nothing is sent. The values shown are examples: replace them with yours.'}</p><div class="tool-cards">${toolCards(lang)}</div></main>`, jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, url: DOMAIN + p, inLanguage: T[lang].locale } }));
 }
 
 function pillarExtras(lang, cat, list) {
