@@ -200,6 +200,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/search"/>
   </url>
   <url>
+    <loc>https://www.margebrief.com/fr/outils/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/"/>
+  </url>
+  <url>
+    <loc>https://www.margebrief.com/en/tools/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.margebrief.com/fr/outils/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.margebrief.com/en/tools/"/>
+  </url>
+  <url>
     <loc>https://www.margebrief.com/fr/outils/calculateur-rentabilite-location-courte-duree</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>

@@ -146,6 +146,7 @@ const nav = (lang, alt, current) => {
     <a class="mh-logo" href="/${lang}/">${BRAND}<i>.</i></a>
     <p class="mh-tag">${esc(m.tag)}</p>
     <div class="mh-tools">
+      <a class="mh-write mh-tools-link" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/">${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a>
       <a class="mh-write" href="${PAGES.write[lang]}">${esc(t.write)}</a>
       <span class="mh-lang"><a href="${alt.fr}"${lang === 'fr' ? ' aria-current="true"' : ''}>FR</a><a href="${alt.en}"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></span>
       <a class="mh-sub" href="${nl}">${m.sub}</a>
@@ -156,7 +157,7 @@ const nav = (lang, alt, current) => {
     <div class="mh-nav-in">
       <a class="mh-nav-home" href="/${lang}/"${current === 'home' ? ' aria-current="page"' : ''}>${esc(t.latest)}</a>
       ${cats}
-      <div class="mh-nav-extra"><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
+      <div class="mh-nav-extra"><a class="mh-nav-tools" href="/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/"${current === 'tools' ? ' aria-current="page"' : ''}>${lang === 'fr' ? 'Outils gratuits' : 'Free tools'}</a><a href="${PAGES.search[lang]}">${lang === 'fr' ? 'Recherche' : 'Search'}</a><a href="${PAGES.write[lang]}">${esc(t.write)}</a><a class="mh-nav-cta" href="${nl}">${m.sub}</a></div>
     </div>
   </nav>
 </header>
@@ -252,6 +253,7 @@ function buildLangIndex(lang, published, schedule) {
   const body = `<h1 class="s-sr">${esc(t.heroH1)}</h1>
 <a class="j-daily" href="#calendrier"><span class="j-daily-dot" aria-hidden="true"></span><strong>${esc(m.calH)}</strong><span class="j-daily-sub">${esc(m.dailySub)}</span></a>
 <div class="j-wrap"><div class="j-top">${leadHtml}<aside><h2 class="j-side-h"><span>${m.top}</span></h2>${side.map((a) => jItem(a, lang, false)).join('')}</aside></div></div>
+${toolsSection(lang)}
 ${calendar(lang, schedule)}
 <section class="j-nl" id="newsletter"><div class="j-nl-in"><div><h2>${esc(m.nlH)}</h2><p>${esc(m.nlP)}</p></div><div>${nlForm(lang, 'home', t.nlCta)}<p class="s-form-note">${esc(t.note)}</p></div></div></section>
 <div class="j-wrap">${catSecs}</div>
@@ -260,6 +262,24 @@ ${calendar(lang, schedule)}
     lang, title: `${t.siteTitle} | ${BRAND}`, desc: t.siteDesc, urlPath: `/${lang}/`, alt: { fr: '/fr/', en: '/en/' }, body, current: 'home',
     jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${BRAND} — ${t.siteTitle}`, description: t.siteDesc, url: `${DOMAIN}/${lang}/`, inLanguage: t.locale, isPartOf: { '@type': 'WebSite', name: BRAND, url: DOMAIN + '/' } },
   }));
+}
+
+
+const TOOL_HOME = (lang) => `/${lang}/${lang === 'fr' ? 'outils' : 'tools'}/`;
+function toolCards(lang, ids) {
+  const fr = lang === 'fr';
+  return EX.TOOLS.filter((t) => !ids || ids.includes(t.id)).map((t) => `<a class="tool-card" href="${EX.toolPath(t, lang)}"><span class="tool-card-k">${fr ? 'Outil gratuit' : 'Free tool'}</span><strong>${esc(t[lang].title)}</strong><span>${esc(t[lang].desc)}</span><span class="tool-card-go">${fr ? 'Ouvrir le calculateur →' : 'Open the calculator →'}</span></a>`).join('');
+}
+function toolsSection(lang) {
+  const fr = lang === 'fr';
+  return `<section class="s-section tools-strip" id="outils"><div class="j-wrap"><h2 class="j-side-h"><span>${fr ? 'Outils gratuits, sans inscription' : 'Free tools, no signup'}</span></h2><div class="tool-cards">${toolCards(lang)}</div></div></section>`;
+}
+function buildToolsIndex(lang) {
+  const fr = lang === 'fr'; const p = TOOL_HOME(lang);
+  const alt = { fr: TOOL_HOME('fr'), en: TOOL_HOME('en') };
+  const title = fr ? 'Outils gratuits pour hôtes, artisans et éditeurs de SaaS' : 'Free tools for hosts, contractors and SaaS founders';
+  const desc = fr ? 'Calculateurs gratuits, sans inscription : rentabilité d’une location courte durée, coût d’un appel manqué, CAC et délai de récupération.' : 'Free calculators, no signup: short-term rental profitability, cost of a missed call, CAC and payback period.';
+  wr(p.slice(1) + 'index.html', shell({ lang, title: `${title} | ${BRAND}`, desc, urlPath: p, alt, current: 'tools', body: `<main class="s-page"><h1>${title}</h1><p class="s-intro">${fr ? 'Chaque outil se calcule dans votre navigateur, rien n’est envoyé. Les valeurs affichées sont des exemples : remplacez-les par les vôtres.' : 'Every tool runs in your browser and nothing is sent. The values shown are examples: replace them with yours.'}</p><div class="tool-cards">${toolCards(lang)}</div></main>`, jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, url: DOMAIN + p, inLanguage: T[lang].locale } }));
 }
 
 function pillarExtras(lang, cat, list) {
@@ -349,6 +369,8 @@ function processArticle(file, lang) {
     const og = `<meta property="og:image" content="${DOMAIN}${im.big}">\n  <meta property="og:image:width" content="1600">\n  <meta property="og:image:height" content="900">\n  <meta property="og:image:alt" content="${esc(altOf(im, lang))}">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${DOMAIN}${im.big}">`;
     html = setBlock(html, 'OGIMG', og, (h, b) => h.replace('</head>', () => `  ${b}\n</head>`));
   }
+  const pcx = SLUG_CAT[slug];
+  if (pcx) { const tl = EX.TOOLS.find((t) => t.id === pcx); if (tl) { const box = `<aside class="article-tool"><strong>${lang === 'fr' ? 'À refaire avec vos chiffres' : 'Run it with your numbers'}</strong> <a href="${EX.toolPath(tl, lang)}">${esc(tl[lang].title)}</a> <span>${lang === 'fr' ? '(gratuit, sans inscription)' : '(free, no signup)'}</span></aside>`; html = setBlock(html, 'TOOLBOX', box, (h, b) => h.replace(/(<section class="article-sources"|<h2[^>]*>(?:Sources|Sources et références)<\/h2>)/, (m) => `${b}\n${m}`)); } }
   const pc = SLUG_CAT[slug];
   if (pc) html = html.replace(/<span class="article-tag">[^<]*<\/span>/, `<span class="article-tag">${esc(catById(pc)[lang].name).replace(/&amp;/g, '&amp;')}</span>`);
   const dm = (html.match(/"dateModified":"(\d{4}-\d{2}-\d{2})"/) || [])[1];
@@ -412,6 +434,7 @@ function buildSitemap(published) {
   const out = [url('/', latest, 'daily', '1.0'), url('/fr/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' }), url('/en/', latest, 'daily', '0.9', { fr: '/fr/', en: '/en/' })];
   CATS.forEach((c) => ['fr', 'en'].forEach((l) => out.push(url(catPath(l, c.id), latest, 'daily', '0.7', { fr: catPath('fr', c.id), en: catPath('en', c.id) }))));
   Object.values(PAGES).forEach((pg) => ['fr', 'en'].forEach((l) => out.push(url(pg[l], latest, 'yearly', '0.3', pg))));
+  out.push(url(TOOL_HOME('fr'), latest, 'monthly', '0.8', { fr: TOOL_HOME('fr'), en: TOOL_HOME('en') }), url(TOOL_HOME('en'), latest, 'monthly', '0.8', { fr: TOOL_HOME('fr'), en: TOOL_HOME('en') }));
   EX.TOOLS.forEach((t) => ['fr', 'en'].forEach((l) => out.push(url(EX.toolPath(t, l), latest, 'monthly', '0.7', { fr: EX.toolPath(t, 'fr'), en: EX.toolPath(t, 'en') }))));
   published.filter((a) => !NOINDEX.includes(a.slug)).forEach((a) => out.push(url(prettyUrl(a.slug), a.date, 'monthly', '0.8')));
   wr('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${out.join('\n')}\n</urlset>\n`);
@@ -513,6 +536,7 @@ function build() {
     CATS.forEach((cat) => buildCategory(lang, cat, schedule, published));
     Object.keys(PAGES).forEach((k) => buildStaticPage(k, lang));
     EX.TOOLS.forEach((t) => buildTool(t, lang));
+    buildToolsIndex(lang);
   });
   published.forEach((a) => { SLUG_CAT[a.slug] = a.cat; });
   buildSearchIndex(published);

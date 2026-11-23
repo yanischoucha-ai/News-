@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/assets/css/blog.css?v=5388675a">
   <link rel="stylesheet" href="/assets/css/site.css?v=2a6575ad">
   <link rel="preload" href="/assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/journal.css?v=061f8e8c">
+  <link rel="stylesheet" href="/assets/css/journal.css?v=e5d863f9">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Short-term rental net profit calculator","description":"From nightly rate to monthly net income and yield: redo the math with your own numbers, no signup.","url":"https://www.margebrief.com/en/tools/short-term-rental-profit-calculator","inLanguage":"en","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Marge Brief","url":"https://www.margebrief.com/"}}</script>
 </head>
 <body>
@@ -31,6 +31,7 @@
     <a class="mh-logo" href="/en/">Marge Brief<i>.</i></a>
     <p class="mh-tag">The daily brief to grow your business</p>
     <div class="mh-tools">
+      <a class="mh-write mh-tools-link" href="/en/tools/">Free tools</a>
       <a class="mh-write" href="/en/write-for-us">Write for us</a>
       <span class="mh-lang"><a href="/fr/outils/calculateur-rentabilite-location-courte-duree">FR</a><a href="/en/tools/short-term-rental-profit-calculator" aria-current="true">EN</a></span>
       <a class="mh-sub" href="/en/#newsletter">Newsletter</a>
@@ -41,31 +42,41 @@
     <div class="mh-nav-in">
       <a class="mh-nav-home" href="/en/">Latest articles</a>
       <a href="/en/category/hotes" aria-current="page">Hosts &amp; short-term rentals</a><a href="/en/category/artisans">Contractors &amp; small service businesses</a><a href="/en/category/saas">SaaS marketing &amp; growth</a>
-      <div class="mh-nav-extra"><a href="/en/search">Search</a><a href="/en/write-for-us">Write for us</a><a class="mh-nav-cta" href="/en/#newsletter">Newsletter</a></div>
+      <div class="mh-nav-extra"><a class="mh-nav-tools" href="/en/tools/">Free tools</a><a href="/en/search">Search</a><a href="/en/write-for-us">Write for us</a><a class="mh-nav-cta" href="/en/#newsletter">Newsletter</a></div>
     </div>
   </nav>
 </header>
 <!--/S:HEAD-->
-<main id="contenu" class="s-page s-tool" data-tool="hotes" data-lang="en">
+<main id="contenu" class="s-page s-tool s-calc" data-tool="calc-lcd" data-lang="en">
 <h1>Short-term rental net profit calculator</h1>
-<p class="s-intro">Enter your numbers (the values shown are examples to replace). Nothing is sent: the math runs in your browser.</p>
-<form class="s-form-stack s-tool-form">
-<div class="s-field"><label for="t-rate">Average nightly rate ($)</label><input id="t-rate" name="rate" type="number" inputmode="decimal" step="any" min="0" value="150"></div>
-<div class="s-field"><label for="t-occ">Occupancy (%)</label><input id="t-occ" name="occ" type="number" inputmode="decimal" step="any" min="0" value="62"></div>
-<div class="s-field"><label for="t-stay">Average stay (nights)</label><input id="t-stay" name="stay" type="number" inputmode="decimal" step="any" min="0" value="3"></div>
-<div class="s-field"><label for="t-fee">Platform fee (% of revenue)</label><input id="t-fee" name="fee" type="number" inputmode="decimal" step="any" min="0" value="15.5"></div>
-<div class="s-field"><label for="t-clean">Cleaning cost per stay ($)</label><input id="t-clean" name="clean" type="number" inputmode="decimal" step="any" min="0" value="80"></div>
-<div class="s-field"><label for="t-cleanfee">Cleaning fee charged to the guest per stay ($)</label><input id="t-cleanfee" name="cleanfee" type="number" inputmode="decimal" step="any" min="0" value="75"></div>
-<div class="s-field"><label for="t-fixed">Monthly fixed costs: mortgage or rent, utilities, internet, insurance, property tax ($)</label><input id="t-fixed" name="fixed" type="number" inputmode="decimal" step="any" min="0" value="1500"></div>
-<div class="s-field"><label for="t-price">Purchase price or capital invested ($, 0 if n/a)</label><input id="t-price" name="price" type="number" inputmode="decimal" step="any" min="0" value="300000"></div>
+<p class="s-intro">From nightly rate to cash flow after tax: revenue, platform fee, cleaning, costs, mortgage, depreciation, break-even occupancy and downside scenarios. The values shown are examples to replace with yours. Nothing is sent: the math runs in your browser.</p>
+<div class="calc-grid">
+<form class="calc-form" aria-label="Inputs">
+<fieldset><legend>Revenue</legend><div class="s-field"><label for="c-rate">Average nightly rate ($)</label><input id="c-rate" name="rate" type="number" inputmode="decimal" step="any" min="0" value="150"></div><div class="s-field"><label for="c-occ">Occupancy (%)</label><input id="c-occ" name="occ" type="number" inputmode="decimal" step="any" min="0" value="62"><small>Share of nights actually booked over the year</small></div><div class="s-field"><label for="c-stay">Average stay (nights)</label><input id="c-stay" name="stay" type="number" inputmode="decimal" step="any" min="0" value="3"></div><div class="s-field"><label for="c-cleanfee">Cleaning fee charged to the guest, per stay ($)</label><input id="c-cleanfee" name="cleanfee" type="number" inputmode="decimal" step="any" min="0" value="75"></div></fieldset>
+<fieldset><legend>Operating costs</legend><div class="s-field"><label for="c-fee">Platform fee (% of revenue)</label><input id="c-fee" name="fee" type="number" inputmode="decimal" step="any" min="0" value="15.5"><small>Airbnb describes a single 15.5% fee paid by the host; check your payout statement</small></div><div class="s-field"><label for="c-clean">Cleaning and laundry cost, per stay ($)</label><input id="c-clean" name="clean" type="number" inputmode="decimal" step="any" min="0" value="85"></div><div class="s-field"><label for="c-util">Utilities and internet ($/month)</label><input id="c-util" name="util" type="number" inputmode="decimal" step="any" min="0" value="250"></div><div class="s-field"><label for="c-ins">Insurance ($/year)</label><input id="c-ins" name="ins" type="number" inputmode="decimal" step="any" min="0" value="1500"></div><div class="s-field"><label for="c-hoa">HOA dues ($/year)</label><input id="c-hoa" name="hoa" type="number" inputmode="decimal" step="any" min="0" value="0"></div><div class="s-field"><label for="c-tax">Property tax ($/year)</label><input id="c-tax" name="tax" type="number" inputmode="decimal" step="any" min="0" value="3500"></div><div class="s-field"><label for="c-acct">Accounting and software ($/year)</label><input id="c-acct" name="acct" type="number" inputmode="decimal" step="any" min="0" value="800"></div><div class="s-field"><label for="c-maint">Repairs, maintenance and supplies ($/year)</label><input id="c-maint" name="maint" type="number" inputmode="decimal" step="any" min="0" value="2000"></div></fieldset>
+<fieldset><legend>Financing</legend><div class="s-field"><label for="c-price">Total cost basis: purchase, closing costs, renovation, furniture ($)</label><input id="c-price" name="price" type="number" inputmode="decimal" step="any" min="0" value="350000"></div><div class="s-field"><label for="c-loan">Loan amount ($, 0 if all cash)</label><input id="c-loan" name="loan" type="number" inputmode="decimal" step="any" min="0" value="260000"></div><div class="s-field"><label for="c-irate">Loan interest rate (% per year)</label><input id="c-irate" name="irate" type="number" inputmode="decimal" step="any" min="0" value="6.8"></div><div class="s-field"><label for="c-years">Loan term (years)</label><input id="c-years" name="years" type="number" inputmode="decimal" step="any" min="0" value="30"></div></fieldset>
+<fieldset><legend>Taxes (estimate)</legend><div class="s-field"><label for="c-fed">Your federal marginal tax rate (%)</label><select id="c-fed" name="fed"><option value="0">0%</option><option value="10">10%</option><option value="12">12%</option><option value="22">22%</option><option value="24" selected>24%</option><option value="32">32%</option><option value="35">35%</option><option value="37">37%</option></select></div><div class="s-field"><label for="c-state">State income tax rate (%)</label><input id="c-state" name="state" type="number" inputmode="decimal" step="any" min="0" value="0"><small>Enter your state’s marginal rate, or 0</small></div><div class="s-field"><label for="c-bshare">Share of cost basis that is depreciable building, excluding land (%)</label><input id="c-bshare" name="bshare" type="number" inputmode="decimal" step="any" min="0" value="80"></div><div class="s-field"><label for="c-yb">Depreciation period for the building (years)</label><input id="c-yb" name="yb" type="number" inputmode="decimal" step="any" min="0" value="27.5"><small>Residential rental is 27.5 years and nonresidential property is 39; short average stays can change the classification, so ask a CPA</small></div><div class="s-field"><label for="c-furn">Furniture and equipment value ($)</label><input id="c-furn" name="furn" type="number" inputmode="decimal" step="any" min="0" value="12000"></div><div class="s-field"><label for="c-yf">Depreciation period for furniture (years)</label><input id="c-yf" name="yf" type="number" inputmode="decimal" step="any" min="0" value="7"></div></fieldset>
+<div class="calc-actions"><button type="button" id="c-copy">Copy the link to this calculation</button><button type="button" id="c-print">Print or save as PDF</button><button type="button" id="c-reset">Reset</button><span id="c-msg" role="status"></span></div>
 </form>
-<section class="s-tool-out" aria-live="polite"><h2>Result</h2><dl><div><dt>Annual gross revenue</dt><dd id="o0">–</dd></div><div><dt>Annual net before tax</dt><dd id="o1">–</dd></div><div><dt>Monthly net before tax</dt><dd id="o2">–</dd></div><div><dt>Net yield before tax</dt><dd id="o3">–</dd></div></dl></section>
+<div class="calc-out" aria-live="polite">
+<h2>Your result</h2>
+<div class="calc-cards" id="c-cards"></div>
+<div id="c-warn"></div>
+<h3>Where each dollar of revenue goes</h3><div class="calc-bar" id="c-bar" role="img" aria-label="Where each dollar of revenue goes"></div><ul class="calc-legend" id="c-legend"></ul>
+<h3>Annual breakdown</h3><table class="calc-table" id="c-split"></table>
+<h3>What depreciation does to your tax</h3><div id="c-regime"></div>
+<h3>Break-even</h3><p id="c-be"></p>
+<h3>What if it goes worse than planned?</h3><table class="calc-table" id="c-sens"></table>
+</div>
+</div>
 <h2>How it is calculated</h2>
-<ul><li>Nights booked = 365 × occupancy. Stays = nights booked ÷ average stay.</li><li>Gross revenue = nights booked × rate + stays × cleaning fee charged.</li><li>Net = gross − platform fee − stays × cleaning cost − 12 × fixed costs.</li><li>Net yield = annual net ÷ capital invested.</li></ul>
+<ul><li>Nights booked = 365 × occupancy. Stays = nights booked ÷ average stay.</li><li>Revenue = nights booked × rate + stays × cleaning fee charged. Occupancy and lodging taxes collected for the city or state are excluded.</li><li>Operating income = revenue − platform fee − cleaning − utilities and internet − annual costs.</li><li>Mortgage: monthly payment of a fixed-rate amortizing loan; year-one interest is that of its first 12 payments.</li><li>Taxable income = revenue − operating costs − mortgage interest − depreciation (building and furniture, straight line over the periods you enter).</li><li>Tax = taxable income × (federal marginal rate + state rate), floored at zero. Self-employment tax is not included.</li><li>Break-even: the occupancy at which cash flow before tax is zero.</li></ul>
 <h2>Limits</h2>
-<p>Does not compute income tax or depreciation, and occupancy taxes and local lodging taxes must be added to your costs. The example values are not market averages.</p>
-<p class="s-form-note">Free tool, no signup. The values you enter stay in your browser. Published 2026-11-21.</p>
-<script src="/assets/js/tools.js?v=dbdc758f" defer></script>
+<p>Estimate for one property and one taxpayer. It does not cover self-employment tax, state and local lodging taxes, depreciation recapture or capital gains on sale, passive loss limits, or the tax classification of your activity, which depends on average stay and the services you provide. IRS rules should be rechecked on irs.gov (last checked November 21, 2026). Information, not tax advice: ask a CPA.</p>
+<p>Further reading: <a href="/en/airbnb-host-plateau-3-listings">going from 2 to 3 short-term rentals</a> (time cost, the IRS 7-day rule and personal-use days).</p>
+<p class="s-form-note">Free tool, no signup. Your inputs stay in your browser; the copied link contains your numbers in the address, so share it only with people you choose. Published 2026-11-21, updated 2026-11-23.</p>
+<script>window.CALC_T={"lang":"en","cur":"$","t":{"result":"Your result","netm":"Operating income per month","cfm":"Cash flow before tax per month","cfa":"Cash flow after tax per month","ny":"Net yield before tax","water":"Where each dollar of revenue goes","split":"Annual breakdown","rev":"Revenue","platform":"Platform fee","cleaning":"Cleaning and laundry","utilities":"Utilities and internet","fixed":"Insurance, HOA, property tax, accounting, repairs","noi":"Operating income (before debt service and tax)","debt":"Mortgage payments (principal and interest)","cf":"Cash flow before tax","tax":"Estimated income tax","cfat":"Cash flow after tax","regime":"What depreciation does to your tax","rMicro":"","rReel":"","base":"Taxable income","taxl":"Estimated tax","be":"Break-even","beOver":"Even at 100% occupancy cash flow before tax stays negative with these inputs.","beOk":"Cash flow is positive even at 0% occupancy: check your inputs.","sens":"What if it goes worse than planned?","sc":["Inputs as entered","Occupancy −10 points","Occupancy −20 points","Rate −10%","Rate +10%"],"scCols":["Scenario","Revenue","Operating income","Cash flow before tax"],"warnOcc":"Occupancy above 90% is rarely held all year: test 60% to 70%.","warnNeg":"Cash flow before tax is negative: the project has to be funded from savings or from future income.","lossNote":"Taxable income is negative: this tool shows $0 of tax and does not value the loss, because passive activity rules can limit its use. Ask a CPA.","copy":"Copy the link to this calculation","copied":"Link copied","print":"Print or save as PDF","reset":"Reset","month":"/mo","year":"/yr"}};</script>
+<script src="/assets/js/calc-lcd.js?v=1e207214" defer></script>
 </main>
 <footer class="site-footer">
 <div class="sf-inner">

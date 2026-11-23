@@ -173,6 +173,7 @@ const TOOLS = [
 const toolPath = (t, lang) => (lang === 'fr' ? '/fr/outils/' : '/en/tools/') + t.slug[lang];
 
 function toolBody(t, lang) {
+  if (t.id === 'hotes') return require('./calc-lcd').body(lang);
   const c = t[lang]; const fr = lang === 'fr';
   return `<main class="s-page s-tool" data-tool="${t.id}" data-lang="${lang}">
 <h1>${c.title}</h1>
