@@ -48,8 +48,8 @@
 
     // ── SEMAINE 48 (23–29 nov) ───────────────────────────────────────────────
     // Lun 23 — Airbnb & gestion locative → residencemanager.online
-    { date: "2026-11-23", title: "Comment gérer 5 logements Airbnb seul en 2026 (sans agence)", lang: "fr", slug: null, tag: "Gestion locative" },
-    { date: "2026-11-23", title: "How to Manage 5 Airbnb Listings Solo in 2026 (Without an Agency)", lang: "en", slug: null, tag: "Airbnb Management" },
+    { date: "2026-11-23", title: "Conciergerie Airbnb ou gestion seul : le seuil en €/heure", lang: "fr", slug: "/fr/conciergerie-airbnb-ou-seul-seuil-euros-par-heure-2026.html", tag: "Gestion locative", cat: "hotes", min: 8, desc: "Gérer seul coûte plus cher qu'une conciergerie quand votre heure dépasse commission ÷ heures par séjour : 40 €/h à 20 %. Calcul refaisable et budget 2027." },
+    { date: "2026-11-23", title: "Self-Managing Airbnb vs. a Manager: The Hours Break-Even", lang: "en", slug: "/en/self-manage-airbnb-vs-property-manager-hours-break-even-2026.html", tag: "Airbnb Management", cat: "hotes", min: 6, desc: "A 20% manager costs $12,000 on a $60,000 listing, enough to buy 490 hours at the median wage. The break-even math, 2026 fees and Airbnb's fall update changes." },
     // Mar 24 — IA & automatisation
     { date: "2026-11-24", title: "Relances de devis automatiques pour artisans : Make, Zapier ou à la main ? Le calcul", lang: "fr", slug: null, tag: "Automatisation" },
     { date: "2026-11-24", title: "Automating Quote Follow-Ups for Contractors: Zapier vs Make vs Doing It by Hand", lang: "en", slug: null, tag: "Automation" },
