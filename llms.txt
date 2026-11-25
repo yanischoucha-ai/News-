@@ -8,6 +8,7 @@
 - SaaS marketing & growth: Content, community management, social media and algorithms: what grows a SaaS company, with data and methods you can apply this week.
 
 ## Articles (English)
+- [US Short-Term Rental Rules: 4 Checks Before You Buy](https://www.margebrief.com/en/us-short-term-rental-rules-4-checks-before-you-buy-2026): Before buying a US short-term rental in 2026: stress-test it at 7.28% mortgage rates, read the HOA covenant, track local votes and price new lodging taxes.
 - [Contractor Estimate Follow-Up: Zapier vs Make vs By Hand](https://www.margebrief.com/en/contractor-estimate-follow-up-zapier-vs-make-vs-by-hand-2026): Following up each estimate three times costs about $15 in time by hand. Zapier or Make pays off from 6 to 8 estimates a month. Math, Nov. 2026 prices, FCC text rule.
 - [Self-Managing Airbnb vs. a Manager: The Hours Break-Even](https://www.margebrief.com/en/self-manage-airbnb-vs-property-manager-hours-break-even-2026): A 20% manager costs $12,000 on a $60,000 listing, enough to buy 490 hours at the median wage. The break-even math, 2026 fees and Airbnb's fall update changes.
 - [SaaS Founder LinkedIn Posting Frequency: What the Data Says](https://www.margebrief.com/en/saas-founder-linkedin-posting-frequency-timing-data-2026): How often should a SaaS founder post on LinkedIn? Buffer's regression table, 4.8M-post timing data and a reach-per-hour calculation you can redo yourself.
@@ -20,6 +21,7 @@
 - [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://www.margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
 
 ## Articles (Français)
+- [Loi Le Meur 2026 : ce qui s'applique aux hôtes Airbnb](https://www.margebrief.com/fr/loi-le-meur-2026-regles-hotes-airbnb-amortissement-lmnp): Loi Le Meur au 25 novembre 2026 : jours, amendes, numéro d'enregistrement, changement d'usage et coût chiffré du plafond d'amortissement LMNP 2027.
 - [Relance de devis automatique : Make, Zapier ou à la main ?](https://www.margebrief.com/fr/relance-devis-automatique-artisan-make-zapier-main-2026): Relancer 3 fois chaque devis coûte 11,25 € de temps à la main : l'automatisation Make ou Zapier devient rentable dès 6 à 8 devis par mois. Calcul et tarifs.
 - [Conciergerie Airbnb ou gestion seul : le seuil en €/heure](https://www.margebrief.com/fr/conciergerie-airbnb-ou-seul-seuil-euros-par-heure-2026): Gérer seul coûte plus cher qu'une conciergerie quand votre heure dépasse commission ÷ heures par séjour : 40 €/h à 20 %. Calcul refaisable et budget 2027.
 - [Fréquence de publication SaaS : ce que disent les données](https://www.margebrief.com/fr/frequence-publication-saas-linkedin-donnees-2026): Combien de posts LinkedIn par semaine pour un SaaS ? Trois études (Buffer, Socialinsider) comparées : 2 à 5 posts, portée par post en baisse, calcul à refaire.
