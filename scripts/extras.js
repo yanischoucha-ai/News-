@@ -82,7 +82,7 @@ const CONTENT = {
 <p>See also: <a href="${PAGES.about.en}">About</a> · <a href="/en/editorial-method">Editorial method</a>.</p>` },
   },
   contact: {
-    fr: { title: 'Contact', meta: `Écrire à la rédaction de ${BRAND} : signaler une erreur, poser une question, proposer un sujet ou demander une autorisation.`,
+    fr: { title: 'Contact : écrire à la rédaction', meta: `Écrire à la rédaction de ${BRAND} : signaler une erreur, poser une question, proposer un sujet ou demander une autorisation.`,
       html: () => `<h1>Contact</h1>
 <p class="s-intro">Une erreur à signaler, une question, un sujet à proposer, une autorisation de réutilisation à demander : écrivez-nous ci-dessous. Nous lisons tout et corrigeons les erreurs avec une date de correction.</p>
 ${contactForm('fr')}
