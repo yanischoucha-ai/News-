@@ -218,5 +218,25 @@
    "fr": "Maison blanche à deux étages avec un porche couvert et une pelouse sous un ciel bleu",
    "en": "A white two-story house with a covered front porch and lawn under a blue sky"
   }
+ },
+ "/fr/tarif-horaire-artisan-2026-calcul-avant-augmentation.html": {
+  "photo": "photo-1761544775659-aaa6fa2e5b3d",
+  "page": "https://unsplash.com/photos/WWLuyDP3t1U",
+  "author": "Minh Đức",
+  "authorUrl": "https://unsplash.com/@meanduck",
+  "alt": {
+   "fr": "Rabots, ciseaux à bois et outils de menuiserie rangés sur un mur sombre",
+   "en": "Hand planes, chisels and woodworking tools arranged on a dark wall"
+  }
+ },
+ "/en/trade-pricing-2026-hourly-rate-that-holds-margin.html": {
+  "photo": "photo-1779031242528-da09f3af18c7",
+  "page": "https://unsplash.com/photos/aTWyvqRJoYY",
+  "author": "Minh Đức",
+  "authorUrl": "https://unsplash.com/@meanduck",
+  "alt": {
+   "fr": "Un artisan penché sur son ouvrage dans un atelier à la lumière chaude",
+   "en": "A craftsman leaning over his work in a warmly lit workshop"
+  }
  }
 }
