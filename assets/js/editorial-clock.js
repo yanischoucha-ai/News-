@@ -60,8 +60,8 @@
     { date: "2026-11-26", title: "Tarif horaire artisan 2026 : le calcul avant d'augmenter", lang: "fr", slug: "/fr/tarif-horaire-artisan-2026-calcul-avant-augmentation.html", tag: "Artisans", cat: "artisans", min: 7, desc: "Tarif horaire artisan : la formule sur les heures facturables, l'effet Smic et gazole de novembre 2026, et les chantiers que vous pouvez perdre." },
     { date: "2026-11-26", title: "Trade Pricing 2026: Set an Hourly Rate That Holds Margin", lang: "en", slug: "/en/trade-pricing-2026-hourly-rate-that-holds-margin.html", tag: "Contractors", cat: "artisans", min: 7, desc: "Trade pricing in 2026: a billable-hour rate formula using BLS data, fuel surcharge math, and how many jobs you can lose after raising prices." },
     // Ven 27 — Tech & outils
-    { date: "2026-11-27", title: "Calendrier éditorial d'un SaaS : Notion, Airtable ou tableur ? Comparatif chiffré", lang: "fr", slug: null, tag: "Marketing SaaS" },
-    { date: "2026-11-27", title: "A SaaS Content Calendar: Notion vs Airtable vs a Spreadsheet", lang: "en", slug: null, tag: "SaaS Marketing" },
+    { date: "2026-11-27", title: "Calendrier éditorial SaaS : Notion, Airtable ou tableur ?", lang: "fr", slug: "/fr/calendrier-editorial-saas-notion-airtable-tableur-2026.html", tag: "Marketing SaaS", cat: "saas", min: 8, desc: "Calendrier éditorial SaaS : coût de Notion, Airtable et Google Sheets pour 6 personnes, limites des offres gratuites et seuil de rentabilité (nov. 2026)." },
+    { date: "2026-11-27", title: "SaaS Content Calendar: Notion vs Airtable vs Sheets", lang: "en", slug: "/en/saas-content-calendar-notion-vs-airtable-vs-sheets-2026.html", tag: "SaaS Marketing", cat: "saas", min: 7, desc: "Content calendar costs for a six-person SaaS team: Notion, Airtable and Google Sheets seat math, free-plan limits and break-even hours (November 2026)." },
     // Sam 28 — Business
     { date: "2026-11-28", title: "Comment facturer ce que vous valez vraiment (sans avoir peur)", lang: "fr", slug: null, tag: "Business" },
     { date: "2026-11-28", title: "How to Charge What You're Actually Worth (Without Flinching)", lang: "en", slug: null, tag: "Business" },

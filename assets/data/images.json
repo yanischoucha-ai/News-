@@ -238,5 +238,25 @@
    "fr": "Un artisan penché sur son ouvrage dans un atelier à la lumière chaude",
    "en": "A craftsman leaning over his work in a warmly lit workshop"
   }
+ },
+ "/fr/calendrier-editorial-saas-notion-airtable-tableur-2026.html": {
+  "photo": "photo-1435527173128-983b87201f4d",
+  "page": "https://unsplash.com/photos/FoKO4DpXamQ",
+  "author": "Eric Rothermel",
+  "authorUrl": "https://unsplash.com/@erothermel",
+  "alt": {
+   "fr": "Un agenda mensuel ouvert sur un bureau en bois",
+   "en": "An open monthly planner on a wooden desk"
+  }
+ },
+ "/en/saas-content-calendar-notion-vs-airtable-vs-sheets-2026.html": {
+  "photo": "photo-1590402494587-44b71d7772f6",
+  "page": "https://unsplash.com/photos/v89zhr0iBFY",
+  "author": "airfocus",
+  "authorUrl": "https://unsplash.com/@airfocus",
+  "alt": {
+   "fr": "Deux personnes organisent un plan trimestriel avec des notes adhésives sur une paroi vitrée",
+   "en": "Two people arranging a quarterly plan with sticky notes on a glass wall"
+  }
  }
 }
