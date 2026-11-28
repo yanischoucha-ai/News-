@@ -392,6 +392,7 @@ main.article-body { max-width: 760px; padding: 1.6rem 1.5rem 1rem; }
 .article-body a { color: var(--ac); text-underline-offset: 3px; text-decoration: underline; }
 .article-body blockquote { border-left: 3px solid var(--ac); background: none; font-style: italic; color: var(--ink2); padding: .2rem 0 .2rem 1.2rem; margin: 1.5rem 0; }
 .article-body table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .88rem; line-height: 1.4; margin: 1.5rem 0; }
+@media (max-width: 640px) { .article-body table { display: block; overflow-x: auto; max-width: 100%; } }
 .article-body th { text-align: left; border-bottom: 2px solid var(--ink); padding: .45rem .6rem; font-weight: 700; }
 .article-body td { border-bottom: 1px solid var(--border); padding: .5rem .6rem; vertical-align: top; }
 

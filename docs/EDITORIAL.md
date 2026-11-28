@@ -193,7 +193,7 @@ La page `/fr/methode-editoriale` (`/en/editorial-method`) promet publiquement : 
 
 Cette section remplace toute consigne contraire d'un prompt de tâche (thèmes par jour, « US/UK », rubriques `durable`, `tech`, `ia`, `social`, `business`, `immobilier`, `airbnb`).
 
-- **3 piliers uniquement**, `cat` = `hotes` | `artisans` | `saas`. Tout article appartient à l'un d'eux, rien d'autre. Jour par défaut : lun/mer hôtes, mar/jeu artisans, ven/dim SaaS, sam alterné par semaine ISO (impaire artisans, paire hôtes). Si le sujet prévu au planning ne rentre dans aucun pilier, le remplacer par un sujet du pilier du jour.
+- **3 piliers uniquement**, `cat` = `hotes` | `artisans` | `saas`. Tout article appartient à l'un d'eux, rien d'autre. Jour par défaut : lun/mer hôtes, mar/jeu artisans, ven/dim SaaS, sam artisans (statuts, prix, trésorerie, comme le tableau des piliers et le SCHEDULE). Si le sujet prévu au planning ne rentre dans aucun pilier, le remplacer par un sujet du pilier du jour.
   - Hôtes : gestion, rentabilité nette, réglementation, fiscalité, investissement locatif (la rénovation énergétique d'un meublé entre ici).
   - Artisans / contractors / petites entreprises de services : appels manqués, devis, tarifs, visibilité, avis, statuts, trésorerie.
   - SaaS : marketing et croissance des éditeurs (contenu, community management, réseaux sociaux, algorithmes). Les thèmes « outils IA / productivité » génériques n'existent plus.
