@@ -8,6 +8,7 @@
 - SaaS marketing & growth: Content, community management, social media and algorithms: what grows a SaaS company, with data and methods you can apply this week.
 
 ## Articles (English)
+- [1099 Rate vs W-2 Salary: The 2027 Math](https://www.margebrief.com/en/1099-rate-vs-w2-salary-2027-math): What 1099 hourly rate matches a $60k, $90k or $120k W-2 salary? Worked 2027 math on payroll tax, health premiums, billable hours, plus a quote template.
 - [SaaS Content Calendar: Notion vs Airtable vs Sheets](https://www.margebrief.com/en/saas-content-calendar-notion-vs-airtable-vs-sheets-2026): Content calendar costs for a six-person SaaS team: Notion, Airtable and Google Sheets seat math, free-plan limits and break-even hours (November 2026).
 - [Trade Pricing 2026: Set an Hourly Rate That Holds Margin](https://www.margebrief.com/en/trade-pricing-2026-hourly-rate-that-holds-margin): Trade pricing in 2026: a billable-hour rate formula using BLS data, fuel surcharge math, and how many jobs you can lose after raising prices.
 - [US Short-Term Rental Rules: 4 Checks Before You Buy](https://www.margebrief.com/en/us-short-term-rental-rules-4-checks-before-you-buy-2026): Before buying a US short-term rental in 2026: stress-test it at 7.28% mortgage rates, read the HOA covenant, track local votes and price new lodging taxes.
@@ -23,6 +24,7 @@
 - [Airbnb Host Software in 2026: The Fee Switch Most Small Hosts Miss](https://www.margebrief.com/en/airbnb-host-concierge-app-2026): Connecting software can move your Airbnb account to a 15.5% host-only fee. The math on a $150 night, vendor pricing, and a break-even test before you subscribe.
 
 ## Articles (Français)
+- [Augmenter ses prix en micro : le piège du seuil de TVA](https://www.margebrief.com/fr/augmenter-prix-micro-entreprise-seuil-tva-2026): Hausse de 20 % en micro-entreprise : combien de chantiers perdre sans gagner moins, et ce que change le seuil de TVA de 37 500 €. Calculs et message.
 - [Calendrier éditorial SaaS : Notion, Airtable ou tableur ?](https://www.margebrief.com/fr/calendrier-editorial-saas-notion-airtable-tableur-2026): Calendrier éditorial SaaS : coût de Notion, Airtable et Google Sheets pour 6 personnes, limites des offres gratuites et seuil de rentabilité (nov. 2026).
 - [Tarif horaire artisan 2026 : le calcul avant d'augmenter](https://www.margebrief.com/fr/tarif-horaire-artisan-2026-calcul-avant-augmentation): Tarif horaire artisan : la formule sur les heures facturables, l'effet Smic et gazole de novembre 2026, et les chantiers que vous pouvez perdre.
 - [Loi Le Meur 2026 : ce qui s'applique aux hôtes Airbnb](https://www.margebrief.com/fr/loi-le-meur-2026-regles-hotes-airbnb-amortissement-lmnp): Loi Le Meur : jours, amendes, enregistrement, changement d'usage, coût du plafond LMNP 2027 et exception votée au Sénat le 24 novembre 2026.

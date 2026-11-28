@@ -63,8 +63,8 @@
     { date: "2026-11-27", title: "Calendrier éditorial SaaS : Notion, Airtable ou tableur ?", lang: "fr", slug: "/fr/calendrier-editorial-saas-notion-airtable-tableur-2026.html", tag: "Marketing SaaS", cat: "saas", min: 8, desc: "Calendrier éditorial SaaS : coût de Notion, Airtable et Google Sheets pour 6 personnes, limites des offres gratuites et seuil de rentabilité (nov. 2026)." },
     { date: "2026-11-27", title: "SaaS Content Calendar: Notion vs Airtable vs Sheets", lang: "en", slug: "/en/saas-content-calendar-notion-vs-airtable-vs-sheets-2026.html", tag: "SaaS Marketing", cat: "saas", min: 7, desc: "Content calendar costs for a six-person SaaS team: Notion, Airtable and Google Sheets seat math, free-plan limits and break-even hours (November 2026)." },
     // Sam 28 — Business
-    { date: "2026-11-28", title: "Comment facturer ce que vous valez vraiment (sans avoir peur)", lang: "fr", slug: null, tag: "Business" },
-    { date: "2026-11-28", title: "How to Charge What You're Actually Worth (Without Flinching)", lang: "en", slug: null, tag: "Business" },
+    { date: "2026-11-28", title: "Augmenter ses prix en micro : le piège du seuil de TVA", lang: "fr", slug: "/fr/augmenter-prix-micro-entreprise-seuil-tva-2026.html", tag: "Prix", cat: "artisans", min: 8, desc: "Hausse de 20 % en micro-entreprise : combien de chantiers perdre sans gagner moins, et ce que change le seuil de TVA de 37 500 €. Calculs et message." },
+    { date: "2026-11-28", title: "1099 Rate vs W-2 Salary: The 2027 Math", lang: "en", slug: "/en/1099-rate-vs-w2-salary-2027-math.html", tag: "Pricing", cat: "artisans", min: 6, desc: "What 1099 hourly rate matches a $60k, $90k or $120k W-2 salary? Worked 2027 math on payroll tax, health premiums, billable hours, plus a quote template." },
     // Dim 29 — Réseaux sociaux → MayaPilot
     { date: "2026-11-29", title: "Quand publier sur LinkedIn pour vendre un SaaS B2B : ce que disent les données", lang: "fr", slug: null, tag: "LinkedIn" },
     { date: "2026-11-29", title: "Best Time to Post on LinkedIn for a B2B SaaS: What the Data Says", lang: "en", slug: null, tag: "LinkedIn" },
